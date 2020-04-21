@@ -7,17 +7,26 @@
 //
 
 import SwiftUI
+import FruityKit
 
 struct ContentView: View {
+    @State private var selectedDevice: RazerDevice?
+    
     var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        NavigationView {
+            DeviceList(selectedDevice: $selectedDevice)
+            
+            if selectedDevice != nil {
+                Text("Hello world!")
+            }
+        }
+        .frame(minWidth: 700, minHeight: 300)
     }
 }
 
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

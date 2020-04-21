@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F7EA7244F7CB80035CB81 /* DeviceList.swift */; };
+		A00F7EAA244F80F70035CB81 /* FruityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00F7EA9244F80F70035CB81 /* FruityKit.framework */; };
+		A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB387244F791D000534F2 /* DeviceRow.swift */; };
 		A0AC44A1244CAF78003CEDB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC44A0244CAF78003CEDB4 /* AppDelegate.swift */; };
 		A0AC44A3244CAF78003CEDB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC44A2244CAF78003CEDB4 /* ContentView.swift */; };
 		A0AC44A5244CAF79003CEDB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A4244CAF79003CEDB4 /* Assets.xcassets */; };
@@ -14,7 +17,23 @@
 		A0AC44AB244CAF79003CEDB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A9244CAF79003CEDB4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A00F7EA6244F7B990035CB81 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A00F7EA7244F7CB80035CB81 /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
+		A00F7EA9244F80F70035CB81 /* FruityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FruityKit.framework; path = Carthage/Build/Mac/FruityKit.framework; sourceTree = "<group>"; };
+		A08DB387244F791D000534F2 /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
 		A0AC449D244CAF78003CEDB4 /* FruityUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruityUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0AC44A0244CAF78003CEDB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0AC44A2244CAF78003CEDB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,17 +49,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00F7EAA244F80F70035CB81 /* FruityKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A00F7E9D244F7AE10035CB81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A00F7EA9244F80F70035CB81 /* FruityKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A08DB389244F7921000534F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A08DB387244F791D000534F2 /* DeviceRow.swift */,
+				A00F7EA7244F7CB80035CB81 /* DeviceList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A0AC4494244CAF78003CEDB4 = {
 			isa = PBXGroup;
 			children = (
 				A0AC449F244CAF78003CEDB4 /* FruityUI */,
 				A0AC449E244CAF78003CEDB4 /* Products */,
+				A00F7E9D244F7AE10035CB81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +93,7 @@
 		A0AC449F244CAF78003CEDB4 /* FruityUI */ = {
 			isa = PBXGroup;
 			children = (
+				A08DB389244F7921000534F2 /* Views */,
 				A0AC44A0244CAF78003CEDB4 /* AppDelegate.swift */,
 				A0AC44A2244CAF78003CEDB4 /* ContentView.swift */,
 				A0AC44A4244CAF79003CEDB4 /* Assets.xcassets */,
@@ -84,6 +123,7 @@
 				A0AC4499244CAF78003CEDB4 /* Sources */,
 				A0AC449A244CAF78003CEDB4 /* Frameworks */,
 				A0AC449B244CAF78003CEDB4 /* Resources */,
+				A00F7EA6244F7B990035CB81 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,7 +186,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0AC44A3244CAF78003CEDB4 /* ContentView.swift in Sources */,
+				A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */,
 				A0AC44A1244CAF78003CEDB4 /* AppDelegate.swift in Sources */,
+				A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,13 +330,18 @@
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = FruityUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = io.edr.FruityUI;
+				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -311,13 +358,18 @@
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = FruityUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = io.edr.FruityUI;
+				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
