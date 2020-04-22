@@ -17,6 +17,9 @@
 		A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00F7EA9244F80F70035CB81 /* FruityKit.framework */; };
 		A0E4BF492450C90700F0D77D /* FruityKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A00F7EA9244F80F70035CB81 /* FruityKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4BF4C2450C94500F0D77D /* StubDevice.swift */; };
+		A0E4BF512450CDE400F0D77D /* DeviceConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4BF502450CDE400F0D77D /* DeviceConfigurationView.swift */; };
+		A0E4BF532450CE6500F0D77D /* NoDeviceSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4BF522450CE6500F0D77D /* NoDeviceSelectedView.swift */; };
+		A0E4BF552450D09600F0D77D /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4BF542450D09600F0D77D /* Filter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +49,9 @@
 		A0AC44AC244CAF79003CEDB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0AC44AD244CAF79003CEDB4 /* FruityUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FruityUI.entitlements; sourceTree = "<group>"; };
 		A0E4BF4C2450C94500F0D77D /* StubDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubDevice.swift; sourceTree = "<group>"; };
+		A0E4BF502450CDE400F0D77D /* DeviceConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationView.swift; sourceTree = "<group>"; };
+		A0E4BF522450CE6500F0D77D /* NoDeviceSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDeviceSelectedView.swift; sourceTree = "<group>"; };
+		A0E4BF542450D09600F0D77D /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,9 @@
 			children = (
 				A08DB387244F791D000534F2 /* DeviceRow.swift */,
 				A00F7EA7244F7CB80035CB81 /* DeviceList.swift */,
+				A0E4BF502450CDE400F0D77D /* DeviceConfigurationView.swift */,
+				A0E4BF542450D09600F0D77D /* Filter.swift */,
+				A0E4BF522450CE6500F0D77D /* NoDeviceSelectedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +210,9 @@
 				A0AC44A3244CAF78003CEDB4 /* ContentView.swift in Sources */,
 				A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */,
 				A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */,
+				A0E4BF532450CE6500F0D77D /* NoDeviceSelectedView.swift in Sources */,
+				A0E4BF512450CDE400F0D77D /* DeviceConfigurationView.swift in Sources */,
+				A0E4BF552450D09600F0D77D /* Filter.swift in Sources */,
 				A0AC44A1244CAF78003CEDB4 /* AppDelegate.swift in Sources */,
 				A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */,
 			);

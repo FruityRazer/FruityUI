@@ -17,16 +17,16 @@ struct ContentView: View {
             DeviceList(selectedDevice: $selectedDevice)
             
             if selectedDevice != nil {
-                Text("Hello world!")
+                DeviceConfigurationView(device: selectedDevice!)
+            } else {
+                NoDeviceSelectedView()
             }
         }
-        .frame(minWidth: 700, minHeight: 300)
     }
 }
 
-
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
