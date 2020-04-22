@@ -9,24 +9,27 @@
 import SwiftUI
 import FruityKit
 
-struct Foo {
-    
-}
-
 struct DeviceList: View {
-    let devices = FruityRazer.devices
+    private let devices: [RazerDevice]
     
-    @Binding var selectedDevice: RazerDevice?
+    @Binding private var selectedDevice: RazerDevice?
+    
+    init(devices: [RazerDevice] = FruityRazer.devices, selectedDevice: Binding<RazerDevice?>) {
+        self.devices = devices
+        self._selectedDevice = selectedDevice
+    }
     
     var body: some View {
-        List(devices, id: \.shortName, selection: $selectedDevice) {
-            DeviceRow(device: $0)
+        List(selection: $selectedDevice) {
+            ForEach(devices, id: \.shortName) { device in
+                DeviceRow(device: device).tag(device)
+            }
         }
     }
 }
 
 struct DeviceList_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceList()
+        DeviceList(devices: [], selectedDevice: .constant(nil))
     }
 }

@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F7EA7244F7CB80035CB81 /* DeviceList.swift */; };
-		A00F7EAA244F80F70035CB81 /* FruityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00F7EA9244F80F70035CB81 /* FruityKit.framework */; };
 		A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB387244F791D000534F2 /* DeviceRow.swift */; };
 		A0AC44A1244CAF78003CEDB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC44A0244CAF78003CEDB4 /* AppDelegate.swift */; };
 		A0AC44A3244CAF78003CEDB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC44A2244CAF78003CEDB4 /* ContentView.swift */; };
 		A0AC44A5244CAF79003CEDB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A4244CAF79003CEDB4 /* Assets.xcassets */; };
 		A0AC44A8244CAF79003CEDB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A7244CAF79003CEDB4 /* Preview Assets.xcassets */; };
 		A0AC44AB244CAF79003CEDB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A9244CAF79003CEDB4 /* Main.storyboard */; };
+		A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00F7EA9244F80F70035CB81 /* FruityKit.framework */; };
+		A0E4BF492450C90700F0D77D /* FruityKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A00F7EA9244F80F70035CB81 /* FruityKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4BF4C2450C94500F0D77D /* StubDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +26,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A0E4BF492450C90700F0D77D /* FruityKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,6 +45,7 @@
 		A0AC44AA244CAF79003CEDB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0AC44AC244CAF79003CEDB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0AC44AD244CAF79003CEDB4 /* FruityUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FruityUI.entitlements; sourceTree = "<group>"; };
+		A0E4BF4C2450C94500F0D77D /* StubDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A00F7EAA244F80F70035CB81 /* FruityKit.framework in Frameworks */,
+				A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +97,7 @@
 		A0AC449F244CAF78003CEDB4 /* FruityUI */ = {
 			isa = PBXGroup;
 			children = (
+				A0E4BF4B2450C93C00F0D77D /* Stubs */,
 				A08DB389244F7921000534F2 /* Views */,
 				A0AC44A0244CAF78003CEDB4 /* AppDelegate.swift */,
 				A0AC44A2244CAF78003CEDB4 /* ContentView.swift */,
@@ -111,6 +116,14 @@
 				A0AC44A7244CAF79003CEDB4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A0E4BF4B2450C93C00F0D77D /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				A0E4BF4C2450C94500F0D77D /* StubDevice.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +200,7 @@
 			files = (
 				A0AC44A3244CAF78003CEDB4 /* ContentView.swift in Sources */,
 				A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */,
+				A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */,
 				A0AC44A1244CAF78003CEDB4 /* AppDelegate.swift in Sources */,
 				A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */,
 			);

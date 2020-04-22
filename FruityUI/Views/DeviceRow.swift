@@ -37,16 +37,13 @@ struct DeviceRow: View {
 }
 
 struct DeviceRow_Previews: PreviewProvider {
-    struct StubDevice: Device {
-        let shortName: String
-        let fullName: String
-        let connected: Bool
-    }
+    
     
     static var previews: some View {
         Group {
-            DeviceRow(device: StubDevice(shortName: "huntsman_elite", fullName: "Razer Huntsman Elite", connected: true))
-            DeviceRow(device: StubDevice(shortName: "lycosa", fullName: "Razer Lycosa", connected: false))
+            ForEach(StubDevice.exampleDevices, id: \.shortName) {
+                DeviceRow(device: $0)
+            }
         }
     }
 }
