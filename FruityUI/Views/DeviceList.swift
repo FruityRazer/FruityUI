@@ -13,20 +13,27 @@ struct DeviceList: View {
     private let devices: [RazerDevice]
     
     @Binding private var selectedDevice: RazerDevice?
-    @Binding private var filter: FilterOption
+    @State private var filter: FilterOption = .connected
     
-    init(devices: [RazerDevice] = FruityRazer.devices, selectedDevice: Binding<RazerDevice?>, filter: Binding<FilterOption> = .constant(.all)) {
+    init(devices: [RazerDevice] = FruityRazer.devices, selectedDevice: Binding<RazerDevice?> = .constant(nil)) {
         self.devices = devices
         self._selectedDevice = selectedDevice
-        self._filter = filter
     }
     
     var body: some View {
         VStack {
-            Filter(selected: self.$filter)
+            Filter(selected: self.$filter).padding(EdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5))
             List(selection: self.$selectedDevice) {
-                ForEach(self.devices, id: \.shortName) { device in
-                    DeviceRow(device: device).tag(device)
+                Section(header: Text("Synapse 2")) {
+                    ForEach(self.devices.filter { $0.driver.synapseVersion == 2 && (filter == .connected ? $0.connected : true) }, id: \.shortName) { device in
+                        DeviceRow(device: device).tag(device)
+                    }
+                }
+                
+                Section(header: Text("Synapse 3")) {
+                    ForEach(self.devices.filter { $0.driver.synapseVersion == 3 && (filter == .connected ? $0.connected : true) }, id: \.shortName) { device in
+                        DeviceRow(device: device).tag(device)
+                    }
                 }
             }
         }.frame(minWidth: 225, maxWidth: 300)
@@ -35,6 +42,6 @@ struct DeviceList: View {
 
 struct DeviceList_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceList(devices: [], selectedDevice: .constant(nil))
+        DeviceList(devices: [])
     }
 }

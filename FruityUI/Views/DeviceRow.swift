@@ -7,24 +7,22 @@
 //
 
 import SwiftUI
-import FruityKit
 
 protocol Device {
     var shortName: String { get }
     var fullName: String { get }
     var connected: Bool { get }
+    var imageURL: URL { get }
 }
-
-extension RazerDevice: Device {}
 
 struct DeviceRow: View {
     let device: Device
     
     var body: some View {
         HStack(alignment: .center) {
-            Rectangle()
-                .size(width: 50, height: 50)
-                .frame(width: 50, height: 50)
+            AsyncImage(url: device.imageURL, placeholder: Text("..."), configuration: { $0.resizable() })
+                .frame(width: 50, height: 50, alignment: .trailing)
+            
             VStack(alignment: .leading) {
                 Text(device.fullName)
                     .font(.subheadline)
@@ -37,8 +35,6 @@ struct DeviceRow: View {
 }
 
 struct DeviceRow_Previews: PreviewProvider {
-    
-    
     static var previews: some View {
         Group {
             ForEach(StubDevice.exampleDevices, id: \.shortName) {

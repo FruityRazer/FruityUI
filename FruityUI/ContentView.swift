@@ -17,7 +17,11 @@ struct ContentView: View {
             DeviceList(selectedDevice: $selectedDevice)
             
             if selectedDevice != nil {
-                DeviceConfigurationView(device: selectedDevice!)
+                if selectedDevice!.driver.synapseVersion == 2 {
+                    DeviceConfigurationViewV2(device: selectedDevice!)
+                } else {
+                    DeviceConfigurationViewV3(device: selectedDevice!)
+                }
             } else {
                 NoDeviceSelectedView()
             }

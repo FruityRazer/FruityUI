@@ -13,6 +13,7 @@ struct StubDevice: Device {
     let shortName: String
     let fullName: String
     let connected: Bool
+    let imageURL: URL = URL(string: "http://google.com")!
     
     static let exampleDevices = [
         StubDevice(shortName: "huntsman_elite", fullName: "Razer Huntsman Elite", connected: true),

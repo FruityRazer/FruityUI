@@ -9,21 +9,28 @@
 import SwiftUI
 import FruityKit
 
-struct DeviceConfigurationView: View {
+struct DeviceConfigurationViewV3: View {
     var device: RazerDevice!
+    @Binding var rawConfigurationText: String
+    
+    init(device: RazerDevice!) {
+        self.device = device
+        self._rawConfigurationText = .constant("")
+    }
     
     var body: some View {
         ScrollView {
             VStack {
                 Text("Device selected: \(device.fullName)")
                     .padding()
+                TextField("", text: $rawConfigurationText).padding()
             }.frame(minWidth: 700)
         }
     }
 }
 
-struct DeviceConfigurationView_Previews: PreviewProvider {
+struct DeviceConfigurationViewV3_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceConfigurationView()
+        DeviceConfigurationViewV3(device: nil)
     }
 }

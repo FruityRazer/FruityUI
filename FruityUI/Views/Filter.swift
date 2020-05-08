@@ -15,7 +15,7 @@ struct Filter: View {
         HStack {
             Picker(selection: $selected, label: EmptyView()) {
                 ForEach(FilterOption.allCases, id: \.rawValue) {
-                    Text($0.rawValue)
+                    Text($0.rawValue).tag($0)
                 }
             }
         }
@@ -29,6 +29,6 @@ struct Filter_Previews: PreviewProvider {
 }
 
 enum FilterOption: String, CaseIterable {
-    case all
-    case connected
+    case all = "All"
+    case connected = "Connected"
 }
