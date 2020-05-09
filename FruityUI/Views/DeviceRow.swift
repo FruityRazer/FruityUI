@@ -19,9 +19,12 @@ struct DeviceRow: View {
             VStack(alignment: .leading) {
                 Text(device.fullName)
                     .font(.subheadline)
-                Text(device.connected ? "Connected" : "Disconnected")
-                    .font(.caption)
-                    .foregroundColor(device.connected ? .green : .red)
+                HStack {
+                    //  Add some sort of traffic light image here...
+                    Text(device.connected ? "Connected" : "Disconnected")
+                        .font(.caption)
+                        .foregroundColor(device.connected ? .green : .red)
+                }
             }
         }
     }

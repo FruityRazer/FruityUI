@@ -21,19 +21,41 @@ struct DeviceConfigurationViewV2: View {
     var device: Device
     
     @State var selectedMode: Synapse2ModeBasic = .wave
-    @State var synapseMode: Synapse2Handle.Mode? = nil
+    @State var synapseMode: Synapse2Handle.Mode? = .wave(direction: .right)
     
     init(device: Device) {
         self.device = device
     }
     
     var body: some View {
-        ScrollView {
+        let selectedModeBinding = Binding<Synapse2ModeBasic>(
+            get: { self.selectedMode },
+            set: {
+                self.selectedMode = $0
+                
+                let white = FruityKit.Color(red: 255, green: 255, blue: 255)
+                
+                switch $0 {
+                case .wave:
+                    self.synapseMode = .wave(direction: .right)
+                case .spectrum:
+                    self.synapseMode = .spectrum
+                case .reactive:
+                    self.synapseMode = .reactive(speed: 1, color: white)
+                case .static:
+                    self.synapseMode = .static(color: white)
+                case .breath:
+                    self.synapseMode = .breath(color: white)
+                }
+            }
+        )
+        
+        return ScrollView {
             VStack {
                 Text("Device selected: \(device.fullName)")
                     .padding()
                 GroupBox(label: Text("Mode")) {
-                    Picker(selection: $selectedMode, label: EmptyView()) {
+                    Picker(selection: selectedModeBinding, label: EmptyView()) {
                         ForEach(Synapse2ModeBasic.allCases, id: \.rawValue) {
                             Text($0.rawValue).tag($0)
                         }

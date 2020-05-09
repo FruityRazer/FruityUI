@@ -28,7 +28,13 @@ struct Reactive: View {
         let speedFieldBinding = Binding<String>(
             get: { String(self.speed) },
             set: {
-                self.speed = Int($0)!
+                guard let speed = Int($0) else {
+                    self.mode = nil
+                    
+                    return
+                }
+                
+                self.speed = speed
                 
                 self.updateMode()
             }
