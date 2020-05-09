@@ -11,23 +11,8 @@ import FruityKit
 import SwiftUI
 
 struct Reactive: View {
-    @State var speedFieldValue: String = "1" {
-        didSet {
-            speed = Int(speedFieldValue)!
-        }
-    }
-    
-    @State var speed: Int = 1 {
-        didSet {
-            updateMode()
-        }
-    }
-    
-    @State var color: FruityKit.Color? = nil {
-        didSet {
-            updateMode()
-        }
-    }
+    @State var speed: Int = 1
+    @State var color: FruityKit.Color? = nil
     
     @Binding var mode: Synapse2Handle.Mode?
     
@@ -40,13 +25,31 @@ struct Reactive: View {
     }
     
     var body: some View {
-        VStack {
+        let speedFieldBinding = Binding<String>(
+            get: { String(self.speed) },
+            set: {
+                self.speed = Int($0)!
+                
+                self.updateMode()
+            }
+        )
+        
+        let colorBinding = Binding<FruityKit.Color?>(
+            get: { self.color },
+            set: {
+                self.color = $0
+                
+                self.updateMode()
+            }
+        )
+        
+        return VStack {
             GroupBox(label: Text("Speed")) {
-                TextField("", text: $speedFieldValue)
+                TextField("", text: speedFieldBinding)
             }
             
             GroupBox(label: Text("Color")) {
-                CompleteColorPicker(selectedColor: $color)
+                CompleteColorPicker(selectedColor: colorBinding)
             }
         }
     }

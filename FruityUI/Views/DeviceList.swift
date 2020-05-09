@@ -36,7 +36,7 @@ struct DeviceList: View {
                     }
                 }
             }
-        }.frame(minWidth: 225, maxWidth: 300)
+        }.frame(minWidth: 225, maxWidth: 300, minHeight: 450)
     }
 }
 

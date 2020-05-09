@@ -21,8 +21,19 @@ struct Static: View {
     @Binding var mode: Synapse2Handle.Mode?
     
     var body: some View {
-        GroupBox(label: Text("Color")) {
-            CompleteColorPicker(selectedColor: $color)
+        let binding = Binding<FruityKit.Color?>(
+            get: { self.color },
+            set: {
+                self.color = $0
+                
+                if let color = $0 {
+                    self.mode = .static(color: color)
+                }
+            }
+        )
+        
+        return GroupBox(label: Text("Color")) {
+            CompleteColorPicker(selectedColor: binding)
         }
     }
 }

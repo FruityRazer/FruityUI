@@ -24,17 +24,21 @@ enum WaveMode: String, CaseIterable {
 }
 
 struct Wave: View {
-    @State var direction: WaveMode = .right {
-        didSet {
-            mode = .wave(direction: direction.direction)
-        }
-    }
+    @State var direction: WaveMode = .right
     
     @Binding var mode: Synapse2Handle.Mode?
     
     var body: some View {
-        GroupBox(label: Text("Direction")) {
-            Picker(selection: $direction, label: EmptyView()) {
+        let waveModeBinding = Binding<WaveMode>(
+            get: { self.direction },
+            set: {
+                self.direction = $0
+                self.mode = .wave(direction: $0.direction)
+            }
+        )
+        
+        return GroupBox(label: Text("Direction")) {
+            Picker(selection: waveModeBinding, label: EmptyView()) {
                 ForEach(WaveMode.allCases, id: \.rawValue) {
                     Text($0.rawValue).tag($0)
                 }
