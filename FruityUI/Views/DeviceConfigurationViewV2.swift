@@ -9,18 +9,19 @@
 import SwiftUI
 import FruityKit
 
-enum Synapse2ModeBasic: String, CaseIterable {
-    case wave = "Wave"
-    case spectrum = "Spectrum"
-    case reactive = "Reactive"
-    case `static` = "Static"
-    case breath = "Breath"
-}
-
 struct DeviceConfigurationViewV2: View {
+    enum Synapse2ModeBasic: String, CaseIterable {
+        case wave = "Wave"
+        case spectrum = "Spectrum"
+        case reactive = "Reactive"
+        case `static` = "Static"
+        case breath = "Breath"
+    }
+    
     var device: Device
     
     @State var selectedMode: Synapse2ModeBasic = .wave
+    @State var synapseMode: Synapse2Handle.Mode? = nil
     
     init(device: Device) {
         self.device = device
@@ -31,15 +32,17 @@ struct DeviceConfigurationViewV2: View {
             VStack {
                 Text("Device selected: \(device.fullName)")
                     .padding()
-                Picker(selection: $selectedMode, label: EmptyView()) {
-                    ForEach(Synapse2ModeBasic.allCases, id: \.rawValue) {
-                        Text($0.rawValue).tag($0)
+                GroupBox(label: Text("Mode")) {
+                    Picker(selection: $selectedMode, label: EmptyView()) {
+                        ForEach(Synapse2ModeBasic.allCases, id: \.rawValue) {
+                            Text($0.rawValue).tag($0)
+                        }
                     }
                 }
                 .padding()
                 modeSettings
                     .padding()
-                Button(action: {}) {
+                Button(action: commitToDevice) {
                     Text("Save")
                 }
             }
@@ -51,17 +54,43 @@ struct DeviceConfigurationViewV2: View {
     var modeSettings: AnyView? {
         switch selectedMode {
         case .wave:
-            return AnyView(Wave(direction: .constant(.right)))
-        default:
-            return nil
+            return AnyView(Wave(mode: $synapseMode))
+        case .spectrum:
+            return AnyView(Spectrum(mode: $synapseMode))
+        case .reactive:
+            return AnyView(Reactive(mode: $synapseMode))
+        case .static:
+            return AnyView(Static(mode: $synapseMode))
+        case .breath:
+            return AnyView(Breath(mode: $synapseMode))
         }
+    }
+    
+    func commitToDevice() {
+        guard let razerDevice = device.razerDevice else {
+            assertionFailure("`razerDevice` should never be nil on a non-stub device driver.")
+            
+            return
+        }
+        
+        guard case let Driver.v2(driver: handle) = razerDevice.driver else {
+            assertionFailure("Driver should be of Synapse2 type.")
+            
+            return
+        }
+        
+        guard let mode = synapseMode else {
+            //  Nothing to write...
+            
+            return
+        }
+        
+        handle.write(mode: mode)
     }
 }
 
 struct DeviceConfigurationViewV2_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceConfigurationViewV2(device: StubDevice(shortName: "synapse2",
-                                                     fullName: "Synapse 2 Device",
-                                                     connected: true))
+        DeviceConfigurationViewV2(device: StubDevice.exampleDevices[0])
     }
 }

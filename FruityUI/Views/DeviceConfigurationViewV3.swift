@@ -10,10 +10,10 @@ import SwiftUI
 import FruityKit
 
 struct DeviceConfigurationViewV3: View {
-    var device: RazerDevice!
+    var device: Device
     @Binding var rawConfigurationText: String
     
-    init(device: RazerDevice!) {
+    init(device: Device) {
         self.device = device
         self._rawConfigurationText = .constant("")
     }
@@ -31,6 +31,6 @@ struct DeviceConfigurationViewV3: View {
 
 struct DeviceConfigurationViewV3_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceConfigurationViewV3(device: nil)
+        DeviceConfigurationViewV3(device: StubDevice.exampleDevices[0])
     }
 }

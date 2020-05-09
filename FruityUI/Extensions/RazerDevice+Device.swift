@@ -19,4 +19,8 @@ extension RazerDevice: Device {
         
         return URL(string: urlStr)!
     }
+    
+    var razerDevice: RazerDevice? {
+        return self
+    }
 }

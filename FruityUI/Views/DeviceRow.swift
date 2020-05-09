@@ -8,19 +8,12 @@
 
 import SwiftUI
 
-protocol Device {
-    var shortName: String { get }
-    var fullName: String { get }
-    var connected: Bool { get }
-    var imageURL: URL { get }
-}
-
 struct DeviceRow: View {
     let device: Device
     
     var body: some View {
         HStack(alignment: .center) {
-            AsyncImage(url: device.imageURL, placeholder: Text("..."), configuration: { $0.resizable() })
+            AsyncImage(url: device.imageURL, placeholder: Rectangle().frame(width: 50, height: 50, alignment: .trailing), configuration: { $0.resizable() })
                 .frame(width: 50, height: 50, alignment: .trailing)
             
             VStack(alignment: .leading) {

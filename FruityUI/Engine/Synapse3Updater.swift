@@ -22,10 +22,10 @@ struct Synapse3Updater: Synapse3Updating {
     
     func update() {
         FruityRazer.connectedDevices.forEach { device in
-            guard let configuration = configurations.first(where: { configuration in configuration.shortName == device.shortName }),
-                case let Driver.v3(driver: handle) = device.driver else {
-                return
-            }
+//            guard let configuration = configurations.first(where: { configuration in configuration.shortName == device.shortName }),
+//                case let Driver.v3(driver: handle) = device.driver else {
+//                return
+//            }
             
             //  Do something with `configuration` and `handle`...
         }

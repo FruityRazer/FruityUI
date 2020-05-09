@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,13 @@
 		A0EF69C524660FB300D77297 /* DeviceImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0EF69C424660FB300D77297 /* DeviceImages.plist */; };
 		A0EF69C72466165A00D77297 /* DeviceConfigurationViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69C62466165A00D77297 /* DeviceConfigurationViewV2.swift */; };
 		A0EF69CA2466192400D77297 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69C92466192400D77297 /* Wave.swift */; };
+		A0FBA0F12466B7420002EB75 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0F02466B7420002EB75 /* Reactive.swift */; };
+		A0FBA0F42466B8340002EB75 /* ColorPicker in Frameworks */ = {isa = PBXBuildFile; productRef = A0FBA0F32466B8340002EB75 /* ColorPicker */; };
+		A0FBA0F62466B9950002EB75 /* CompleteColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0F52466B9950002EB75 /* CompleteColorPicker.swift */; };
+		A0FBA0FA2466BD740002EB75 /* Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0F92466BD740002EB75 /* Static.swift */; };
+		A0FBA0FC2466C7D00002EB75 /* Breath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0FB2466C7D00002EB75 /* Breath.swift */; };
+		A0FBA0FE2466C88D0002EB75 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0FD2466C88D0002EB75 /* Device.swift */; };
+		A0FBA1002466CEC00002EB75 /* Spectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0FF2466CEC00002EB75 /* Spectrum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +83,12 @@
 		A0EF69C424660FB300D77297 /* DeviceImages.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DeviceImages.plist; sourceTree = "<group>"; };
 		A0EF69C62466165A00D77297 /* DeviceConfigurationViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationViewV2.swift; sourceTree = "<group>"; };
 		A0EF69C92466192400D77297 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		A0FBA0F02466B7420002EB75 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
+		A0FBA0F52466B9950002EB75 /* CompleteColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteColorPicker.swift; sourceTree = "<group>"; };
+		A0FBA0F92466BD740002EB75 /* Static.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static.swift; sourceTree = "<group>"; };
+		A0FBA0FB2466C7D00002EB75 /* Breath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breath.swift; sourceTree = "<group>"; };
+		A0FBA0FD2466C88D0002EB75 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		A0FBA0FF2466CEC00002EB75 /* Spectrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spectrum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0FBA0F42466B8340002EB75 /* ColorPicker in Frameworks */,
 				A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A0EF69C82466191800D77297 /* Synapse 2 Mode */,
+				A0FBA0F52466B9950002EB75 /* CompleteColorPicker.swift */,
 				A08DB387244F791D000534F2 /* DeviceRow.swift */,
 				A00F7EA7244F7CB80035CB81 /* DeviceList.swift */,
 				A0EF69C62466165A00D77297 /* DeviceConfigurationViewV2.swift */,
@@ -181,6 +196,7 @@
 			children = (
 				A0EF69B52466063900D77297 /* DeviceConfigurationV3.swift */,
 				A0EF69B72466075700D77297 /* DeviceConfigurationV3+Extensions.swift */,
+				A0FBA0FD2466C88D0002EB75 /* Device.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,6 +230,10 @@
 		A0EF69C82466191800D77297 /* Synapse 2 Mode */ = {
 			isa = PBXGroup;
 			children = (
+				A0FBA0FB2466C7D00002EB75 /* Breath.swift */,
+				A0FBA0F02466B7420002EB75 /* Reactive.swift */,
+				A0FBA0FF2466CEC00002EB75 /* Spectrum.swift */,
+				A0FBA0F92466BD740002EB75 /* Static.swift */,
 				A0EF69C92466192400D77297 /* Wave.swift */,
 			);
 			path = "Synapse 2 Mode";
@@ -236,6 +256,9 @@
 			dependencies = (
 			);
 			name = FruityUI;
+			packageProductDependencies = (
+				A0FBA0F32466B8340002EB75 /* ColorPicker */,
+			);
 			productName = FruityUI;
 			productReference = A0AC449D244CAF78003CEDB4 /* FruityUI.app */;
 			productType = "com.apple.product-type.application";
@@ -264,6 +287,9 @@
 				Base,
 			);
 			mainGroup = A0AC4494244CAF78003CEDB4;
+			packageReferences = (
+				A0FBA0F22466B8340002EB75 /* XCRemoteSwiftPackageReference "ColorPicker" */,
+			);
 			productRefGroup = A0AC449E244CAF78003CEDB4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,16 +320,22 @@
 			files = (
 				A0AC44A3244CAF78003CEDB4 /* ContentView.swift in Sources */,
 				A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */,
+				A0FBA0FC2466C7D00002EB75 /* Breath.swift in Sources */,
 				A0EF69C124660DE400D77297 /* ImageCache.swift in Sources */,
 				A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */,
+				A0FBA0F12466B7420002EB75 /* Reactive.swift in Sources */,
 				A0EF69B82466075700D77297 /* DeviceConfigurationV3+Extensions.swift in Sources */,
 				A0EF69C72466165A00D77297 /* DeviceConfigurationViewV2.swift in Sources */,
 				A0E4BF532450CE6500F0D77D /* NoDeviceSelectedView.swift in Sources */,
 				A0EF69CA2466192400D77297 /* Wave.swift in Sources */,
+				A0FBA1002466CEC00002EB75 /* Spectrum.swift in Sources */,
 				A0EF69B32466044300D77297 /* Synapse3Updater.swift in Sources */,
 				A0E4BF512450CDE400F0D77D /* DeviceConfigurationViewV3.swift in Sources */,
 				A0E4BF552450D09600F0D77D /* Filter.swift in Sources */,
 				A0EF69AF2466038C00D77297 /* DataModel.xcdatamodeld in Sources */,
+				A0FBA0FA2466BD740002EB75 /* Static.swift in Sources */,
+				A0FBA0FE2466C88D0002EB75 /* Device.swift in Sources */,
+				A0FBA0F62466B9950002EB75 /* CompleteColorPicker.swift in Sources */,
 				A0AC44A1244CAF78003CEDB4 /* AppDelegate.swift in Sources */,
 				A0EF69C324660DF500D77297 /* ImageLoader.swift in Sources */,
 				A0EF69BF24660DD100D77297 /* AsyncImage.swift in Sources */,
@@ -519,6 +551,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A0FBA0F22466B8340002EB75 /* XCRemoteSwiftPackageReference "ColorPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hendriku/ColorPicker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A0FBA0F32466B8340002EB75 /* ColorPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0FBA0F22466B8340002EB75 /* XCRemoteSwiftPackageReference "ColorPicker" */;
+			productName = ColorPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A0EF69AD2466038C00D77297 /* DataModel.xcdatamodeld */ = {

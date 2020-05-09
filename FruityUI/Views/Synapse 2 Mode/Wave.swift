@@ -6,16 +6,31 @@
 //  Copyright © 2020 Eduardo Almeida. All rights reserved.
 //
 
-import SwiftUI
 import FruityKit
+import SwiftUI
 
 enum WaveMode: String, CaseIterable {
     case left = "Left"
     case right = "Right"
+    
+    var direction: Direction {
+        switch self {
+        case .left:
+            return .left
+        case .right:
+            return .right
+        }
+    }
 }
 
 struct Wave: View {
-    @Binding var direction: WaveMode
+    @State var direction: WaveMode = .right {
+        didSet {
+            mode = .wave(direction: direction.direction)
+        }
+    }
+    
+    @Binding var mode: Synapse2Handle.Mode?
     
     var body: some View {
         GroupBox(label: Text("Direction")) {
@@ -30,6 +45,6 @@ struct Wave: View {
 
 struct Wave_Previews: PreviewProvider {
     static var previews: some View {
-        Wave(direction: .constant(.right))
+        Wave(mode: .constant(nil))
     }
 }
