@@ -10,13 +10,7 @@ import FruityKit
 import SwiftUI
 
 struct Breath: View {
-    @State var color: FruityKit.Color? = nil {
-        didSet {
-            if let color = color {
-                mode = .breath(color: color)
-            }
-        }
-    }
+    @State var color: FruityKit.Color? = nil
     
     @Binding var mode: Synapse2Handle.Mode?
     
