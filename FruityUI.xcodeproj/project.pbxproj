@@ -112,10 +112,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A087405A246AF798008DFBA4 /* Synapse 3 Mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Synapse 3 Mode";
+			sourceTree = "<group>";
+		};
 		A08DB389244F7921000534F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A0EF69C82466191800D77297 /* Synapse 2 Mode */,
+				A087405A246AF798008DFBA4 /* Synapse 3 Mode */,
 				A0FBA0F52466B9950002EB75 /* CompleteColorPicker.swift */,
 				A08DB387244F791D000534F2 /* DeviceRow.swift */,
 				A00F7EA7244F7CB80035CB81 /* DeviceList.swift */,

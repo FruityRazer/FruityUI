@@ -23,8 +23,12 @@ struct DeviceConfigurationViewV3: View {
             VStack {
                 Text("Device selected: \(device.fullName)")
                     .padding()
-                TextField("", text: $rawConfigurationText).padding()
-            }.frame(minWidth: 700)
+                GroupBox(label: Text("Raw Data")) {
+                    TextField("JSON Data", text: $rawConfigurationText)
+                }.padding()
+            }
+                .padding()
+                .frame(minWidth: 700)
         }
     }
 }
