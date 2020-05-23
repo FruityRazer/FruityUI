@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E266" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DeviceConfigurationV2" representedClassName="DeviceConfigurationV2" syncable="YES">
+        <attribute name="colorRaw" optional="YES" attributeType="Transformable"/>
+        <attribute name="direction" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="mode" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="shortName" attributeType="String"/>
+        <attribute name="speed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="DeviceConfigurationV3" representedClassName="DeviceConfigurationV3" syncable="YES">
         <attribute name="colorsRaw" optional="YES" attributeType="Transformable"/>
         <attribute name="shortName" attributeType="String"/>
     </entity>
     <elements>
         <element name="DeviceConfigurationV3" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="DeviceConfigurationV2" positionX="-63" positionY="0" width="128" height="118"/>
     </elements>
 </model>

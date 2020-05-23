@@ -18,7 +18,7 @@ struct ContentView: View {
             
             if selectedDevice != nil {
                 if selectedDevice!.driver.synapseVersion == 2 {
-                    DeviceConfigurationViewV2(device: selectedDevice!)
+                    DeviceConfigurationViewV2(presenter: .init(device: selectedDevice!))
                 } else {
                     DeviceConfigurationViewV3(device: selectedDevice!)
                 }

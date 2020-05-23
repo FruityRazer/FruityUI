@@ -10,6 +10,7 @@ import SwiftUI
 import FruityKit
 
 struct DeviceList: View {
+    
     private let devices: [RazerDevice]
     
     @Binding private var selectedDevice: RazerDevice?

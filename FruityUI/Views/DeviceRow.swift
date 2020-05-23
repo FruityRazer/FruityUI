@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct DeviceRow: View {
+    
     let device: Device
     
     var body: some View {

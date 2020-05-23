@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F7EA7244F7CB80035CB81 /* DeviceList.swift */; };
+		A04620222478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04620212478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift */; };
+		A0569E4324774A8E00D98B41 /* DeviceConfigurationV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0569E4224774A8E00D98B41 /* DeviceConfigurationV2.swift */; };
 		A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB387244F791D000534F2 /* DeviceRow.swift */; };
 		A0AC44A1244CAF78003CEDB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC44A0244CAF78003CEDB4 /* AppDelegate.swift */; };
 		A0AC44A3244CAF78003CEDB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC44A2244CAF78003CEDB4 /* ContentView.swift */; };
 		A0AC44A5244CAF79003CEDB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A4244CAF79003CEDB4 /* Assets.xcassets */; };
 		A0AC44A8244CAF79003CEDB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A7244CAF79003CEDB4 /* Preview Assets.xcassets */; };
 		A0AC44AB244CAF79003CEDB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A9244CAF79003CEDB4 /* Main.storyboard */; };
+		A0CD978824789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978724789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift */; };
+		A0CD978A24789BFA00BA56B0 /* DeviceConfigurationV2+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978924789BFA00BA56B0 /* DeviceConfigurationV2+Extensions.swift */; };
+		A0CD978C24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978B24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift */; };
 		A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00F7EA9244F80F70035CB81 /* FruityKit.framework */; };
 		A0E4BF492450C90700F0D77D /* FruityKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A00F7EA9244F80F70035CB81 /* FruityKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4BF4C2450C94500F0D77D /* StubDevice.swift */; };
@@ -58,6 +63,8 @@
 /* Begin PBXFileReference section */
 		A00F7EA7244F7CB80035CB81 /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
 		A00F7EA9244F80F70035CB81 /* FruityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FruityKit.framework; path = Carthage/Build/Mac/FruityKit.framework; sourceTree = "<group>"; };
+		A04620212478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+Convenience.swift"; sourceTree = "<group>"; };
+		A0569E4224774A8E00D98B41 /* DeviceConfigurationV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationV2.swift; sourceTree = "<group>"; };
 		A08DB387244F791D000534F2 /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
 		A0AC449D244CAF78003CEDB4 /* FruityUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruityUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0AC44A0244CAF78003CEDB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +74,9 @@
 		A0AC44AA244CAF79003CEDB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0AC44AC244CAF79003CEDB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0AC44AD244CAF79003CEDB4 /* FruityUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FruityUI.entitlements; sourceTree = "<group>"; };
+		A0CD978724789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationV2+SynapseMode.swift"; sourceTree = "<group>"; };
+		A0CD978924789BFA00BA56B0 /* DeviceConfigurationV2+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationV2+Extensions.swift"; sourceTree = "<group>"; };
+		A0CD978B24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationViewV2+Presenter.swift"; sourceTree = "<group>"; };
 		A0E4BF4C2450C94500F0D77D /* StubDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubDevice.swift; sourceTree = "<group>"; };
 		A0E4BF502450CDE400F0D77D /* DeviceConfigurationViewV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationViewV3.swift; sourceTree = "<group>"; };
 		A0E4BF522450CE6500F0D77D /* NoDeviceSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDeviceSelectedView.swift; sourceTree = "<group>"; };
@@ -112,6 +122,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A046201E2478A27800CB2A5B /* Convenience */ = {
+			isa = PBXGroup;
+			children = (
+				A04620212478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift */,
+			);
+			path = Convenience;
+			sourceTree = "<group>";
+		};
 		A087405A246AF798008DFBA4 /* Synapse 3 Mode */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,11 +173,13 @@
 		A0AC449F244CAF78003CEDB4 /* FruityUI */ = {
 			isa = PBXGroup;
 			children = (
+				A046201E2478A27800CB2A5B /* Convenience */,
 				A0EF69BC24660DAD00D77297 /* External */,
 				A0EF69B924660CDB00D77297 /* Extensions */,
 				A0EF69B42466062F00D77297 /* Models */,
 				A0EF69AC2466037000D77297 /* Engine */,
 				A0E4BF4B2450C93C00F0D77D /* Stubs */,
+				A0CD978D24789F3F00BA56B0 /* Presenters */,
 				A08DB389244F7921000534F2 /* Views */,
 				A0AC44A0244CAF78003CEDB4 /* AppDelegate.swift */,
 				A0AC44A2244CAF78003CEDB4 /* ContentView.swift */,
@@ -182,6 +202,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A0CD978624789A0600BA56B0 /* Conversions */ = {
+			isa = PBXGroup;
+			children = (
+				A0CD978724789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift */,
+			);
+			path = Conversions;
+			sourceTree = "<group>";
+		};
+		A0CD978D24789F3F00BA56B0 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				A0CD978B24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
 		A0E4BF4B2450C93C00F0D77D /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +238,9 @@
 		A0EF69B42466062F00D77297 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A0CD978624789A0600BA56B0 /* Conversions */,
+				A0569E4224774A8E00D98B41 /* DeviceConfigurationV2.swift */,
+				A0CD978924789BFA00BA56B0 /* DeviceConfigurationV2+Extensions.swift */,
 				A0EF69B52466063900D77297 /* DeviceConfigurationV3.swift */,
 				A0EF69B72466075700D77297 /* DeviceConfigurationV3+Extensions.swift */,
 				A0FBA0FD2466C88D0002EB75 /* Device.swift */,
@@ -278,7 +317,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Eduardo Almeida";
 				TargetAttributes = {
 					A0AC449C244CAF78003CEDB4 = {
@@ -330,6 +369,9 @@
 				A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */,
 				A0FBA0FC2466C7D00002EB75 /* Breath.swift in Sources */,
 				A0EF69C124660DE400D77297 /* ImageCache.swift in Sources */,
+				A0CD978C24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift in Sources */,
+				A04620222478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift in Sources */,
+				A0CD978A24789BFA00BA56B0 /* DeviceConfigurationV2+Extensions.swift in Sources */,
 				A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */,
 				A0FBA0F12466B7420002EB75 /* Reactive.swift in Sources */,
 				A0EF69B82466075700D77297 /* DeviceConfigurationV3+Extensions.swift in Sources */,
@@ -350,6 +392,8 @@
 				A0EF69BB24660CFB00D77297 /* RazerDevice+Device.swift in Sources */,
 				A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */,
 				A0EF69B12466041700D77297 /* Engine.swift in Sources */,
+				A0CD978824789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift in Sources */,
+				A0569E4324774A8E00D98B41 /* DeviceConfigurationV2.swift in Sources */,
 				A0EF69B62466063900D77297 /* DeviceConfigurationV3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +530,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FruityUI/FruityUI.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
@@ -514,6 +559,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FruityUI/FruityUI.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";

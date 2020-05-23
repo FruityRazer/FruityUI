@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct NoDeviceSelectedView: View {
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -20,6 +21,7 @@ struct NoDeviceSelectedView: View {
 }
 
 struct NoDeviceSelectedView_Previews: PreviewProvider {
+    
     static var previews: some View {
         NoDeviceSelectedView()
     }

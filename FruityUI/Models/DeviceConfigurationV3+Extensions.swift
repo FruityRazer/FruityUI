@@ -10,6 +10,7 @@ import Foundation
 import FruityKit
 
 extension DeviceConfigurationV3 {
+    
     var colors: [[Color]] {
         get {
             colorsRaw.map { row in

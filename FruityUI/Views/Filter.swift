@@ -12,6 +12,7 @@ struct Filter: View {
     @Binding var selected: FilterOption
     
     var body: some View {
+        
         HStack {
             Picker(selection: $selected, label: EmptyView()) {
                 ForEach(FilterOption.allCases, id: \.rawValue) {
@@ -23,12 +24,14 @@ struct Filter: View {
 }
 
 struct Filter_Previews: PreviewProvider {
+    
     static var previews: some View {
         Filter(selected: .constant(.all))
     }
 }
 
 enum FilterOption: String, CaseIterable {
+    
     case all = "All"
     case connected = "Connected"
 }

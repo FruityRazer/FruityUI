@@ -10,6 +10,7 @@ import SwiftUI
 import FruityKit
 
 struct DeviceConfigurationViewV2: View {
+    
     enum Synapse2ModeBasic: String, CaseIterable {
         case wave = "Wave"
         case spectrum = "Spectrum"
@@ -18,41 +19,19 @@ struct DeviceConfigurationViewV2: View {
         case breath = "Breath"
     }
     
-    var device: Device
-    
-    @State var selectedMode: Synapse2ModeBasic = .wave
-    @State var synapseMode: Synapse2Handle.Mode? = .wave(direction: .right)
-    
-    init(device: Device) {
-        self.device = device
-    }
+    @ObservedObject var presenter: DeviceConfigurationViewV2.Presenter
     
     var body: some View {
         let selectedModeBinding = Binding<Synapse2ModeBasic>(
-            get: { self.selectedMode },
+            get: { self.presenter.selectedMode },
             set: {
-                self.selectedMode = $0
-                
-                let white = FruityKit.Color(red: 255, green: 255, blue: 255)
-                
-                switch $0 {
-                case .wave:
-                    self.synapseMode = .wave(direction: .right)
-                case .spectrum:
-                    self.synapseMode = .spectrum
-                case .reactive:
-                    self.synapseMode = .reactive(speed: 1, color: white)
-                case .static:
-                    self.synapseMode = .static(color: white)
-                case .breath:
-                    self.synapseMode = .breath(color: white)
-                }
+                self.presenter.perform(.setMode($0))
             }
         )
         
         return ScrollView {
             VStack {
-                Text("Device selected: \(device.fullName)")
+                Text("Device selected: \(presenter.device.fullName)")
                     .padding()
                 GroupBox(label: Text("Mode")) {
                     Picker(selection: selectedModeBinding, label: EmptyView()) {
@@ -64,7 +43,7 @@ struct DeviceConfigurationViewV2: View {
                 .padding()
                 modeSettings
                     .padding()
-                Button(action: commitToDevice) {
+                Button(action: { self.presenter.perform(.commit) }) {
                     Text("Save")
                 }
             }
@@ -74,45 +53,24 @@ struct DeviceConfigurationViewV2: View {
     }
     
     var modeSettings: AnyView? {
-        switch selectedMode {
+        switch presenter.selectedMode {
         case .wave:
-            return AnyView(Wave(mode: $synapseMode))
+            return AnyView(Wave(mode: $presenter.synapseMode))
         case .spectrum:
-            return AnyView(Spectrum(mode: $synapseMode))
+            return AnyView(Spectrum(mode: $presenter.synapseMode))
         case .reactive:
-            return AnyView(Reactive(mode: $synapseMode))
+            return AnyView(Reactive(mode: $presenter.synapseMode))
         case .static:
-            return AnyView(Static(mode: $synapseMode))
+            return AnyView(Static(mode: $presenter.synapseMode))
         case .breath:
-            return AnyView(Breath(mode: $synapseMode))
+            return AnyView(Breath(mode: $presenter.synapseMode))
         }
-    }
-    
-    func commitToDevice() {
-        guard let razerDevice = device.razerDevice else {
-            assertionFailure("`razerDevice` should never be nil on a non-stub device driver.")
-            
-            return
-        }
-        
-        guard case let Driver.v2(driver: handle) = razerDevice.driver else {
-            assertionFailure("Driver should be of Synapse2 type.")
-            
-            return
-        }
-        
-        guard let mode = synapseMode else {
-            //  Nothing to write...
-            
-            return
-        }
-        
-        handle.write(mode: mode)
     }
 }
 
 struct DeviceConfigurationViewV2_Previews: PreviewProvider {
+    
     static var previews: some View {
-        DeviceConfigurationViewV2(device: StubDevice.exampleDevices[0])
+        DeviceConfigurationViewV2(presenter: .init(device: StubDevice.exampleDevices[0]))
     }
 }

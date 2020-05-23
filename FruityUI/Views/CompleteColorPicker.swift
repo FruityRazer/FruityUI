@@ -11,6 +11,7 @@ import FruityKit
 import SwiftUI
 
 struct CompleteColorPicker: View {
+    
     enum ColorPickerSelection: String, CaseIterable {
         case white = "White"
         case black = "Black"
