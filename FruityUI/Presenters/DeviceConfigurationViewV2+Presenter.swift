@@ -23,6 +23,11 @@ extension DeviceConfigurationViewV2 {
         
         init(device: Device) {
             self.device = device
+            
+            if let storedConfiguration = DeviceConfigurationV2.get(forDeviceWithShortName: device.shortName) {
+                selectedMode = storedConfiguration.synapseMode.synapse2ModeBasic
+                synapseMode = storedConfiguration.synapseMode
+            }
         }
         
         func perform(_ action: Action) {
@@ -48,7 +53,8 @@ extension DeviceConfigurationViewV2 {
                 
                 handle.write(mode: mode)
                 
-                mode.save()
+                DeviceConfigurationV2.delete(forDeviceWithShortName: device.shortName)
+                DeviceConfigurationV2.new(withShortName: device.shortName, mode: mode)
                 
             case .setMode(let mode):
                 selectedMode = mode

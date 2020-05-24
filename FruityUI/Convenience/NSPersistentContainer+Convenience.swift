@@ -29,6 +29,14 @@ extension NSPersistentContainer {
 
 enum CoreData {
     
+    static var managedContext: NSManagedObjectContext? {
+        guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
+            return nil
+        }
+        
+        return appDelegate.persistentContainer.viewContext
+    }
+    
     static func commit() {
         guard let appDelegate = NSApplication.shared.delegate as? AppDelegate else {
             return

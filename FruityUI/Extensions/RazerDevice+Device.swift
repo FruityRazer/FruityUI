@@ -10,6 +10,7 @@ import Foundation
 import FruityKit
 
 extension RazerDevice: Device {
+    
     var imageURL: URL {
         guard let plistPath = Bundle.main.path(forResource: "DeviceImages", ofType: "plist"),
             let dictionary = NSDictionary(contentsOfFile: plistPath) as? Dictionary<String, String>,
