@@ -7,27 +7,18 @@
 //
 
 import Foundation
-import FruityKit
 
-protocol Synapse3Updating {
+struct Synapse3Updater: Updater {
     
-}
-
-struct Synapse3Updater: Synapse3Updating {
-    let configurations: [DeviceConfigurationV3]
-    
-    init(configurations: [DeviceConfigurationV3]) {
-        self.configurations = configurations
+    private var configurations: [DeviceConfigurationV3] {
+        return []
     }
     
-    func update() {
-        FruityRazer.connectedDevices.forEach { device in
-//            guard let configuration = configurations.first(where: { configuration in configuration.shortName == device.shortName }),
-//                case let Driver.v3(driver: handle) = device.driver else {
-//                return
-//            }
-            
-            //  Do something with `configuration` and `handle`...
-        }
+    func updateWithSavedConfigurations() {
+        
+    }
+    
+    func pause(with: PauseType) {
+        
     }
 }

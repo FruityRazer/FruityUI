@@ -44,6 +44,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         statusBarItem.button?.title = "FruityUI"
         statusBarItem.button?.action = #selector(statusBarItemPressed(_:))
+        
+        let engine = Engine()
+        engine.startUpdating()
     }
     
     @objc func statusBarItemPressed(_ sender: AnyObject?) {

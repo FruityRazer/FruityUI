@@ -19,6 +19,8 @@
 		A0BAE5582479E8A200B82FBE /* DeviceConfigurationV2Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5572479E8A200B82FBE /* DeviceConfigurationV2Mode.swift */; };
 		A0BAE55A2479E8C800B82FBE /* DeviceConfigurationV2Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5592479E8C800B82FBE /* DeviceConfigurationV2Direction.swift */; };
 		A0BAE55E2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE55D2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift */; };
+		A0BAE5602479F83300B82FBE /* Synapse2Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE55F2479F83300B82FBE /* Synapse2Updater.swift */; };
+		A0BAE5622479F83E00B82FBE /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5612479F83E00B82FBE /* Updater.swift */; };
 		A0CD978824789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978724789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift */; };
 		A0CD978A24789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978924789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift */; };
 		A0CD978C24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978B24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift */; };
@@ -80,6 +82,8 @@
 		A0BAE5572479E8A200B82FBE /* DeviceConfigurationV2Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationV2Mode.swift; sourceTree = "<group>"; };
 		A0BAE5592479E8C800B82FBE /* DeviceConfigurationV2Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationV2Direction.swift; sourceTree = "<group>"; };
 		A0BAE55D2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Synapse2HandleMode+Conversions.swift"; sourceTree = "<group>"; };
+		A0BAE55F2479F83300B82FBE /* Synapse2Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synapse2Updater.swift; sourceTree = "<group>"; };
+		A0BAE5612479F83E00B82FBE /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
 		A0CD978724789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationV2+SynapseMode.swift"; sourceTree = "<group>"; };
 		A0CD978924789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationV2+CoreData.swift"; sourceTree = "<group>"; };
 		A0CD978B24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationViewV2+Presenter.swift"; sourceTree = "<group>"; };
@@ -257,7 +261,9 @@
 			isa = PBXGroup;
 			children = (
 				A0EF69B02466041700D77297 /* Engine.swift */,
+				A0BAE55F2479F83300B82FBE /* Synapse2Updater.swift */,
 				A0EF69B22466044300D77297 /* Synapse3Updater.swift */,
+				A0BAE5612479F83E00B82FBE /* Updater.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -410,9 +416,11 @@
 				A0BAE55A2479E8C800B82FBE /* DeviceConfigurationV2Direction.swift in Sources */,
 				A0E4BF512450CDE400F0D77D /* DeviceConfigurationViewV3.swift in Sources */,
 				A0E4BF552450D09600F0D77D /* Filter.swift in Sources */,
+				A0BAE5602479F83300B82FBE /* Synapse2Updater.swift in Sources */,
 				A0EF69AF2466038C00D77297 /* DataModel.xcdatamodeld in Sources */,
 				A0FBA0FA2466BD740002EB75 /* Static.swift in Sources */,
 				A0FBA0FE2466C88D0002EB75 /* Device.swift in Sources */,
+				A0BAE5622479F83E00B82FBE /* Updater.swift in Sources */,
 				A0FBA0F62466B9950002EB75 /* CompleteColorPicker.swift in Sources */,
 				A0AC44A1244CAF78003CEDB4 /* AppDelegate.swift in Sources */,
 				A0EF69C324660DF500D77297 /* ImageLoader.swift in Sources */,

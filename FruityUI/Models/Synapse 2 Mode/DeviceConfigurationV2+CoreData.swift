@@ -18,7 +18,7 @@ extension DeviceConfigurationV2 {
         }
         
         let managedContext = appDelegate.persistentContainer.viewContext
-        
+
         let entity = NSEntityDescription.entity(forEntityName: "DeviceConfigurationV2", in: managedContext)!
         
         let deviceConfiguration = NSManagedObject(entity: entity, insertInto: managedContext)
@@ -54,6 +54,22 @@ extension DeviceConfigurationV2 {
         CoreData.commit()
         
         return configuration
+    }
+    
+    class func get() -> [DeviceConfigurationV2] {
+        guard let managedContext = CoreData.managedContext else {
+            return []
+        }
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DeviceConfigurationV2")
+        
+        do {
+            return try managedContext.fetch(fetchRequest) as! [DeviceConfigurationV2]
+        } catch {
+            
+        }
+        
+        return []
     }
     
     class func get(forDeviceWithShortName shortName: String) -> DeviceConfigurationV2? {
