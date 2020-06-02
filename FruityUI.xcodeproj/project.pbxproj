@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F7EA7244F7CB80035CB81 /* DeviceList.swift */; };
+		A010711124870F28007E3E45 /* Synapse2Handle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A010711024870F28007E3E45 /* Synapse2Handle+Extensions.swift */; };
 		A04620222478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04620212478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift */; };
 		A0569E4324774A8E00D98B41 /* DeviceConfigurationV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0569E4224774A8E00D98B41 /* DeviceConfigurationV2.swift */; };
 		A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB387244F791D000534F2 /* DeviceRow.swift */; };
@@ -68,6 +69,7 @@
 /* Begin PBXFileReference section */
 		A00F7EA7244F7CB80035CB81 /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
 		A00F7EA9244F80F70035CB81 /* FruityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FruityKit.framework; path = Carthage/Build/Mac/FruityKit.framework; sourceTree = "<group>"; };
+		A010711024870F28007E3E45 /* Synapse2Handle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Synapse2Handle+Extensions.swift"; sourceTree = "<group>"; };
 		A04620212478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+Convenience.swift"; sourceTree = "<group>"; };
 		A0569E4224774A8E00D98B41 /* DeviceConfigurationV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationV2.swift; sourceTree = "<group>"; };
 		A08DB387244F791D000534F2 /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			children = (
 				A0EF69BA24660CFB00D77297 /* RazerDevice+Device.swift */,
 				A0BAE55D2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift */,
+				A010711024870F28007E3E45 /* Synapse2Handle+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				A0EF69B82466075700D77297 /* DeviceConfigurationV3+Extensions.swift in Sources */,
 				A0EF69C72466165A00D77297 /* DeviceConfigurationViewV2.swift in Sources */,
 				A0E4BF532450CE6500F0D77D /* NoDeviceSelectedView.swift in Sources */,
+				A010711124870F28007E3E45 /* Synapse2Handle+Extensions.swift in Sources */,
 				A0EF69CA2466192400D77297 /* Wave.swift in Sources */,
 				A0FBA1002466CEC00002EB75 /* Spectrum.swift in Sources */,
 				A0EF69B32466044300D77297 /* Synapse3Updater.swift in Sources */,

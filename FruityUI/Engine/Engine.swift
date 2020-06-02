@@ -25,9 +25,9 @@ class Engine {
             t.invalidate()
         }
         
+        synapse2.updateWithSavedConfigurations()
+        
         timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(update), userInfo: nil, repeats: true)
-        
-        
     }
     
     func pauseUpdates(with pauseType: PauseType) {
@@ -40,7 +40,7 @@ class Engine {
     }
     
     @objc private func update() {
-        synapse2.updateWithSavedConfigurations()
+//        synapse2.updateWithSavedConfigurations()
         synapse3.updateWithSavedConfigurations()
     }
 }
