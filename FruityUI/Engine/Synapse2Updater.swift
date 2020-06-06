@@ -38,6 +38,8 @@ struct Synapse2Updater: Updater {
     }
     
     func pause(with: PauseType) {
-        
+        configurations.forEach {
+            $0.handle.write(mode: .static(color: .init(red: 0, green: 0, blue: 0)))
+        }
     }
 }

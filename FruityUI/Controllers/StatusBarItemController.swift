@@ -9,60 +9,91 @@
 import AppKit
 
 class StatusBarItemController: NSObject {
-
+    
+    private enum MenuItemTitle: String {
+        
+        case startEngine = "⏯️ Start Engine"
+        case pauseEngine = "⏸️ Pause Engine"
+        case openMainWindow = "🍎 Open FruityUI"
+        case quit = "🛑 Quit"
+    }
+    
+    let engine: Engine
     let router: Routable
     let statusBarItem: NSStatusItem
     
-    var menu: NSMenu?
+    var menu: NSMenu!
     
-    init(router: Routable, statusBarItem: NSStatusItem) {
+    init(engine: Engine, router: Routable, statusBarItem: NSStatusItem) {
+        self.engine = engine
         self.router = router
         self.statusBarItem = statusBarItem
         
         super.init()
         
-        setup()
+        setupStatusItem()
     }
     
-    func setup() {
-        menu = NSMenu(title: "FruityUI")
+    private func addMenuItemWithCorrectTarget(_ menuItem: NSMenuItem) {
+        menuItem.target = self
         
-        menu!.addItem(NSMenuItem(title: "⏯️ Start Engine",
-                                 action: #selector(startEngine),
-                                 keyEquivalent: ""))
+        menu.addItem(menuItem)
+    }
+    
+    func setupStatusItem() {
+        menu = NSMenu(title: "FruityUI Status Bar Menu")
         
-        menu!.addItem(NSMenuItem(title: "⏸️ Pause Engine",
-                                 action: #selector(pauseEngine),
-                                 keyEquivalent: ""))
+        let menuItems = [
+            NSMenuItem(title: MenuItemTitle.startEngine.rawValue,
+                       action: #selector(startEngine(_:)),
+                       keyEquivalent: ""),
+            NSMenuItem(title: MenuItemTitle.pauseEngine.rawValue,
+                       action: #selector(pauseEngine(_:)),
+                       keyEquivalent: ""),
+            .separator(),
+            NSMenuItem(title: MenuItemTitle.openMainWindow.rawValue,
+                       action: #selector(openMainWindow),
+                       keyEquivalent: ""),
+            .separator(),
+            NSMenuItem(title: MenuItemTitle.quit.rawValue,
+                       action: #selector(quit(_:)),
+                       keyEquivalent: "")
+        ]
         
-        menu!.addItem(.separator())
-        
-        menu!.addItem(NSMenuItem(title: "🍎 Open FruityUI",
-                                 action: #selector(openFruityUI),
-                                 keyEquivalent: ""))
-        
-        menu!.addItem(.separator())
-        
-        menu!.addItem(NSMenuItem(title: "🛑 Quit",
-                                 action: #selector(StatusBarItemController.quit),
-                                 keyEquivalent: ""))
+        menuItems.forEach(addMenuItemWithCorrectTarget(_:))
         
         statusBarItem.menu = menu
     }
     
-    @objc func startEngine() {
-        
+    @objc func startEngine(_ sender: Any) {
+        engine.startUpdating()
     }
     
-    @objc func pauseEngine() {
-        
+    @objc func pauseEngine(_ sender: Any) {
+        engine.pauseUpdates(withPauseType: .lightsOut)
     }
     
-    @objc func openFruityUI() {
+    @objc func openMainWindow(_ sender: Any) {
         router.openMainWindow()
     }
     
-    @objc func quit() {
+    @objc func quit(_ sender: Any) {
         NSApp.terminate(nil)
+    }
+}
+
+extension StatusBarItemController: NSMenuItemValidation {
+    
+    func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        let engineIsRunning = engine.status == .running
+        
+        switch menuItem.title {
+        case MenuItemTitle.startEngine.rawValue:
+            return !engineIsRunning
+        case MenuItemTitle.pauseEngine.rawValue:
+            return engineIsRunning
+        default:
+            return true
+        }
     }
 }

@@ -46,6 +46,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         newImage.unlockFocus()
         
+        newImage.isTemplate = true
+        
         return newImage
     }()
     
@@ -53,11 +55,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         engine = Engine()
         router = Router(engine: engine)
         
+        engine.startUpdating()
+        
         statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.squareLength))
         
         statusBarItem.button?.image = statusBarImage
         
-        statusBarMenuController = StatusBarItemController(router: router, statusBarItem: statusBarItem)
+        statusBarMenuController = StatusBarItemController(engine: engine,
+                                                          router: router,
+                                                          statusBarItem: statusBarItem)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
