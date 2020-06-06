@@ -71,6 +71,7 @@ struct DeviceConfigurationViewV2: View {
 struct DeviceConfigurationViewV2_Previews: PreviewProvider {
     
     static var previews: some View {
-        DeviceConfigurationViewV2(presenter: .init(device: StubDevice.exampleDevices[0]))
+        DeviceConfigurationViewV2(presenter: .init(device: StubDevice.exampleDevices[0],
+                                                   engine: Engine()))
     }
 }

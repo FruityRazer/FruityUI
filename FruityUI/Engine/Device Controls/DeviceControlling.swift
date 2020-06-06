@@ -14,7 +14,7 @@ enum PauseType {
     case none
 }
 
-protocol Updater {
+protocol DeviceControlling {
     
     func updateWithSavedConfigurations()
     func pause(with: PauseType)

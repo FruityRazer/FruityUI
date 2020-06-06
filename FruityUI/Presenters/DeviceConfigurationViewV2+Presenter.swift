@@ -16,13 +16,15 @@ extension DeviceConfigurationViewV2 {
             case setMode(Synapse2ModeBasic)
         }
         
-        var device: Device
+        let device: Device
+        let engine: Engine
         
         @Published var selectedMode: Synapse2ModeBasic = .wave
         @Published var synapseMode: Synapse2Handle.Mode? = .wave(direction: .right)
         
-        init(device: Device) {
+        init(device: Device, engine: Engine) {
             self.device = device
+            self.engine = engine
             
             if let storedConfiguration = DeviceConfigurationV2.get(forDeviceWithShortName: device.shortName) {
                 selectedMode = storedConfiguration.synapseMode.synapse2ModeBasic
@@ -53,8 +55,7 @@ extension DeviceConfigurationViewV2 {
                 
                 handle.write(mode: mode)
                 
-                DeviceConfigurationV2.delete(forDeviceWithShortName: device.shortName)
-                DeviceConfigurationV2.new(withShortName: device.shortName, mode: mode)
+                engine.persistence.setMode(mode, forDeviceWithShortName: device.shortName)
                 
             case .setMode(let mode):
                 selectedMode = mode

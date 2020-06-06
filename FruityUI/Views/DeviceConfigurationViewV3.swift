@@ -25,8 +25,19 @@ struct DeviceConfigurationViewV3: View {
                 Text("Device selected: \(device.fullName)")
                     .padding()
                 GroupBox(label: Text("Raw Data")) {
-                    TextField("JSON Data", text: $rawConfigurationText)
+                    MacEditorTextView(
+                        text: $rawConfigurationText,
+                        isEditable: true,
+                        font: .userFixedPitchFont(ofSize: 14)
+                    )
+                    .frame(minWidth: 300,
+                           maxWidth: .infinity,
+                           minHeight: 200,
+                           maxHeight: .infinity)
                 }.padding()
+                Button(action: { }) {
+                    Text("Save")
+                }
             }
                 .padding()
                 .frame(minWidth: 700)

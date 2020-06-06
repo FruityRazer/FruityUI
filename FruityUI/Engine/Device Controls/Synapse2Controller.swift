@@ -9,7 +9,7 @@
 import Foundation
 import FruityKit
 
-struct Synapse2Updater: Updater {
+struct Synapse2Controller: DeviceControlling {
     
     typealias DeviceConfigurationWithHandle = (configuration: DeviceConfigurationV2, handle: Synapse2Handle)
     

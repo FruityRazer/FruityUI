@@ -11,6 +11,8 @@ import SwiftUI
 
 struct DeviceConfigurationView: View {
     
+    @EnvironmentObject var engine: Engine
+    
     private var device: VersionedRazerDevice
     
     init(device: VersionedRazerDevice) {
@@ -22,7 +24,7 @@ struct DeviceConfigurationView: View {
     var body: some View {
         switch device {
         case let .v2(device):
-            return AnyView(DeviceConfigurationViewV2(presenter: .init(device: device)))
+            return AnyView(DeviceConfigurationViewV2(presenter: .init(device: device, engine: engine)))
         case let .v3(device):
             return AnyView(DeviceConfigurationViewV3(device: device))
         case let .both(v2: v2, v3: v3):
@@ -31,7 +33,7 @@ struct DeviceConfigurationView: View {
                     .padding()
                 
                 if selectedSynapseVersion == .v2 {
-                    DeviceConfigurationViewV2(presenter: .init(device: v2))
+                    DeviceConfigurationViewV2(presenter: .init(device: v2, engine: engine))
                 } else {
                     DeviceConfigurationViewV3(device: v3)
                 }

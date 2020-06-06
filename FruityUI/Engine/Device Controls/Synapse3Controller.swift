@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Synapse3Updater: Updater {
+struct Synapse3Controller: DeviceControlling {
     
     private var configurations: [DeviceConfigurationV3] {
         return []

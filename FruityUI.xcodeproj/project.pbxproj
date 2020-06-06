@@ -20,14 +20,18 @@
 		A0BAE5582479E8A200B82FBE /* DeviceConfigurationV2Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5572479E8A200B82FBE /* DeviceConfigurationV2Mode.swift */; };
 		A0BAE55A2479E8C800B82FBE /* DeviceConfigurationV2Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5592479E8C800B82FBE /* DeviceConfigurationV2Direction.swift */; };
 		A0BAE55E2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE55D2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift */; };
-		A0BAE5602479F83300B82FBE /* Synapse2Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE55F2479F83300B82FBE /* Synapse2Updater.swift */; };
-		A0BAE5622479F83E00B82FBE /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5612479F83E00B82FBE /* Updater.swift */; };
+		A0BAE5602479F83300B82FBE /* Synapse2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE55F2479F83300B82FBE /* Synapse2Controller.swift */; };
+		A0BAE5622479F83E00B82FBE /* DeviceControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5612479F83E00B82FBE /* DeviceControlling.swift */; };
 		A0CD978824789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978724789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift */; };
 		A0CD978A24789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978924789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift */; };
 		A0CD978C24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978B24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift */; };
 		A0DFECDA248BA09B000C01BC /* ResourceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFECD9248BA09B000C01BC /* ResourceHelpers.swift */; };
 		A0DFECDF248BA3BC000C01BC /* DeviceConfigurationVersionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFECDE248BA3BC000C01BC /* DeviceConfigurationVersionPicker.swift */; };
 		A0DFECE1248BA60D000C01BC /* DeviceConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFECE0248BA60D000C01BC /* DeviceConfigurationView.swift */; };
+		A0DFECE6248C442F000C01BC /* MacEditorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFECE5248C442F000C01BC /* MacEditorTextView.swift */; };
+		A0DFECE8248C4E57000C01BC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFECE7248C4E57000C01BC /* Persistence.swift */; };
+		A0DFECEA248C53C3000C01BC /* DeviceConfigurationV3+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFECE9248C53C3000C01BC /* DeviceConfigurationV3+CoreData.swift */; };
+		A0DFECEE248C57F3000C01BC /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFECED248C57F3000C01BC /* Engine.swift */; };
 		A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00F7EA9244F80F70035CB81 /* FruityKit.framework */; };
 		A0E4BF492450C90700F0D77D /* FruityKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A00F7EA9244F80F70035CB81 /* FruityKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4BF4C2450C94500F0D77D /* StubDevice.swift */; };
@@ -35,8 +39,8 @@
 		A0E4BF532450CE6500F0D77D /* NoDeviceSelectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4BF522450CE6500F0D77D /* NoDeviceSelectedView.swift */; };
 		A0E4BF552450D09600F0D77D /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4BF542450D09600F0D77D /* Filter.swift */; };
 		A0EF69AF2466038C00D77297 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69AD2466038C00D77297 /* DataModel.xcdatamodeld */; };
-		A0EF69B12466041700D77297 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69B02466041700D77297 /* Engine.swift */; };
-		A0EF69B32466044300D77297 /* Synapse3Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69B22466044300D77297 /* Synapse3Updater.swift */; };
+		A0EF69B12466041700D77297 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69B02466041700D77297 /* Controller.swift */; };
+		A0EF69B32466044300D77297 /* Synapse3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69B22466044300D77297 /* Synapse3Controller.swift */; };
 		A0EF69B62466063900D77297 /* DeviceConfigurationV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69B52466063900D77297 /* DeviceConfigurationV3.swift */; };
 		A0EF69B82466075700D77297 /* DeviceConfigurationV3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69B72466075700D77297 /* DeviceConfigurationV3+Extensions.swift */; };
 		A0EF69BB24660CFB00D77297 /* RazerDevice+Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69BA24660CFB00D77297 /* RazerDevice+Device.swift */; };
@@ -90,21 +94,25 @@
 		A0BAE5572479E8A200B82FBE /* DeviceConfigurationV2Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationV2Mode.swift; sourceTree = "<group>"; };
 		A0BAE5592479E8C800B82FBE /* DeviceConfigurationV2Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationV2Direction.swift; sourceTree = "<group>"; };
 		A0BAE55D2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Synapse2HandleMode+Conversions.swift"; sourceTree = "<group>"; };
-		A0BAE55F2479F83300B82FBE /* Synapse2Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synapse2Updater.swift; sourceTree = "<group>"; };
-		A0BAE5612479F83E00B82FBE /* Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
+		A0BAE55F2479F83300B82FBE /* Synapse2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synapse2Controller.swift; sourceTree = "<group>"; };
+		A0BAE5612479F83E00B82FBE /* DeviceControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceControlling.swift; sourceTree = "<group>"; };
 		A0CD978724789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationV2+SynapseMode.swift"; sourceTree = "<group>"; };
 		A0CD978924789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationV2+CoreData.swift"; sourceTree = "<group>"; };
 		A0CD978B24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationViewV2+Presenter.swift"; sourceTree = "<group>"; };
 		A0DFECD9248BA09B000C01BC /* ResourceHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceHelpers.swift; sourceTree = "<group>"; };
 		A0DFECDE248BA3BC000C01BC /* DeviceConfigurationVersionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationVersionPicker.swift; sourceTree = "<group>"; };
 		A0DFECE0248BA60D000C01BC /* DeviceConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationView.swift; sourceTree = "<group>"; };
+		A0DFECE5248C442F000C01BC /* MacEditorTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacEditorTextView.swift; sourceTree = "<group>"; };
+		A0DFECE7248C4E57000C01BC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		A0DFECE9248C53C3000C01BC /* DeviceConfigurationV3+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationV3+CoreData.swift"; sourceTree = "<group>"; };
+		A0DFECED248C57F3000C01BC /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		A0E4BF4C2450C94500F0D77D /* StubDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubDevice.swift; sourceTree = "<group>"; };
 		A0E4BF502450CDE400F0D77D /* DeviceConfigurationViewV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationViewV3.swift; sourceTree = "<group>"; };
 		A0E4BF522450CE6500F0D77D /* NoDeviceSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDeviceSelectedView.swift; sourceTree = "<group>"; };
 		A0E4BF542450D09600F0D77D /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		A0EF69AE2466038C00D77297 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		A0EF69B02466041700D77297 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
-		A0EF69B22466044300D77297 /* Synapse3Updater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synapse3Updater.swift; sourceTree = "<group>"; };
+		A0EF69B02466041700D77297 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		A0EF69B22466044300D77297 /* Synapse3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synapse3Controller.swift; sourceTree = "<group>"; };
 		A0EF69B52466063900D77297 /* DeviceConfigurationV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationV3.swift; sourceTree = "<group>"; };
 		A0EF69B72466075700D77297 /* DeviceConfigurationV3+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationV3+Extensions.swift"; sourceTree = "<group>"; };
 		A0EF69BA24660CFB00D77297 /* RazerDevice+Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RazerDevice+Device.swift"; sourceTree = "<group>"; };
@@ -247,6 +255,7 @@
 			children = (
 				A0EF69B52466063900D77297 /* DeviceConfigurationV3.swift */,
 				A0EF69B72466075700D77297 /* DeviceConfigurationV3+Extensions.swift */,
+				A0DFECE9248C53C3000C01BC /* DeviceConfigurationV3+CoreData.swift */,
 			);
 			path = "Synapse 3 Mode";
 			sourceTree = "<group>";
@@ -271,9 +280,18 @@
 			isa = PBXGroup;
 			children = (
 				A0AC44A0244CAF78003CEDB4 /* AppDelegate.swift */,
-				A0FB0066248B16DA003FF9C7 /* Router.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		A0DFECEF248C588E000C01BC /* Device Controls */ = {
+			isa = PBXGroup;
+			children = (
+				A0BAE5612479F83E00B82FBE /* DeviceControlling.swift */,
+				A0BAE55F2479F83300B82FBE /* Synapse2Controller.swift */,
+				A0EF69B22466044300D77297 /* Synapse3Controller.swift */,
+			);
+			path = "Device Controls";
 			sourceTree = "<group>";
 		};
 		A0E4BF4B2450C93C00F0D77D /* Stubs */ = {
@@ -287,10 +305,11 @@
 		A0EF69AC2466037000D77297 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				A0EF69B02466041700D77297 /* Engine.swift */,
-				A0BAE55F2479F83300B82FBE /* Synapse2Updater.swift */,
-				A0EF69B22466044300D77297 /* Synapse3Updater.swift */,
-				A0BAE5612479F83E00B82FBE /* Updater.swift */,
+				A0DFECEF248C588E000C01BC /* Device Controls */,
+				A0EF69B02466041700D77297 /* Controller.swift */,
+				A0DFECED248C57F3000C01BC /* Engine.swift */,
+				A0DFECE7248C4E57000C01BC /* Persistence.swift */,
+				A0FB0066248B16DA003FF9C7 /* Router.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -320,6 +339,7 @@
 			children = (
 				A0EF69BD24660DBA00D77297 /* AsyncImage */,
 				A0FB0061248B1247003FF9C7 /* ClosableWindow.swift */,
+				A0DFECE5248C442F000C01BC /* MacEditorTextView.swift */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -439,8 +459,10 @@
 				A0BAE55E2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift in Sources */,
 				A0EF69C124660DE400D77297 /* ImageCache.swift in Sources */,
 				A0CD978C24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift in Sources */,
+				A0DFECE6248C442F000C01BC /* MacEditorTextView.swift in Sources */,
 				A04620222478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift in Sources */,
 				A0CD978A24789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift in Sources */,
+				A0DFECE8248C4E57000C01BC /* Persistence.swift in Sources */,
 				A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */,
 				A0BAE5582479E8A200B82FBE /* DeviceConfigurationV2Mode.swift in Sources */,
 				A0FB0065248B14C1003FF9C7 /* StatusBarItemController.swift in Sources */,
@@ -449,28 +471,30 @@
 				A0EF69B82466075700D77297 /* DeviceConfigurationV3+Extensions.swift in Sources */,
 				A0FB0062248B1247003FF9C7 /* ClosableWindow.swift in Sources */,
 				A0EF69C72466165A00D77297 /* DeviceConfigurationViewV2.swift in Sources */,
+				A0DFECEA248C53C3000C01BC /* DeviceConfigurationV3+CoreData.swift in Sources */,
 				A0E4BF532450CE6500F0D77D /* NoDeviceSelectedView.swift in Sources */,
 				A010711124870F28007E3E45 /* Synapse2Handle+Extensions.swift in Sources */,
 				A0EF69CA2466192400D77297 /* Wave.swift in Sources */,
 				A0FBA1002466CEC00002EB75 /* Spectrum.swift in Sources */,
-				A0EF69B32466044300D77297 /* Synapse3Updater.swift in Sources */,
+				A0EF69B32466044300D77297 /* Synapse3Controller.swift in Sources */,
 				A0DFECDF248BA3BC000C01BC /* DeviceConfigurationVersionPicker.swift in Sources */,
 				A0BAE55A2479E8C800B82FBE /* DeviceConfigurationV2Direction.swift in Sources */,
 				A0E4BF512450CDE400F0D77D /* DeviceConfigurationViewV3.swift in Sources */,
 				A0E4BF552450D09600F0D77D /* Filter.swift in Sources */,
-				A0BAE5602479F83300B82FBE /* Synapse2Updater.swift in Sources */,
+				A0BAE5602479F83300B82FBE /* Synapse2Controller.swift in Sources */,
 				A0EF69AF2466038C00D77297 /* DataModel.xcdatamodeld in Sources */,
 				A0FB0067248B16DA003FF9C7 /* Router.swift in Sources */,
 				A0FBA0FA2466BD740002EB75 /* Static.swift in Sources */,
 				A0FBA0FE2466C88D0002EB75 /* Device.swift in Sources */,
-				A0BAE5622479F83E00B82FBE /* Updater.swift in Sources */,
+				A0BAE5622479F83E00B82FBE /* DeviceControlling.swift in Sources */,
 				A0FBA0F62466B9950002EB75 /* CompleteColorPicker.swift in Sources */,
 				A0AC44A1244CAF78003CEDB4 /* AppDelegate.swift in Sources */,
+				A0DFECEE248C57F3000C01BC /* Engine.swift in Sources */,
 				A0EF69C324660DF500D77297 /* ImageLoader.swift in Sources */,
 				A0EF69BF24660DD100D77297 /* AsyncImage.swift in Sources */,
 				A0EF69BB24660CFB00D77297 /* RazerDevice+Device.swift in Sources */,
 				A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */,
-				A0EF69B12466041700D77297 /* Engine.swift in Sources */,
+				A0EF69B12466041700D77297 /* Controller.swift in Sources */,
 				A0CD978824789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift in Sources */,
 				A0DFECE1248BA60D000C01BC /* DeviceConfigurationView.swift in Sources */,
 				A0569E4324774A8E00D98B41 /* DeviceConfigurationV2.swift in Sources */,

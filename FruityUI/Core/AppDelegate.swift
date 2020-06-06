@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         engine = Engine()
         router = Router(engine: engine)
         
-        engine.startUpdating()
+        engine.deviceController.startUpdating()
         
         statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.squareLength))
         

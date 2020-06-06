@@ -66,11 +66,11 @@ class StatusBarItemController: NSObject {
     }
     
     @objc func startEngine(_ sender: Any) {
-        engine.startUpdating()
+        engine.deviceController.startUpdating()
     }
     
     @objc func pauseEngine(_ sender: Any) {
-        engine.pauseUpdates(withPauseType: .lightsOut)
+        engine.deviceController.pauseUpdates(withPauseType: .lightsOut)
     }
     
     @objc func openMainWindow(_ sender: Any) {
@@ -85,13 +85,13 @@ class StatusBarItemController: NSObject {
 extension StatusBarItemController: NSMenuItemValidation {
     
     func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
-        let engineIsRunning = engine.status == .running
+        let deviceControllerIsRunning = engine.deviceController.status == .running
         
         switch menuItem.title {
         case MenuItemTitle.startEngine.rawValue:
-            return !engineIsRunning
+            return !deviceControllerIsRunning
         case MenuItemTitle.pauseEngine.rawValue:
-            return engineIsRunning
+            return deviceControllerIsRunning
         default:
             return true
         }
