@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct Filter: View {
+    
     @Binding var selected: FilterOption
     
     var body: some View {

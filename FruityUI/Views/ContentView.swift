@@ -10,6 +10,7 @@ import SwiftUI
 import FruityKit
 
 struct ContentView: View {
+    
     @State private var selectedDevice: RazerDevice?
     
     var body: some View {
@@ -30,6 +31,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
         ContentView()
     }

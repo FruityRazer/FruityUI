@@ -10,6 +10,7 @@ import FruityKit
 import SwiftUI
 
 struct Breath: View {
+    
     @State var color: FruityKit.Color? = nil
     
     @Binding var mode: Synapse2Handle.Mode?
@@ -33,6 +34,7 @@ struct Breath: View {
 }
 
 struct Breath_Previews: PreviewProvider {
+    
     static var previews: some View {
         Breath(mode: .constant(nil))
     }

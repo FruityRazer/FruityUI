@@ -72,6 +72,7 @@ struct CompleteColorPicker: View {
 }
 
 struct CompleteColorPicker_Previews: PreviewProvider {
+    
     static var previews: some View {
         CompleteColorPicker(selectedColor: .constant(nil))
     }

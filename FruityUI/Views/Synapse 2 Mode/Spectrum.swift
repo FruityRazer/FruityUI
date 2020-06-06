@@ -10,6 +10,7 @@ import FruityKit
 import SwiftUI
 
 struct Spectrum: View {
+    
     @Binding var mode: Synapse2Handle.Mode?
     
     var body: some View {
@@ -18,6 +19,7 @@ struct Spectrum: View {
 }
 
 struct Spectrum_Previews: PreviewProvider {
+    
     static var previews: some View {
         Spectrum(mode: .constant(.spectrum))
     }

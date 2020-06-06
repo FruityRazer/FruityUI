@@ -32,6 +32,7 @@ struct DeviceRow: View {
 }
 
 struct DeviceRow_Previews: PreviewProvider {
+    
     static var previews: some View {
         Group {
             ForEach(StubDevice.exampleDevices, id: \.shortName) {

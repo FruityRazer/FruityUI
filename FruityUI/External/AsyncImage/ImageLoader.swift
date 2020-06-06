@@ -10,6 +10,7 @@ import AppKit
 import Combine
 
 class ImageLoader: ObservableObject {
+    
     @Published var image: NSImage?
     
     private(set) var isLoading = false

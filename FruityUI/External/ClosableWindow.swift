@@ -8,6 +8,7 @@
 import AppKit
 
 class ClosableWindow: NSWindow {
+    
     override func close() {
         self.orderOut(NSApp)
     }

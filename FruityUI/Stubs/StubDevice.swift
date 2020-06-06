@@ -10,6 +10,7 @@ import Foundation
 import FruityKit
 
 struct StubDevice: Device {
+    
     let shortName: String
     let fullName: String
     let connected: Bool

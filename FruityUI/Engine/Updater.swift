@@ -9,6 +9,7 @@
 import Foundation
 
 enum PauseType {
+    
     case lightsOut
     case none
 }

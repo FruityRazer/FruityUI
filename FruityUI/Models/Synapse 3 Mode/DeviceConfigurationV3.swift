@@ -11,6 +11,7 @@ import CoreData
 
 @objc(DeviceConfigurationV3)
 class DeviceConfigurationV3: NSManagedObject {
+    
     @NSManaged var colorsRaw: [[[UInt8]]]
     @NSManaged var shortName: String
     

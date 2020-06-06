@@ -11,6 +11,7 @@ import FruityKit
 import SwiftUI
 
 struct Reactive: View {
+    
     @State var speed: Int = 1
     @State var color: FruityKit.Color? = nil
     
@@ -62,6 +63,7 @@ struct Reactive: View {
 }
 
 struct Reactive_Previews: PreviewProvider {
+    
     static var previews: some View {
         Reactive(mode: .constant(nil))
     }

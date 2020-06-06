@@ -10,6 +10,7 @@ import FruityKit
 import SwiftUI
 
 enum WaveMode: String, CaseIterable {
+    
     case left = "Left"
     case right = "Right"
     
@@ -24,6 +25,7 @@ enum WaveMode: String, CaseIterable {
 }
 
 struct Wave: View {
+    
     @State var direction: WaveMode = .right
     
     @Binding var mode: Synapse2Handle.Mode?
@@ -48,6 +50,7 @@ struct Wave: View {
 }
 
 struct Wave_Previews: PreviewProvider {
+    
     static var previews: some View {
         Wave(mode: .constant(nil))
     }

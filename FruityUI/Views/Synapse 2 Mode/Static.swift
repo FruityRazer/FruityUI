@@ -10,6 +10,7 @@ import FruityKit
 import SwiftUI
 
 struct Static: View {
+    
     @State var color: FruityKit.Color? = nil
     
     @Binding var mode: Synapse2Handle.Mode?
@@ -33,6 +34,7 @@ struct Static: View {
 }
 
 struct Static_Previews: PreviewProvider {
+    
     static var previews: some View {
         Static(mode: .constant(nil))
     }

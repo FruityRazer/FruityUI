@@ -9,10 +9,12 @@
 import AppKit
 
 protocol ImageCache {
+    
     subscript(_ url: URL) -> NSImage? { get set }
 }
 
 struct TemporaryImageCache: ImageCache {
+    
     private let cache = NSCache<NSURL, NSImage>()
     
     subscript(_ key: URL) -> NSImage? {

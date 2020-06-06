@@ -42,6 +42,7 @@ struct DeviceList: View {
 }
 
 struct DeviceList_Previews: PreviewProvider {
+    
     static var previews: some View {
         DeviceList(devices: [])
     }

@@ -26,6 +26,8 @@
 		A0CD978A24789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978924789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift */; };
 		A0CD978C24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978B24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift */; };
 		A0DFECDA248BA09B000C01BC /* ResourceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFECD9248BA09B000C01BC /* ResourceHelpers.swift */; };
+		A0DFECDF248BA3BC000C01BC /* DeviceConfigurationVersionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFECDE248BA3BC000C01BC /* DeviceConfigurationVersionPicker.swift */; };
+		A0DFECE1248BA60D000C01BC /* DeviceConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFECE0248BA60D000C01BC /* DeviceConfigurationView.swift */; };
 		A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00F7EA9244F80F70035CB81 /* FruityKit.framework */; };
 		A0E4BF492450C90700F0D77D /* FruityKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A00F7EA9244F80F70035CB81 /* FruityKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E4BF4C2450C94500F0D77D /* StubDevice.swift */; };
@@ -94,6 +96,8 @@
 		A0CD978924789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationV2+CoreData.swift"; sourceTree = "<group>"; };
 		A0CD978B24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationViewV2+Presenter.swift"; sourceTree = "<group>"; };
 		A0DFECD9248BA09B000C01BC /* ResourceHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceHelpers.swift; sourceTree = "<group>"; };
+		A0DFECDE248BA3BC000C01BC /* DeviceConfigurationVersionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationVersionPicker.swift; sourceTree = "<group>"; };
+		A0DFECE0248BA60D000C01BC /* DeviceConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationView.swift; sourceTree = "<group>"; };
 		A0E4BF4C2450C94500F0D77D /* StubDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubDevice.swift; sourceTree = "<group>"; };
 		A0E4BF502450CDE400F0D77D /* DeviceConfigurationViewV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationViewV3.swift; sourceTree = "<group>"; };
 		A0E4BF522450CE6500F0D77D /* NoDeviceSelectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDeviceSelectedView.swift; sourceTree = "<group>"; };
@@ -167,8 +171,10 @@
 				A0AC44A2244CAF78003CEDB4 /* ContentView.swift */,
 				A08DB387244F791D000534F2 /* DeviceRow.swift */,
 				A00F7EA7244F7CB80035CB81 /* DeviceList.swift */,
+				A0DFECE0248BA60D000C01BC /* DeviceConfigurationView.swift */,
 				A0EF69C62466165A00D77297 /* DeviceConfigurationViewV2.swift */,
 				A0E4BF502450CDE400F0D77D /* DeviceConfigurationViewV3.swift */,
+				A0DFECDE248BA3BC000C01BC /* DeviceConfigurationVersionPicker.swift */,
 				A0E4BF542450D09600F0D77D /* Filter.swift */,
 				A0E4BF522450CE6500F0D77D /* NoDeviceSelectedView.swift */,
 			);
@@ -448,6 +454,7 @@
 				A0EF69CA2466192400D77297 /* Wave.swift in Sources */,
 				A0FBA1002466CEC00002EB75 /* Spectrum.swift in Sources */,
 				A0EF69B32466044300D77297 /* Synapse3Updater.swift in Sources */,
+				A0DFECDF248BA3BC000C01BC /* DeviceConfigurationVersionPicker.swift in Sources */,
 				A0BAE55A2479E8C800B82FBE /* DeviceConfigurationV2Direction.swift in Sources */,
 				A0E4BF512450CDE400F0D77D /* DeviceConfigurationViewV3.swift in Sources */,
 				A0E4BF552450D09600F0D77D /* Filter.swift in Sources */,
@@ -465,6 +472,7 @@
 				A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */,
 				A0EF69B12466041700D77297 /* Engine.swift in Sources */,
 				A0CD978824789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift in Sources */,
+				A0DFECE1248BA60D000C01BC /* DeviceConfigurationView.swift in Sources */,
 				A0569E4324774A8E00D98B41 /* DeviceConfigurationV2.swift in Sources */,
 				A0EF69B62466063900D77297 /* DeviceConfigurationV3.swift in Sources */,
 			);

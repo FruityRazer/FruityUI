@@ -10,6 +10,7 @@ import Foundation
 import FruityKit
 
 protocol Device {
+    
     var shortName: String { get }
     var fullName: String { get }
     var connected: Bool { get }
@@ -17,4 +18,3 @@ protocol Device {
     
     var razerDevice: RazerDevice? { get }
 }
-
