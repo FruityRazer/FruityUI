@@ -44,3 +44,5 @@ class Engine {
         synapse3.updateWithSavedConfigurations()
     }
 }
+
+extension Engine: ObservableObject {}

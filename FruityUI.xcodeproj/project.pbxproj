@@ -43,6 +43,9 @@
 		A0EF69C524660FB300D77297 /* DeviceImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0EF69C424660FB300D77297 /* DeviceImages.plist */; };
 		A0EF69C72466165A00D77297 /* DeviceConfigurationViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69C62466165A00D77297 /* DeviceConfigurationViewV2.swift */; };
 		A0EF69CA2466192400D77297 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69C92466192400D77297 /* Wave.swift */; };
+		A0FB0062248B1247003FF9C7 /* ClosableWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0061248B1247003FF9C7 /* ClosableWindow.swift */; };
+		A0FB0065248B14C1003FF9C7 /* StatusBarItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0064248B14C1003FF9C7 /* StatusBarItemController.swift */; };
+		A0FB0067248B16DA003FF9C7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0066248B16DA003FF9C7 /* Router.swift */; };
 		A0FBA0F12466B7420002EB75 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0F02466B7420002EB75 /* Reactive.swift */; };
 		A0FBA0F42466B8340002EB75 /* ColorPicker in Frameworks */ = {isa = PBXBuildFile; productRef = A0FBA0F32466B8340002EB75 /* ColorPicker */; };
 		A0FBA0F62466B9950002EB75 /* CompleteColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0F52466B9950002EB75 /* CompleteColorPicker.swift */; };
@@ -105,6 +108,9 @@
 		A0EF69C424660FB300D77297 /* DeviceImages.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DeviceImages.plist; sourceTree = "<group>"; };
 		A0EF69C62466165A00D77297 /* DeviceConfigurationViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationViewV2.swift; sourceTree = "<group>"; };
 		A0EF69C92466192400D77297 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		A0FB0061248B1247003FF9C7 /* ClosableWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosableWindow.swift; sourceTree = "<group>"; };
+		A0FB0064248B14C1003FF9C7 /* StatusBarItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarItemController.swift; sourceTree = "<group>"; };
+		A0FB0066248B16DA003FF9C7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A0FBA0F02466B7420002EB75 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 		A0FBA0F52466B9950002EB75 /* CompleteColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteColorPicker.swift; sourceTree = "<group>"; };
 		A0FBA0F92466BD740002EB75 /* Static.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static.swift; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 		A0AC449F244CAF78003CEDB4 /* FruityUI */ = {
 			isa = PBXGroup;
 			children = (
+				A0FB0063248B14B3003FF9C7 /* Controllers */,
 				A046201E2478A27800CB2A5B /* Convenience */,
 				A0EF69BC24660DAD00D77297 /* External */,
 				A0EF69B924660CDB00D77297 /* Extensions */,
@@ -195,6 +202,7 @@
 				A08DB389244F7921000534F2 /* Views */,
 				A0AC44A0244CAF78003CEDB4 /* AppDelegate.swift */,
 				A0AC44A2244CAF78003CEDB4 /* ContentView.swift */,
+				A0FB0066248B16DA003FF9C7 /* Router.swift */,
 				A0AC44A4244CAF79003CEDB4 /* Assets.xcassets */,
 				A0AC44A9244CAF79003CEDB4 /* Main.storyboard */,
 				A0EF69AD2466038C00D77297 /* DataModel.xcdatamodeld */,
@@ -294,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				A0EF69BD24660DBA00D77297 /* AsyncImage */,
+				A0FB0061248B1247003FF9C7 /* ClosableWindow.swift */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -318,6 +327,14 @@
 				A0EF69C92466192400D77297 /* Wave.swift */,
 			);
 			path = "Synapse 2 Mode";
+			sourceTree = "<group>";
+		};
+		A0FB0063248B14B3003FF9C7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A0FB0064248B14C1003FF9C7 /* StatusBarItemController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,8 +426,10 @@
 				A0CD978A24789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift in Sources */,
 				A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */,
 				A0BAE5582479E8A200B82FBE /* DeviceConfigurationV2Mode.swift in Sources */,
+				A0FB0065248B14C1003FF9C7 /* StatusBarItemController.swift in Sources */,
 				A0FBA0F12466B7420002EB75 /* Reactive.swift in Sources */,
 				A0EF69B82466075700D77297 /* DeviceConfigurationV3+Extensions.swift in Sources */,
+				A0FB0062248B1247003FF9C7 /* ClosableWindow.swift in Sources */,
 				A0EF69C72466165A00D77297 /* DeviceConfigurationViewV2.swift in Sources */,
 				A0E4BF532450CE6500F0D77D /* NoDeviceSelectedView.swift in Sources */,
 				A010711124870F28007E3E45 /* Synapse2Handle+Extensions.swift in Sources */,
@@ -422,6 +441,7 @@
 				A0E4BF552450D09600F0D77D /* Filter.swift in Sources */,
 				A0BAE5602479F83300B82FBE /* Synapse2Updater.swift in Sources */,
 				A0EF69AF2466038C00D77297 /* DataModel.xcdatamodeld in Sources */,
+				A0FB0067248B16DA003FF9C7 /* Router.swift in Sources */,
 				A0FBA0FA2466BD740002EB75 /* Static.swift in Sources */,
 				A0FBA0FE2466C88D0002EB75 /* Device.swift in Sources */,
 				A0BAE5622479F83E00B82FBE /* Updater.swift in Sources */,

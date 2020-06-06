@@ -12,51 +12,55 @@ import SwiftUI
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    var engine: Engine!
+    var router: Routable!
+    var statusBarMenuController: StatusBarItemController!
+    
+    var statusBarItem: NSStatusItem!
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "DataModel")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        
+        container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        })
+        }
+        
         return container
     }()
 
-    var window: NSWindow!
-    var statusBarItem: NSStatusItem!
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
-
-        // Create the window and set the content view. 
-        window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 960, height: 600),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        window.center()
-        window.title = "FruityUI for FruityRazer"
-        window.setFrameAutosaveName("Main Window")
-        window.contentView = NSHostingView(rootView: contentView)
-        window.makeKeyAndOrderFront(nil)
+    lazy var statusBarImage: NSImage = {
+        let newSize = NSSize(width: 20, height: 20)
         
-        statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
+        let sourceImage = NSImage(named: "FruityRazerGray")
         
-        statusBarItem.button?.title = "FruityUI"
-        statusBarItem.button?.action = #selector(statusBarItemPressed(_:))
+        let newImage = NSImage(size: newSize)
+        newImage.lockFocus()
         
-        let engine = Engine()
-        engine.startUpdating()
-    }
+        sourceImage?.size = newSize
+        
+        NSGraphicsContext.current?.imageInterpolation = .high
+        
+        sourceImage?.draw(at: .zero, from: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height), operation: .copy, fraction: 1.0)
+        
+        newImage.unlockFocus()
+        
+        return newImage
+    }()
     
-    @objc func statusBarItemPressed(_ sender: AnyObject?) {
-        print("Status bar item was pressed!")
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        engine = Engine()
+        router = Router(engine: engine)
+        
+        statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.squareLength))
+        
+        statusBarItem.button?.image = statusBarImage
+        
+        statusBarMenuController = StatusBarItemController(router: router, statusBarItem: statusBarItem)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-
 }
-
