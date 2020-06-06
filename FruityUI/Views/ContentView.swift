@@ -11,18 +11,14 @@ import FruityKit
 
 struct ContentView: View {
     
-    @State private var selectedDevice: RazerDevice?
+    @State private var selectedDevice: VersionedRazerDevice?
     
     var body: some View {
         NavigationView {
             DeviceList(selectedDevice: $selectedDevice)
             
             if selectedDevice != nil {
-                if selectedDevice!.driver.synapseVersion == 2 {
-                    DeviceConfigurationViewV2(presenter: .init(device: selectedDevice!))
-                } else {
-                    DeviceConfigurationViewV3(device: selectedDevice!)
-                }
+                DeviceConfigurationView(device: selectedDevice!)
             } else {
                 NoDeviceSelectedView()
             }

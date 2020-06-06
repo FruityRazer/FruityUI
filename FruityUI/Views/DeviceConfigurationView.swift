@@ -11,16 +11,16 @@ import SwiftUI
 
 struct DeviceConfigurationView: View {
     
-    private var selectedDevice: VersionedRazerDevice
+    private var device: VersionedRazerDevice
     
-    init(selectedDevice: VersionedRazerDevice) {
-        self.selectedDevice = selectedDevice
+    init(device: VersionedRazerDevice) {
+        self.device = device
     }
     
     @State private var selectedSynapseVersion: DeviceConfigurationVersionPicker.SynapseVersion = .v2
     
     var body: some View {
-        switch selectedDevice {
+        switch device {
         case let .v2(device):
             return AnyView(DeviceConfigurationViewV2(presenter: .init(device: device)))
         case let .v3(device):
@@ -45,7 +45,7 @@ struct DeviceConfigurationView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ForEach(FruityRazer.groupedConnectedDevices, id: \.self) {
-                DeviceConfigurationView(selectedDevice: $0)
+                DeviceConfigurationView(device: $0)
             }
         }
     }

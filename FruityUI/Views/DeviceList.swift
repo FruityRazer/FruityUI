@@ -11,12 +11,12 @@ import FruityKit
 
 struct DeviceList: View {
     
-    private let devices: [RazerDevice]
+    private let devices: [VersionedRazerDevice]
     
-    @Binding private var selectedDevice: RazerDevice?
+    @Binding private var selectedDevice: VersionedRazerDevice?
     @State private var filter: FilterOption = .connected
     
-    init(devices: [RazerDevice] = FruityRazer.devices, selectedDevice: Binding<RazerDevice?> = .constant(nil)) {
+    init(devices: [VersionedRazerDevice] = FruityRazer.groupedDevices, selectedDevice: Binding<VersionedRazerDevice?> = .constant(nil)) {
         self.devices = devices
         self._selectedDevice = selectedDevice
     }
@@ -25,16 +25,8 @@ struct DeviceList: View {
         VStack {
             Filter(selected: self.$filter).padding(EdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5))
             List(selection: self.$selectedDevice) {
-                Section(header: Text("Synapse 2")) {
-                    ForEach(self.devices.filter { $0.driver.synapseVersion == 2 && (filter == .connected ? $0.connected : true) }, id: \.shortName) { device in
-                        DeviceRow(device: device).tag(device)
-                    }
-                }
-                
-                Section(header: Text("Synapse 3")) {
-                    ForEach(self.devices.filter { $0.driver.synapseVersion == 3 && (filter == .connected ? $0.connected : true) }, id: \.shortName) { device in
-                        DeviceRow(device: device).tag(device)
-                    }
+                ForEach(self.devices.filter { (filter == .connected ? $0.connected : true) }, id: \.shortName) { device in
+                    DeviceRow(device: device).tag(device)
                 }
             }
         }.frame(minWidth: 225, maxWidth: 300, minHeight: 450)

@@ -25,3 +25,22 @@ extension RazerDevice: Device {
         return self
     }
 }
+
+extension VersionedRazerDevice: Device {
+    
+    var imageURL: URL {
+        guard let plistPath = Bundle.main.path(forResource: "DeviceImages", ofType: "plist"),
+            let dictionary = NSDictionary(contentsOfFile: plistPath) as? Dictionary<String, String>,
+            let urlStr = dictionary[shortName] else {
+            return URL(string: "https://assets.razerzone.com/eeimages/support/products/1227/1245_synapse_xbox.png")!
+        }
+        
+        return URL(string: urlStr)!
+    }
+    
+    var razerDevice: RazerDevice? {
+        //  TODO: Fix me.
+        
+        return nil
+    }
+}
