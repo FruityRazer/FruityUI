@@ -39,7 +39,7 @@ extension VersionedRazerDevice: Device {
     }
     
     var razerDevice: RazerDevice? {
-        //  TODO: Fix me.
+        assertionFailure("This should never be called on a VersionedRazerDevice instance. This should probably be re-factored, it's a code 👃.")
         
         return nil
     }
