@@ -42,7 +42,7 @@ class Controller: Controlling {
     private var usbWatcher: USBWatcher
     
     init(synapse2: Synapse2Controller = Synapse2Controller(),
-         synapse3: Synapse2Controller = Synapse2Controller()) {
+         synapse3: Synapse3Controller = Synapse3Controller()) {
         
         self.synapse2 = synapse2
         self.synapse3 = synapse3
