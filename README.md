@@ -10,11 +10,11 @@ Please note that since this app uses SwiftUI, it only supports macOS 10.15 and u
 
 ## Development
 
-You need to have Carthage configured on your system.
+You need to have Carthage configured on your system, along with Xcode 11 or up running in macOS 10.15 or newer.
 
- - `carthage update --platform macOS`
+ - `carthage bootstrap --platform macOS`
  
- After that, open the project and compile.
+After that, open the project and compile.
 
 ## Documentation
 
