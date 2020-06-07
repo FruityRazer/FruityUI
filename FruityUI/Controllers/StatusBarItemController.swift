@@ -71,7 +71,7 @@ class StatusBarItemController: NSObject {
     }
     
     @objc func startEngine(_ sender: Any) {
-        engine.deviceController.startUpdating()
+        engine.deviceController.startUpdates()
     }
     
     @objc func pauseEngine(_ sender: Any) {

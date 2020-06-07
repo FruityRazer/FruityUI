@@ -18,24 +18,15 @@ protocol Controlling {
     
     var status: ControllerStatus { get }
     
-    func manualUpdate()
-    func startUpdating(withInterval interval: TimeInterval)
+    func forceUpdate()
+    func startUpdates()
     func pauseUpdates(withPauseType pauseType: PauseType)
-}
-
-extension Controlling {
-    
-    func startUpdating() {
-        self.startUpdating(withInterval: 10.0)
-    }
 }
 
 class Controller: Controlling {
     
     private let synapse2: DeviceControlling
     private let synapse3: DeviceControlling
-    
-    private var timer: Timer? = nil
     
     private(set) var status: ControllerStatus
     
@@ -61,40 +52,24 @@ class Controller: Controlling {
     
     @objc private func receivedDidWakeNotification() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.manualUpdate()
+            self.forceUpdate()
         }
     }
     
-    func manualUpdate() {
+    func forceUpdate() {
         if status == .running {
             synapse2.updateWithSavedConfigurations()
             synapse3.updateWithSavedConfigurations()
         }
     }
     
-    func startUpdating(withInterval interval: TimeInterval = 10.0) {
-        if let t = timer {
-            t.invalidate()
-        }
-        
+    func startUpdates() {
         status = .running
         
         synapse2.updateWithSavedConfigurations()
-        
-        timer = Timer.scheduledTimer(timeInterval: interval,
-                                     target: self,
-                                     selector: #selector(update),
-                                     userInfo: nil,
-                                     repeats: true)
     }
     
     func pauseUpdates(withPauseType pauseType: PauseType) {
-        if let t = timer {
-            t.invalidate()
-        }
-        
-        status = .paused
-        
         synapse2.pause(with: pauseType)
         synapse3.pause(with: pauseType)
     }
@@ -112,7 +87,7 @@ extension Controller: USBWatcherDelegate {
             return
         }
         
-        manualUpdate()
+        forceUpdate()
     }
     
     func deviceRemoved(_ device: io_object_t) {
