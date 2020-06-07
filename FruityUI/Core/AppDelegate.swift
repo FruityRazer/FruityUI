@@ -19,12 +19,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusBarItem: NSStatusItem!
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "DataModel")
+        let container = NSPersistentCloudKitContainer(name: "DataModel")
         
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
+            
+            let remoteChangeKey = "NSPersistentStoreRemoteChangeNotificationOptionKey"
+            storeDescription.setOption(true as NSNumber,
+                                       forKey: remoteChangeKey)
         }
         
         return container

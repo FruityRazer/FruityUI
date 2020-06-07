@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E266" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="DeviceConfigurationV2" representedClassName="DeviceConfigurationV2" syncable="YES">
         <attribute name="colorRaw" optional="YES" attributeType="Transformable"/>
         <attribute name="directionRaw" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="modeRaw" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="shortName" attributeType="String"/>
+        <attribute name="shortName" attributeType="String" defaultValueString=""/>
         <attribute name="speed" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="DeviceConfigurationV3" representedClassName="DeviceConfigurationV3" syncable="YES">
         <attribute name="colorsRaw" optional="YES" attributeType="Transformable"/>
-        <attribute name="shortName" attributeType="String"/>
+        <attribute name="shortName" attributeType="String" defaultValueString=""/>
     </entity>
     <elements>
         <element name="DeviceConfigurationV2" positionX="-63" positionY="0" width="128" height="118"/>

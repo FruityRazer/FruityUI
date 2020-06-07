@@ -48,6 +48,11 @@ class Controller: Controlling {
                                                           selector: #selector(receivedDidWakeNotification),
                                                           name: NSWorkspace.didWakeNotification,
                                                           object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(forceUpdate),
+                                               name: NSNotification.Name(rawValue: "NSPersistentStoreRemoteChangeNotification"),
+                                               object: nil)
     }
     
     @objc private func receivedDidWakeNotification() {
@@ -56,7 +61,7 @@ class Controller: Controlling {
         }
     }
     
-    func forceUpdate() {
+    @objc func forceUpdate() {
         if status == .running {
             synapse2.updateWithSavedConfigurations()
             synapse3.updateWithSavedConfigurations()
