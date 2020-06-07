@@ -6,7 +6,7 @@
 //  Copyright © 2020 Eduardo Almeida. All rights reserved.
 //
 
-import Foundation
+import AppKit
 
 enum ControllerStatus {
     
@@ -39,6 +39,8 @@ class Controller: Controlling {
     
     private(set) var status: ControllerStatus
     
+    private var usbWatcher: USBWatcher
+    
     init(synapse2: Synapse2Controller = Synapse2Controller(),
          synapse3: Synapse2Controller = Synapse2Controller()) {
         
@@ -46,6 +48,21 @@ class Controller: Controlling {
         self.synapse3 = synapse3
         
         self.status = .paused
+        
+        self.usbWatcher = USBWatcher()
+        
+        self.usbWatcher.delegate = self
+        
+        NSWorkspace.shared.notificationCenter.addObserver(self,
+                                                          selector: #selector(receivedDidWakeNotification),
+                                                          name: NSWorkspace.didWakeNotification,
+                                                          object: nil)
+    }
+    
+    @objc private func receivedDidWakeNotification() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.manualUpdate()
+        }
     }
     
     func manualUpdate() {
@@ -88,3 +105,17 @@ class Controller: Controlling {
 }
 
 extension Controller: ObservableObject {}
+
+extension Controller: USBWatcherDelegate {
+    func deviceAdded(_ device: io_object_t) {
+        guard let name = device.name(), String(name.prefix(5)) == "Razer" else {
+            return
+        }
+        
+        manualUpdate()
+    }
+    
+    func deviceRemoved(_ device: io_object_t) {
+        //  Ignored, this doesn't interest us for now.
+    }
+}

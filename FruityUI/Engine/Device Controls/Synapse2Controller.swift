@@ -38,8 +38,8 @@ struct Synapse2Controller: DeviceControlling {
     }
     
     func pause(with: PauseType) {
-        configurations.forEach {
-            $0.handle.write(mode: .static(color: .init(red: 0, green: 0, blue: 0)))
-        }
+//        configurations.forEach {
+//            $0.handle.write(mode: .static(color: .init(red: 0, green: 0, blue: 0)))
+//        }
     }
 }

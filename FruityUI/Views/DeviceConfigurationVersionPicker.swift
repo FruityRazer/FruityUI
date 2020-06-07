@@ -10,11 +10,6 @@ import SwiftUI
 
 struct DeviceConfigurationVersionPicker: View {
     
-    enum SynapseVersion {
-        case v2
-        case v3
-    }
-    
     @Binding var selectedVersion: SynapseVersion
     
     var body: some View {

@@ -1,10 +1,12 @@
-# FruityUI - Swift
+# FruityUI
 
 Open-source UI for [FruityRazer](https://github.com/FruityRazer/FruityRazer), open-source Razer drivers for macOS.
 
-This is the next version of FruityUI. Do not attempt to use it right now, you'll just rip your hair off. :)
+The app should be stable, but is still in its early stages.
 
-If you just want to use FruityRazer, check the current version's [Releases](https://github.com/FruityRazer/FruityUI/releases) page. Developer ID signed releases are published there.
+If you just want to use it, check the [Releases](https://github.com/FruityRazer/FruityUI/releases) page. Developer ID signed releases are published there.
+
+Please note that since this app uses SwiftUI, it only supports macOS 10.15 and up. Users of older versions of macOS may try [FruityUI Legacy](https://github.com/FruityRazer/FruityUI-Legacy) ([Releases](https://github.com/FruityRazer/FruityUI-Legacy/releases)), but please note that version is unsupported.
 
 ## Development
 

@@ -12,10 +12,11 @@ class StatusBarItemController: NSObject {
     
     private enum MenuItemTitle: String {
         
-        case startEngine = "⏯️ Start Engine"
-        case pauseEngine = "⏸️ Pause Engine"
-        case openMainWindow = "🍎 Open FruityUI"
-        case quit = "🛑 Quit"
+        case startEngine = "▶ Start Engine"
+        case pauseEngine = "■ Pause Engine"
+        case forceReSync = "↻ Force Re-Sync"
+        case openMainWindow = "Open FruityUI"
+        case quit = "Quit"
     }
     
     let engine: Engine
@@ -51,6 +52,10 @@ class StatusBarItemController: NSObject {
                        action: #selector(pauseEngine(_:)),
                        keyEquivalent: ""),
             .separator(),
+            NSMenuItem(title: MenuItemTitle.forceReSync.rawValue,
+                       action: #selector(forceReSync(_:)),
+                       keyEquivalent: ""),
+            .separator(),
             NSMenuItem(title: MenuItemTitle.openMainWindow.rawValue,
                        action: #selector(openMainWindow),
                        keyEquivalent: ""),
@@ -71,6 +76,10 @@ class StatusBarItemController: NSObject {
     
     @objc func pauseEngine(_ sender: Any) {
         engine.deviceController.pauseUpdates(withPauseType: .lightsOut)
+    }
+    
+    @objc func forceReSync(_ sender: Any) {
+        
     }
     
     @objc func openMainWindow(_ sender: Any) {

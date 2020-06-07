@@ -28,4 +28,15 @@ extension DeviceConfigurationV3 {
             }
         }
     }
+    
+    var mode: Synapse3Handle.Mode {
+        switch colorsRaw.count {
+        case 0:
+            return .raw(colors: [])
+        case 1:
+            return .raw(colors: colors[0])
+        default:
+            return .rawRows(colors: colors)
+        }
+    }
 }

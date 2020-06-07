@@ -11,6 +11,8 @@ import FruityKit
 
 protocol Persisting {
     
+    func getStoredDataVersion(forVersionedDevice device: VersionedRazerDevice) -> SynapseVersion?
+    
     func setMode(_ mode: Synapse2Handle.Mode, forDeviceWithShortName shortName: String)
     func setMode(_ mode: Synapse3Handle.Mode, forDeviceWithShortName shortName: String)
 }
@@ -28,6 +30,22 @@ struct Persistence: Persisting {
             DeviceConfigurationV2.delete(forDeviceWithShortName: shortName)
             DeviceConfigurationV3.delete(forDeviceWithShortName: shortName)
         }
+    }
+    
+    func getStoredDataVersion(forVersionedDevice device: VersionedRazerDevice) -> SynapseVersion? {
+        guard case let VersionedRazerDevice.both(v2: v2, v3: v3) = device else {
+            return nil
+        }
+        
+        if DeviceConfigurationV2.get(forDeviceWithShortName: v2.shortName) != nil {
+            return .v2
+        }
+        
+        if DeviceConfigurationV3.get(forDeviceWithShortName: v3.shortName) != nil {
+            return .v3
+        }
+        
+        return nil
     }
     
     func setMode(_ mode: Synapse2Handle.Mode, forDeviceWithShortName shortName: String) {
