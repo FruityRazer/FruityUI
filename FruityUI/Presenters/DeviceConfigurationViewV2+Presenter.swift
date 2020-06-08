@@ -53,7 +53,7 @@ extension DeviceConfigurationViewV2 {
                     return
                 }
                 
-                handle.write(mode: mode)
+                _ = handle.write(mode: mode)
                 
                 engine.persistence.setMode(mode, forDeviceWithShortName: device.shortName)
                 

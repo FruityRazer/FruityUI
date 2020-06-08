@@ -129,14 +129,19 @@ extension StatusBarItemController: NSMenuItemValidation {
         let deviceControllerIsRunning = engine.deviceController.status == .running
         
         switch menuItem.title {
-        case MenuItemTitle.startEngine.rawValue:
-            return !deviceControllerIsRunning
-        case MenuItemTitle.pauseEngine.rawValue:
-            return deviceControllerIsRunning
+        case MenuItemTitle.forceReSync.rawValue:
+            return engine.deviceController.status == .running
+            
         case MenuItemTitle.openAtLogin.rawValue:
             menuItem.state = engine.loginItemManager.openAtLogin ? .on : .off
+            return true
             
-            fallthrough
+        case MenuItemTitle.pauseEngine.rawValue:
+            return deviceControllerIsRunning
+            
+        case MenuItemTitle.startEngine.rawValue:
+            return !deviceControllerIsRunning
+            
         default:
             return true
         }

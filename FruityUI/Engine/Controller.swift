@@ -79,6 +79,8 @@ class Controller: Controlling {
     }
     
     func pauseUpdates(withPauseType pauseType: PauseType) {
+        status = .paused
+        
         synapse2.pause(with: pauseType)
         synapse3.pause(with: pauseType)
     }

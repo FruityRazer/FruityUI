@@ -55,7 +55,7 @@ extension DeviceConfigurationViewV3 {
                     return
                 }
                 
-                handle.write(mode: converter.mode)
+                _ = handle.write(mode: converter.mode)
                 
                 engine.persistence.setMode(converter.mode, forDeviceWithShortName: device.shortName)
                 

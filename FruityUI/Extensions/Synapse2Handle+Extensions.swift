@@ -11,6 +11,6 @@ import FruityKit
 extension Synapse2Handle {
     
     public func lightsOut() {
-        write(mode: .static(color: .init(red: 0, green: 0, blue: 0)))
+        _ = write(mode: .static(color: .init(red: 0, green: 0, blue: 0)))
     }
 }

@@ -38,6 +38,8 @@ struct DeviceRawDataConverter: DeviceRawDataConverting {
     
     init(mode: Synapse3Handle.Mode) {
         switch mode {
+        case .off:
+            fatalError("The lights out mode can never be saved to Core Data.")
         case let .raw(colors: colors):
             self.rawData = DeviceRawData(rows: [colors.map { $0.hexValue }])
         case let .rawRows(colors: rows):

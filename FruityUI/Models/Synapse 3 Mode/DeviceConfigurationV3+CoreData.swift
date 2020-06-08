@@ -34,6 +34,8 @@ extension DeviceConfigurationV3 {
         configuration.shortName = shortName
         
         switch mode {
+        case .off:
+            fatalError("The lights out mode can never be saved to Core Data.")
         case let .raw(colors: colors):
             configuration.colors = [colors]
         case let .rawRows(colors: colorRows):

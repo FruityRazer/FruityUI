@@ -33,13 +33,13 @@ struct Synapse3Controller: DeviceControlling {
     
     func updateWithSavedConfigurations() {
         configurations.forEach {
-            $0.handle.write(mode: $0.configuration.mode)
+            _ = $0.handle.write(mode: $0.configuration.mode)
         }
     }
     
     func pause(with: PauseType) {
-//        configurations.forEach {
-//            $0.handle.write(mode: .raw(colors: []))
-//        }
+        configurations.forEach {
+            _ = $0.handle.write(mode: .off)
+        }
     }
 }
