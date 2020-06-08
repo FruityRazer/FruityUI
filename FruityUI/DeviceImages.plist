@@ -2,9 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>huntsman_elite_hw</key>
-	<string>https://assets.razerzone.com/eeimages/support/products/1361/1361_huntsman_elite.png</string>
-	<key>huntsman_elite_sw</key>
+	<key>huntsman_elite</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1361/1361_huntsman_elite.png</string>
 	<key>mamba_hyperflux</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1276/1276_hyperflux.png</string>

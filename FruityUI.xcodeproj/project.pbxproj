@@ -18,18 +18,20 @@
 		A08D8706248D08A3008CE599 /* SynapseVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D8705248D08A3008CE599 /* SynapseVersion.swift */; };
 		A08D870A248D120C008CE599 /* USBWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D8709248D120C008CE599 /* USBWatcher.swift */; };
 		A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB387244F791D000534F2 /* DeviceRow.swift */; };
+		A0A91F43248EDE9A000EFC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91F42248EDE9A000EFC9A /* AppDelegate.swift */; };
+		A0A91F45248EDE9B000EFC9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A91F44248EDE9B000EFC9A /* Assets.xcassets */; };
+		A0A91F48248EDE9B000EFC9A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A91F46248EDE9B000EFC9A /* MainMenu.xib */; };
+		A0A91F4E248EDEDE000EFC9A /* FruityUILaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = A0A91F40248EDE9A000EFC9A /* FruityUILaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0A91F4F248EDEF4000EFC9A /* BundleIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDCE248EC26C00E07C79 /* BundleIdentifier.swift */; };
+		A0A91F50248EDEF6000EFC9A /* Notification+FruityUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDCB248EC22000E07C79 /* Notification+FruityUI.swift */; };
 		A0AC44A1244CAF78003CEDB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC44A0244CAF78003CEDB4 /* AppDelegate.swift */; };
 		A0AC44A3244CAF78003CEDB4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AC44A2244CAF78003CEDB4 /* ContentView.swift */; };
 		A0AC44A5244CAF79003CEDB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A4244CAF79003CEDB4 /* Assets.xcassets */; };
 		A0AC44A8244CAF79003CEDB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A7244CAF79003CEDB4 /* Preview Assets.xcassets */; };
 		A0AC44AB244CAF79003CEDB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A9244CAF79003CEDB4 /* Main.storyboard */; };
-		A0B1FDBB248EC13300E07C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDBA248EC13300E07C79 /* AppDelegate.swift */; };
-		A0B1FDC7248EC19700E07C79 /* FruityUILaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = A0B1FDB8248EC13300E07C79 /* FruityUILaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0B1FDC9248EC1A600E07C79 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B1FDC8248EC1A600E07C79 /* ServiceManagement.framework */; };
 		A0B1FDCC248EC22000E07C79 /* Notification+FruityUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDCB248EC22000E07C79 /* Notification+FruityUI.swift */; };
-		A0B1FDCD248EC22400E07C79 /* Notification+FruityUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDCB248EC22000E07C79 /* Notification+FruityUI.swift */; };
 		A0B1FDCF248EC26C00E07C79 /* BundleIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDCE248EC26C00E07C79 /* BundleIdentifier.swift */; };
-		A0B1FDD0248EC2D400E07C79 /* BundleIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDCE248EC26C00E07C79 /* BundleIdentifier.swift */; };
 		A0B1FDD2248EC32600E07C79 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDD1248EC32600E07C79 /* LoginItemManager.swift */; };
 		A0BAE5582479E8A200B82FBE /* DeviceConfigurationV2Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5572479E8A200B82FBE /* DeviceConfigurationV2Mode.swift */; };
 		A0BAE55A2479E8C800B82FBE /* DeviceConfigurationV2Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5592479E8C800B82FBE /* DeviceConfigurationV2Direction.swift */; };
@@ -94,7 +96,7 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				A0B1FDC7248EC19700E07C79 /* FruityUILaunchHelper.app in CopyFiles */,
+				A0A91F4E248EDEDE000EFC9A /* FruityUILaunchHelper.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +115,12 @@
 		A08D8705248D08A3008CE599 /* SynapseVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynapseVersion.swift; sourceTree = "<group>"; };
 		A08D8709248D120C008CE599 /* USBWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBWatcher.swift; sourceTree = "<group>"; };
 		A08DB387244F791D000534F2 /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
+		A0A91F40248EDE9A000EFC9A /* FruityUILaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruityUILaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0A91F42248EDE9A000EFC9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A0A91F44248EDE9B000EFC9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0A91F47248EDE9B000EFC9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A0A91F49248EDE9B000EFC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0A91F4A248EDE9B000EFC9A /* FruityUILaunchHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FruityUILaunchHelper.entitlements; sourceTree = "<group>"; };
 		A0AC449D244CAF78003CEDB4 /* FruityUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruityUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0AC44A0244CAF78003CEDB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0AC44A2244CAF78003CEDB4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,10 +129,6 @@
 		A0AC44AA244CAF79003CEDB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0AC44AC244CAF79003CEDB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0AC44AD244CAF79003CEDB4 /* FruityUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FruityUI.entitlements; sourceTree = "<group>"; };
-		A0B1FDB8248EC13300E07C79 /* FruityUILaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruityUILaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0B1FDBA248EC13300E07C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0B1FDC1248EC13400E07C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0B1FDC2248EC13400E07C79 /* FruityUILaunchHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FruityUILaunchHelper.entitlements; sourceTree = "<group>"; };
 		A0B1FDC8248EC1A600E07C79 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		A0B1FDCB248EC22000E07C79 /* Notification+FruityUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+FruityUI.swift"; sourceTree = "<group>"; };
 		A0B1FDCE248EC26C00E07C79 /* BundleIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleIdentifier.swift; sourceTree = "<group>"; };
@@ -172,21 +176,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A0A91F3D248EDE9A000EFC9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0AC449A244CAF78003CEDB4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A0692F10248D913E00296F7A /* CloudKit.framework in Frameworks */,
+				A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */,
 				A0B1FDC9248EC1A600E07C79 /* ServiceManagement.framework in Frameworks */,
 				A0FBA0F42466B8340002EB75 /* ColorPicker in Frameworks */,
-				A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0B1FDB5248EC13300E07C79 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,11 +243,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A0A91F41248EDE9A000EFC9A /* FruityUILaunchHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A0A91F42248EDE9A000EFC9A /* AppDelegate.swift */,
+				A0A91F44248EDE9B000EFC9A /* Assets.xcassets */,
+				A0A91F46248EDE9B000EFC9A /* MainMenu.xib */,
+				A0A91F49248EDE9B000EFC9A /* Info.plist */,
+				A0A91F4A248EDE9B000EFC9A /* FruityUILaunchHelper.entitlements */,
+			);
+			path = FruityUILaunchHelper;
+			sourceTree = "<group>";
+		};
 		A0AC4494244CAF78003CEDB4 = {
 			isa = PBXGroup;
 			children = (
 				A0AC449F244CAF78003CEDB4 /* FruityUI */,
-				A0B1FDB9248EC13300E07C79 /* FruityUILaunchHelper */,
+				A0A91F41248EDE9A000EFC9A /* FruityUILaunchHelper */,
 				A0B1FDCA248EC21200E07C79 /* Shared */,
 				A0AC449E244CAF78003CEDB4 /* Products */,
 				A00F7E9D244F7AE10035CB81 /* Frameworks */,
@@ -254,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				A0AC449D244CAF78003CEDB4 /* FruityUI.app */,
-				A0B1FDB8248EC13300E07C79 /* FruityUILaunchHelper.app */,
+				A0A91F40248EDE9A000EFC9A /* FruityUILaunchHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -289,16 +305,6 @@
 				A0AC44A7244CAF79003CEDB4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		A0B1FDB9248EC13300E07C79 /* FruityUILaunchHelper */ = {
-			isa = PBXGroup;
-			children = (
-				A0B1FDBA248EC13300E07C79 /* AppDelegate.swift */,
-				A0B1FDC1248EC13400E07C79 /* Info.plist */,
-				A0B1FDC2248EC13400E07C79 /* FruityUILaunchHelper.entitlements */,
-			);
-			path = FruityUILaunchHelper;
 			sourceTree = "<group>";
 		};
 		A0B1FDCA248EC21200E07C79 /* Shared */ = {
@@ -454,6 +460,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A0A91F3F248EDE9A000EFC9A /* FruityUILaunchHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0A91F4B248EDE9B000EFC9A /* Build configuration list for PBXNativeTarget "FruityUILaunchHelper" */;
+			buildPhases = (
+				A0A91F3C248EDE9A000EFC9A /* Sources */,
+				A0A91F3D248EDE9A000EFC9A /* Frameworks */,
+				A0A91F3E248EDE9A000EFC9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FruityUILaunchHelper;
+			productName = FruityUILaunchHelper;
+			productReference = A0A91F40248EDE9A000EFC9A /* FruityUILaunchHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A0AC449C244CAF78003CEDB4 /* FruityUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0AC44B0244CAF79003CEDB4 /* Build configuration list for PBXNativeTarget "FruityUI" */;
@@ -476,23 +499,6 @@
 			productReference = A0AC449D244CAF78003CEDB4 /* FruityUI.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A0B1FDB7248EC13300E07C79 /* FruityUILaunchHelper */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A0B1FDC5248EC13400E07C79 /* Build configuration list for PBXNativeTarget "FruityUILaunchHelper" */;
-			buildPhases = (
-				A0B1FDB4248EC13300E07C79 /* Sources */,
-				A0B1FDB5248EC13300E07C79 /* Frameworks */,
-				A0B1FDB6248EC13300E07C79 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FruityUILaunchHelper;
-			productName = FruityUILaunchHelper;
-			productReference = A0B1FDB8248EC13300E07C79 /* FruityUILaunchHelper.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -503,11 +509,11 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Eduardo Almeida";
 				TargetAttributes = {
+					A0A91F3F248EDE9A000EFC9A = {
+						CreatedOnToolsVersion = 11.5;
+					};
 					A0AC449C244CAF78003CEDB4 = {
 						CreatedOnToolsVersion = 11.4.1;
-					};
-					A0B1FDB7248EC13300E07C79 = {
-						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
@@ -528,12 +534,21 @@
 			projectRoot = "";
 			targets = (
 				A0AC449C244CAF78003CEDB4 /* FruityUI */,
-				A0B1FDB7248EC13300E07C79 /* FruityUILaunchHelper */,
+				A0A91F3F248EDE9A000EFC9A /* FruityUILaunchHelper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A0A91F3E248EDE9A000EFC9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0A91F45248EDE9B000EFC9A /* Assets.xcassets in Resources */,
+				A0A91F48248EDE9B000EFC9A /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0AC449B244CAF78003CEDB4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -545,16 +560,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0B1FDB6248EC13300E07C79 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A0A91F3C248EDE9A000EFC9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0A91F4F248EDEF4000EFC9A /* BundleIdentifier.swift in Sources */,
+				A0A91F50248EDEF6000EFC9A /* Notification+FruityUI.swift in Sources */,
+				A0A91F43248EDE9A000EFC9A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0AC4499244CAF78003CEDB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -616,19 +634,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0B1FDB4248EC13300E07C79 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0B1FDBB248EC13300E07C79 /* AppDelegate.swift in Sources */,
-				A0B1FDCD248EC22400E07C79 /* Notification+FruityUI.swift in Sources */,
-				A0B1FDD0248EC2D400E07C79 /* BundleIdentifier.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		A0A91F46248EDE9B000EFC9A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0A91F47248EDE9B000EFC9A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		A0AC44A9244CAF79003CEDB4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -640,6 +656,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A0A91F4C248EDE9B000EFC9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FruityUILaunchHelper/FruityUILaunchHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3D7R27DBRZ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = FruityUILaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityuilaunchhelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A0A91F4D248EDE9B000EFC9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FruityUILaunchHelper/FruityUILaunchHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3D7R27DBRZ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = FruityUILaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityuilaunchhelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		A0AC44AE244CAF79003CEDB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -761,7 +819,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -777,7 +835,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -792,7 +850,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -808,51 +866,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		A0B1FDC3248EC13400E07C79 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FruityUILaunchHelper/FruityUILaunchHelper.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 3D7R27DBRZ;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = FruityUILaunchHelper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.edr.FruityUILaunchHelper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		A0B1FDC4248EC13400E07C79 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FruityUILaunchHelper/FruityUILaunchHelper.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 3D7R27DBRZ;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = FruityUILaunchHelper/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.edr.FruityUILaunchHelper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -860,6 +876,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A0A91F4B248EDE9B000EFC9A /* Build configuration list for PBXNativeTarget "FruityUILaunchHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0A91F4C248EDE9B000EFC9A /* Debug */,
+				A0A91F4D248EDE9B000EFC9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A0AC4498244CAF78003CEDB4 /* Build configuration list for PBXProject "FruityUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -874,15 +899,6 @@
 			buildConfigurations = (
 				A0AC44B1244CAF79003CEDB4 /* Debug */,
 				A0AC44B2244CAF79003CEDB4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A0B1FDC5248EC13400E07C79 /* Build configuration list for PBXNativeTarget "FruityUILaunchHelper" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A0B1FDC3248EC13400E07C79 /* Debug */,
-				A0B1FDC4248EC13400E07C79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

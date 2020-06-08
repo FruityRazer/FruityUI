@@ -9,7 +9,7 @@
 import Foundation
 import FruityKit
 
-extension RazerDevice: Device {
+extension Device {
     
     var imageURL: URL {
         guard let plistPath = Bundle.main.path(forResource: "DeviceImages", ofType: "plist"),
@@ -20,6 +20,9 @@ extension RazerDevice: Device {
         
         return URL(string: urlStr)!
     }
+}
+
+extension RazerDevice: Device {
     
     var razerDevice: RazerDevice? {
         return self
@@ -27,16 +30,6 @@ extension RazerDevice: Device {
 }
 
 extension VersionedRazerDevice: Device {
-    
-    var imageURL: URL {
-        guard let plistPath = Bundle.main.path(forResource: "DeviceImages", ofType: "plist"),
-            let dictionary = NSDictionary(contentsOfFile: plistPath) as? Dictionary<String, String>,
-            let urlStr = dictionary[shortName] else {
-            return URL(string: "https://assets.razerzone.com/eeimages/support/products/1227/1245_synapse_xbox.png")!
-        }
-        
-        return URL(string: urlStr)!
-    }
     
     var razerDevice: RazerDevice? {
         assertionFailure("This should never be called on a VersionedRazerDevice instance. This should probably be re-factored, it's a code 👃.")
