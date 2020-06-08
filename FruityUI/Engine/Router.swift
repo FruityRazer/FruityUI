@@ -46,7 +46,7 @@ struct Router: Routable {
         window.title = "FruityUI for FruityRazer"
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)
-        window.level = .statusBar
+        window.level = .modalPanel
         window.makeKeyAndOrderFront(nil)
         
         window.makeKeyAndOrderFront(self)

@@ -11,12 +11,15 @@ import Foundation
 class Engine {
     
     let deviceController: Controlling
+    let loginItemManager: LoginItemManaging
     let persistence: Persisting
     
     init(deviceController: Controlling = Controller(),
+         loginItemManager: LoginItemManaging = LoginItemManager(),
          persistence: Persisting = Persistence()) {
         
         self.deviceController = deviceController
+        self.loginItemManager = loginItemManager
         self.persistence = persistence
     }
 }

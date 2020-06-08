@@ -34,7 +34,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return container
     }()
     
+    private func killLaunchHelperIfRunning() {
+        let launcherAppId = BundleIdentifier.launchHelper.rawValue
+        let runningApps = NSWorkspace.shared.runningApplications
+        
+        if !runningApps.filter({ $0.bundleIdentifier == launcherAppId }).isEmpty {
+            DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier!)
+        }
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        killLaunchHelperIfRunning()
+        
         engine = Engine()
         router = Router(engine: engine)
         

@@ -15,7 +15,9 @@ class StatusBarItemController: NSObject {
         case startEngine = "▶ Start Engine"
         case pauseEngine = "■ Pause Engine"
         case forceReSync = "↻ Force Re-Sync"
+        case preferences = "Preferences"
         case openMainWindow = "Open FruityUI"
+        case openAtLogin = "Open at Login"
         case quit = "Quit"
     }
     
@@ -41,6 +43,34 @@ class StatusBarItemController: NSObject {
         menu.addItem(menuItem)
     }
     
+    private var preferencesSubMenuItem: NSMenuItem {
+        let preferencesSubMenuItem = NSMenuItem(title: MenuItemTitle.preferences.rawValue,
+                                                action: nil,
+                                                keyEquivalent: "")
+        
+        let preferencesSubMenu = NSMenu(title: "Preferences Sub Menu")
+        
+        let preferencesSubMenuItems = [
+            NSMenuItem(title: MenuItemTitle.openMainWindow.rawValue,
+                       action: #selector(openMainWindow),
+                       keyEquivalent: ""),
+            .separator(),
+            NSMenuItem(title: MenuItemTitle.openAtLogin.rawValue,
+                       action: #selector(toggleOpenAtLogin),
+                       keyEquivalent: ""),
+        ]
+        
+        preferencesSubMenuItems.forEach {
+            $0.target = self
+            
+            preferencesSubMenu.addItem($0)
+        }
+        
+        preferencesSubMenuItem.submenu = preferencesSubMenu
+        
+        return preferencesSubMenuItem
+    }
+    
     func setupStatusItem() {
         menu = NSMenu(title: "FruityUI Status Bar Menu")
         
@@ -56,9 +86,7 @@ class StatusBarItemController: NSObject {
                        action: #selector(forceReSync(_:)),
                        keyEquivalent: ""),
             .separator(),
-            NSMenuItem(title: MenuItemTitle.openMainWindow.rawValue,
-                       action: #selector(openMainWindow),
-                       keyEquivalent: ""),
+            preferencesSubMenuItem,
             .separator(),
             NSMenuItem(title: MenuItemTitle.quit.rawValue,
                        action: #selector(quit(_:)),
@@ -79,11 +107,15 @@ class StatusBarItemController: NSObject {
     }
     
     @objc func forceReSync(_ sender: Any) {
-        
+        engine.deviceController.forceUpdate()
     }
     
     @objc func openMainWindow(_ sender: Any) {
         router.openMainWindow()
+    }
+    
+    @objc func toggleOpenAtLogin(_ sender: Any) {
+        engine.loginItemManager.toggle()
     }
     
     @objc func quit(_ sender: Any) {
@@ -101,6 +133,10 @@ extension StatusBarItemController: NSMenuItemValidation {
             return !deviceControllerIsRunning
         case MenuItemTitle.pauseEngine.rawValue:
             return deviceControllerIsRunning
+        case MenuItemTitle.openAtLogin.rawValue:
+            menuItem.state = engine.loginItemManager.openAtLogin ? .on : .off
+            
+            fallthrough
         default:
             return true
         }

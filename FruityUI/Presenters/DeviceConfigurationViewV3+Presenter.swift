@@ -14,12 +14,14 @@ extension DeviceConfigurationViewV3 {
         enum Action {
             case commit
             case setRawConfiguration(String)
+            case setShowingJSONValidationError(Bool)
         }
         
         let device: Device
         let engine: Engine
         
         @Published var rawConfiguration: String = ""
+        @Published var showingJSONValidationError = false
         
         init(device: Device, engine: Engine) {
             self.device = device
@@ -48,7 +50,7 @@ extension DeviceConfigurationViewV3 {
                 }
                 
                 guard let converter = DeviceRawDataConverter(json: rawConfiguration) else {
-                    //  Show a JSON parsing error!
+                    showingJSONValidationError = true
                     
                     return
                 }
@@ -59,6 +61,9 @@ extension DeviceConfigurationViewV3 {
                 
             case .setRawConfiguration(let configuration):
                 rawConfiguration = configuration
+                
+            case .setShowingJSONValidationError(let showing):
+                showingJSONValidationError = showing
             }
         }
     }

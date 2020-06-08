@@ -16,9 +16,12 @@ struct DeviceConfigurationViewV3: View {
     var body: some View {
         let rawConfigurationBinding = Binding<String>(
             get: { self.presenter.rawConfiguration },
-            set: {
-                self.presenter.perform(.setRawConfiguration($0))
-            }
+            set: { self.presenter.perform(.setRawConfiguration($0)) }
+        )
+        
+        let showingJSONValidationErrorBinding = Binding<Bool>(
+            get: { self.presenter.showingJSONValidationError },
+            set: { self.presenter.perform(.setShowingJSONValidationError($0)) }
         )
         
         return ScrollView {
@@ -42,6 +45,8 @@ struct DeviceConfigurationViewV3: View {
             }
                 .padding()
                 .frame(minWidth: 700)
+        }.alert(isPresented: showingJSONValidationErrorBinding) {
+            Alert(title: Text("Error!"), message: Text("Your input wasn't accepted by the driver. Please refer to the documentation to learn how to build a raw data input for your device."), dismissButton: .default(Text("Got it!")))
         }
     }
 }

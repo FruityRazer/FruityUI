@@ -23,6 +23,14 @@
 		A0AC44A5244CAF79003CEDB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A4244CAF79003CEDB4 /* Assets.xcassets */; };
 		A0AC44A8244CAF79003CEDB4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A7244CAF79003CEDB4 /* Preview Assets.xcassets */; };
 		A0AC44AB244CAF79003CEDB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AC44A9244CAF79003CEDB4 /* Main.storyboard */; };
+		A0B1FDBB248EC13300E07C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDBA248EC13300E07C79 /* AppDelegate.swift */; };
+		A0B1FDC7248EC19700E07C79 /* FruityUILaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = A0B1FDB8248EC13300E07C79 /* FruityUILaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0B1FDC9248EC1A600E07C79 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B1FDC8248EC1A600E07C79 /* ServiceManagement.framework */; };
+		A0B1FDCC248EC22000E07C79 /* Notification+FruityUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDCB248EC22000E07C79 /* Notification+FruityUI.swift */; };
+		A0B1FDCD248EC22400E07C79 /* Notification+FruityUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDCB248EC22000E07C79 /* Notification+FruityUI.swift */; };
+		A0B1FDCF248EC26C00E07C79 /* BundleIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDCE248EC26C00E07C79 /* BundleIdentifier.swift */; };
+		A0B1FDD0248EC2D400E07C79 /* BundleIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDCE248EC26C00E07C79 /* BundleIdentifier.swift */; };
+		A0B1FDD2248EC32600E07C79 /* LoginItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B1FDD1248EC32600E07C79 /* LoginItemManager.swift */; };
 		A0BAE5582479E8A200B82FBE /* DeviceConfigurationV2Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5572479E8A200B82FBE /* DeviceConfigurationV2Mode.swift */; };
 		A0BAE55A2479E8C800B82FBE /* DeviceConfigurationV2Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5592479E8C800B82FBE /* DeviceConfigurationV2Direction.swift */; };
 		A0BAE55E2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE55D2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift */; };
@@ -80,6 +88,16 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0B1FDC6248EC17C00E07C79 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				A0B1FDC7248EC19700E07C79 /* FruityUILaunchHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +121,14 @@
 		A0AC44AA244CAF79003CEDB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0AC44AC244CAF79003CEDB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0AC44AD244CAF79003CEDB4 /* FruityUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FruityUI.entitlements; sourceTree = "<group>"; };
+		A0B1FDB8248EC13300E07C79 /* FruityUILaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruityUILaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0B1FDBA248EC13300E07C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A0B1FDC1248EC13400E07C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0B1FDC2248EC13400E07C79 /* FruityUILaunchHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FruityUILaunchHelper.entitlements; sourceTree = "<group>"; };
+		A0B1FDC8248EC1A600E07C79 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		A0B1FDCB248EC22000E07C79 /* Notification+FruityUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+FruityUI.swift"; sourceTree = "<group>"; };
+		A0B1FDCE248EC26C00E07C79 /* BundleIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleIdentifier.swift; sourceTree = "<group>"; };
+		A0B1FDD1248EC32600E07C79 /* LoginItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItemManager.swift; sourceTree = "<group>"; };
 		A0BAE5572479E8A200B82FBE /* DeviceConfigurationV2Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationV2Mode.swift; sourceTree = "<group>"; };
 		A0BAE5592479E8C800B82FBE /* DeviceConfigurationV2Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationV2Direction.swift; sourceTree = "<group>"; };
 		A0BAE55D2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Synapse2HandleMode+Conversions.swift"; sourceTree = "<group>"; };
@@ -151,8 +177,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0692F10248D913E00296F7A /* CloudKit.framework in Frameworks */,
+				A0B1FDC9248EC1A600E07C79 /* ServiceManagement.framework in Frameworks */,
 				A0FBA0F42466B8340002EB75 /* ColorPicker in Frameworks */,
 				A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0B1FDB5248EC13300E07C79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +198,7 @@
 			children = (
 				A0692F0F248D913E00296F7A /* CloudKit.framework */,
 				A00F7EA9244F80F70035CB81 /* FruityKit.framework */,
+				A0B1FDC8248EC1A600E07C79 /* ServiceManagement.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -208,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				A0AC449F244CAF78003CEDB4 /* FruityUI */,
+				A0B1FDB9248EC13300E07C79 /* FruityUILaunchHelper */,
+				A0B1FDCA248EC21200E07C79 /* Shared */,
 				A0AC449E244CAF78003CEDB4 /* Products */,
 				A00F7E9D244F7AE10035CB81 /* Frameworks */,
 			);
@@ -217,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				A0AC449D244CAF78003CEDB4 /* FruityUI.app */,
+				A0B1FDB8248EC13300E07C79 /* FruityUILaunchHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,6 +289,25 @@
 				A0AC44A7244CAF79003CEDB4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A0B1FDB9248EC13300E07C79 /* FruityUILaunchHelper */ = {
+			isa = PBXGroup;
+			children = (
+				A0B1FDBA248EC13300E07C79 /* AppDelegate.swift */,
+				A0B1FDC1248EC13400E07C79 /* Info.plist */,
+				A0B1FDC2248EC13400E07C79 /* FruityUILaunchHelper.entitlements */,
+			);
+			path = FruityUILaunchHelper;
+			sourceTree = "<group>";
+		};
+		A0B1FDCA248EC21200E07C79 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A0B1FDCE248EC26C00E07C79 /* BundleIdentifier.swift */,
+				A0B1FDCB248EC22000E07C79 /* Notification+FruityUI.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		A0BAE55B2479E8FB00B82FBE /* Synapse 2 Mode */ = {
@@ -324,6 +381,7 @@
 				A0DFECEF248C588E000C01BC /* Device Controls */,
 				A0EF69B02466041700D77297 /* Controller.swift */,
 				A0DFECED248C57F3000C01BC /* Engine.swift */,
+				A0B1FDD1248EC32600E07C79 /* LoginItemManager.swift */,
 				A0DFECE7248C4E57000C01BC /* Persistence.swift */,
 				A0FB0066248B16DA003FF9C7 /* Router.swift */,
 			);
@@ -404,6 +462,7 @@
 				A0AC449A244CAF78003CEDB4 /* Frameworks */,
 				A0AC449B244CAF78003CEDB4 /* Resources */,
 				A00F7EA6244F7B990035CB81 /* Embed Frameworks */,
+				A0B1FDC6248EC17C00E07C79 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -417,18 +476,38 @@
 			productReference = A0AC449D244CAF78003CEDB4 /* FruityUI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A0B1FDB7248EC13300E07C79 /* FruityUILaunchHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0B1FDC5248EC13400E07C79 /* Build configuration list for PBXNativeTarget "FruityUILaunchHelper" */;
+			buildPhases = (
+				A0B1FDB4248EC13300E07C79 /* Sources */,
+				A0B1FDB5248EC13300E07C79 /* Frameworks */,
+				A0B1FDB6248EC13300E07C79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FruityUILaunchHelper;
+			productName = FruityUILaunchHelper;
+			productReference = A0B1FDB8248EC13300E07C79 /* FruityUILaunchHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A0AC4495244CAF78003CEDB4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Eduardo Almeida";
 				TargetAttributes = {
 					A0AC449C244CAF78003CEDB4 = {
 						CreatedOnToolsVersion = 11.4.1;
+					};
+					A0B1FDB7248EC13300E07C79 = {
+						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
@@ -449,6 +528,7 @@
 			projectRoot = "";
 			targets = (
 				A0AC449C244CAF78003CEDB4 /* FruityUI */,
+				A0B1FDB7248EC13300E07C79 /* FruityUILaunchHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -462,6 +542,13 @@
 				A0AC44A8244CAF79003CEDB4 /* Preview Assets.xcassets in Resources */,
 				A0EF69C524660FB300D77297 /* DeviceImages.plist in Resources */,
 				A0AC44A5244CAF79003CEDB4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0B1FDB6248EC13300E07C79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +568,7 @@
 				A0CD978C24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift in Sources */,
 				A0DFECE6248C442F000C01BC /* MacEditorTextView.swift in Sources */,
 				A04620222478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift in Sources */,
+				A0B1FDCC248EC22000E07C79 /* Notification+FruityUI.swift in Sources */,
 				A0CD978A24789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift in Sources */,
 				A0DFECE8248C4E57000C01BC /* Persistence.swift in Sources */,
 				A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */,
@@ -505,6 +593,7 @@
 				A0BAE55A2479E8C800B82FBE /* DeviceConfigurationV2Direction.swift in Sources */,
 				A0E4BF512450CDE400F0D77D /* DeviceConfigurationViewV3.swift in Sources */,
 				A0E4BF552450D09600F0D77D /* Filter.swift in Sources */,
+				A0B1FDD2248EC32600E07C79 /* LoginItemManager.swift in Sources */,
 				A0BAE5602479F83300B82FBE /* Synapse2Controller.swift in Sources */,
 				A0EF69AF2466038C00D77297 /* DataModel.xcdatamodeld in Sources */,
 				A0FB0067248B16DA003FF9C7 /* Router.swift in Sources */,
@@ -522,7 +611,18 @@
 				A0CD978824789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift in Sources */,
 				A0DFECE1248BA60D000C01BC /* DeviceConfigurationView.swift in Sources */,
 				A0569E4324774A8E00D98B41 /* DeviceConfigurationV2.swift in Sources */,
+				A0B1FDCF248EC26C00E07C79 /* BundleIdentifier.swift in Sources */,
 				A0EF69B62466063900D77297 /* DeviceConfigurationV3.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0B1FDB4248EC13300E07C79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0B1FDBB248EC13300E07C79 /* AppDelegate.swift in Sources */,
+				A0B1FDCD248EC22400E07C79 /* Notification+FruityUI.swift in Sources */,
+				A0B1FDD0248EC2D400E07C79 /* BundleIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +815,48 @@
 			};
 			name = Release;
 		};
+		A0B1FDC3248EC13400E07C79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FruityUILaunchHelper/FruityUILaunchHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3D7R27DBRZ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = FruityUILaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.edr.FruityUILaunchHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A0B1FDC4248EC13400E07C79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FruityUILaunchHelper/FruityUILaunchHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3D7R27DBRZ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = FruityUILaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.edr.FruityUILaunchHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -732,6 +874,15 @@
 			buildConfigurations = (
 				A0AC44B1244CAF79003CEDB4 /* Debug */,
 				A0AC44B2244CAF79003CEDB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0B1FDC5248EC13400E07C79 /* Build configuration list for PBXNativeTarget "FruityUILaunchHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0B1FDC3248EC13400E07C79 /* Debug */,
+				A0B1FDC4248EC13400E07C79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
