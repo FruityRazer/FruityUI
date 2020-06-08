@@ -56,6 +56,10 @@ class Controller: Controlling {
     }
     
     @objc private func receivedDidWakeNotification() {
+        //  Just listening for the USB notifications would be enough in
+        //  most cases, but by experience this doesn't always work,
+        //  so this delayed update is a nice-to-have fallback.
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.forceUpdate()
         }
@@ -71,16 +75,12 @@ class Controller: Controlling {
     func startUpdates() {
         status = .running
         
-        synapse2.updateWithSavedConfigurations()
+        forceUpdate()
     }
     
     func pauseUpdates(withPauseType pauseType: PauseType) {
         synapse2.pause(with: pauseType)
         synapse3.pause(with: pauseType)
-    }
-    
-    @objc private func update() {
-        synapse3.updateWithSavedConfigurations()
     }
 }
 
