@@ -11,6 +11,7 @@ import IOKit
 import IOKit.usb
 
 public protocol USBWatcherDelegate: class {
+    
     /// Called on the main thread when a device is connected.
     func deviceAdded(_ device: io_object_t)
 
@@ -21,6 +22,7 @@ public protocol USBWatcherDelegate: class {
 /// An object which observes USB devices added and removed from the system.
 /// Abstracts away most of the ugliness of IOKit APIs.
 public class USBWatcher {
+    
     weak var delegate: USBWatcherDelegate?
     private let notificationPort = IONotificationPortCreate(kIOMasterPortDefault)
     private var addedIterator: io_iterator_t = 0
@@ -73,6 +75,7 @@ public class USBWatcher {
 }
 
 extension io_object_t {
+    
     /// - Returns: The device's name.
     func name() -> String? {
         let buf = UnsafeMutablePointer<io_name_t>.allocate(capacity: 1)

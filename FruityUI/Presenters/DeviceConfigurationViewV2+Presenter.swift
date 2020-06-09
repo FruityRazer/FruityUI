@@ -11,7 +11,9 @@ import FruityKit
 extension DeviceConfigurationViewV2 {
     
     class Presenter: ObservableObject {
+        
         enum Action {
+            
             case commit
             case setMode(Synapse2ModeBasic)
         }

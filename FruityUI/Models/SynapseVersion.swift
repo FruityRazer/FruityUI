@@ -7,6 +7,7 @@
 //
 
 enum SynapseVersion {
+    
     case v2
     case v3
 }

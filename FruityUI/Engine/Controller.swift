@@ -8,10 +8,10 @@
 
 import AppKit
 
-enum ControllerStatus {
+enum ControllerStatus: Equatable {
     
     case running
-    case paused
+    case paused(PauseType)
 }
 
 protocol Controlling {
@@ -38,7 +38,7 @@ class Controller: Controlling {
         self.synapse2 = synapse2
         self.synapse3 = synapse3
         
-        self.status = .paused
+        self.status = .paused(.none)
         
         self.usbWatcher = USBWatcher()
         
@@ -69,6 +69,9 @@ class Controller: Controlling {
         if status == .running {
             synapse2.updateWithSavedConfigurations()
             synapse3.updateWithSavedConfigurations()
+        } else if case let ControllerStatus.paused(pauseType) = status, pauseType == .lightsOut {
+            synapse2.pause(with: pauseType)
+            synapse3.pause(with: pauseType)
         }
     }
     
@@ -79,16 +82,16 @@ class Controller: Controlling {
     }
     
     func pauseUpdates(withPauseType pauseType: PauseType) {
-        status = .paused
+        status = .paused(pauseType)
         
-        synapse2.pause(with: pauseType)
-        synapse3.pause(with: pauseType)
+        forceUpdate()
     }
 }
 
 extension Controller: ObservableObject {}
 
 extension Controller: USBWatcherDelegate {
+    
     func deviceAdded(_ device: io_object_t) {
         guard let name = device.name(), String(name.prefix(5)) == "Razer" else {
             return

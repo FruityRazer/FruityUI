@@ -11,7 +11,9 @@ import FruityKit
 extension DeviceConfigurationViewV3 {
     
     class Presenter: ObservableObject {
+        
         enum Action {
+            
             case commit
             case setRawConfiguration(String)
             case setShowingJSONValidationError(Bool)

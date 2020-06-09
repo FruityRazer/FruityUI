@@ -58,6 +58,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItemController = StatusBarItemController(engine: engine,
                                                           router: router,
                                                           statusBarItem: statusBarItem)
+        
+        if DeviceConfigurationV2.get().count == 0 && DeviceConfigurationV3.get().count == 0 {
+            //  Show the main window upon launch if there are no saved configurations.
+            
+            router.openMainWindow()
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

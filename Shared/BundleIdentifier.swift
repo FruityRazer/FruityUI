@@ -6,9 +6,8 @@
 //  Copyright © 2020 Eduardo Almeida. All rights reserved.
 //
 
-import Foundation
-
 enum BundleIdentifier: String {
+    
     case mainApp = "io.edr.fruityui"
     case launchHelper = "io.edr.fruityuilaunchhelper"
 }

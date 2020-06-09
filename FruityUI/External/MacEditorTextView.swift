@@ -10,6 +10,7 @@ import Combine
 import SwiftUI
 
 struct MacEditorTextView: NSViewRepresentable {
+    
     @Binding var text: String
     var isEditable: Bool = true
     var font: NSFont?    = .systemFont(ofSize: 14, weight: .regular)
@@ -43,6 +44,7 @@ struct MacEditorTextView: NSViewRepresentable {
 #if DEBUG
 
 struct MacEditorTextView_Previews: PreviewProvider {
+    
     static var previews: some View {
         Group {
             MacEditorTextView(
@@ -107,6 +109,7 @@ extension MacEditorTextView {
 
 // MARK: - CustomTextView
 final class CustomTextView: NSView {
+    
     private var isEditable: Bool
     private var font: NSFont?
     

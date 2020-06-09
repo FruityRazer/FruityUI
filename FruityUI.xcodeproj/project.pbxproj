@@ -18,6 +18,7 @@
 		A08D8706248D08A3008CE599 /* SynapseVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D8705248D08A3008CE599 /* SynapseVersion.swift */; };
 		A08D870A248D120C008CE599 /* USBWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D8709248D120C008CE599 /* USBWatcher.swift */; };
 		A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB387244F791D000534F2 /* DeviceRow.swift */; };
+		A0A777F524904C0B00F246D5 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A777F424904C0B00F246D5 /* URLs.swift */; };
 		A0A91F43248EDE9A000EFC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91F42248EDE9A000EFC9A /* AppDelegate.swift */; };
 		A0A91F45248EDE9B000EFC9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A91F44248EDE9B000EFC9A /* Assets.xcassets */; };
 		A0A91F48248EDE9B000EFC9A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A91F46248EDE9B000EFC9A /* MainMenu.xib */; };
@@ -115,6 +116,7 @@
 		A08D8705248D08A3008CE599 /* SynapseVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynapseVersion.swift; sourceTree = "<group>"; };
 		A08D8709248D120C008CE599 /* USBWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBWatcher.swift; sourceTree = "<group>"; };
 		A08DB387244F791D000534F2 /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
+		A0A777F424904C0B00F246D5 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		A0A91F40248EDE9A000EFC9A /* FruityUILaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruityUILaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A91F42248EDE9A000EFC9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0A91F44248EDE9B000EFC9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				A08D86FF248CFAFE008CE599 /* DeviceRawDataConverter.swift */,
 				A04620212478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift */,
 				A0DFECD9248BA09B000C01BC /* ResourceHelpers.swift */,
+				A0A777F424904C0B00F246D5 /* URLs.swift */,
 			);
 			path = Convenience;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				A0B1FDCC248EC22000E07C79 /* Notification+FruityUI.swift in Sources */,
 				A0CD978A24789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift in Sources */,
 				A0DFECE8248C4E57000C01BC /* Persistence.swift in Sources */,
+				A0A777F524904C0B00F246D5 /* URLs.swift in Sources */,
 				A0E4BF4D2450C94500F0D77D /* StubDevice.swift in Sources */,
 				A0BAE5582479E8A200B82FBE /* DeviceConfigurationV2Mode.swift in Sources */,
 				A0FB0065248B14C1003FF9C7 /* StatusBarItemController.swift in Sources */,
@@ -819,7 +823,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -835,7 +839,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -850,7 +854,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -866,7 +870,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

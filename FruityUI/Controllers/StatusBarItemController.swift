@@ -18,6 +18,7 @@ class StatusBarItemController: NSObject {
         case preferences = "Preferences"
         case openMainWindow = "Open FruityUI"
         case openAtLogin = "Open at Login"
+        case help = "Help"
         case quit = "Quit"
     }
     
@@ -88,6 +89,10 @@ class StatusBarItemController: NSObject {
             .separator(),
             preferencesSubMenuItem,
             .separator(),
+            NSMenuItem(title: MenuItemTitle.help.rawValue,
+                       action: #selector(openHelp(_:)),
+                       keyEquivalent: ""),
+            .separator(),
             NSMenuItem(title: MenuItemTitle.quit.rawValue,
                        action: #selector(quit(_:)),
                        keyEquivalent: "")
@@ -116,6 +121,10 @@ class StatusBarItemController: NSObject {
     
     @objc func toggleOpenAtLogin(_ sender: Any) {
         engine.loginItemManager.toggle()
+    }
+    
+    @objc func openHelp(_ sender: Any) {
+        NSWorkspace.shared.open(URLs.help)
     }
     
     @objc func quit(_ sender: Any) {

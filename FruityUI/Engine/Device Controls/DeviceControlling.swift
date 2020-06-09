@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PauseType {
+enum PauseType: Equatable {
     
     case lightsOut
     case none
