@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     var engine: Engine!
     var router: Routable!
-    var statusBarMenuController: StatusBarItemController!
+    var statusBarItemController: StatusBarItemController!
     
     var statusBarItem: NSStatusItem!
     
@@ -55,7 +55,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         statusBarItem.button?.image = ResourceHelpers.statusBarImage
         
-        statusBarMenuController = StatusBarItemController(engine: engine,
+        statusBarItemController = StatusBarItemController(engine: engine,
                                                           router: router,
                                                           statusBarItem: statusBarItem)
     }

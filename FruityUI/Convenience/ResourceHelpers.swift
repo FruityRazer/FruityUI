@@ -13,7 +13,7 @@ enum ResourceHelpers {
     static var statusBarImage: NSImage {
         let newSize = NSSize(width: 20, height: 20)
         
-        let sourceImage = NSImage(named: "FruityRazerGray")
+        let sourceImage = NSImage(named: "SnakeTemplate")
         
         let newImage = NSImage(size: newSize)
         newImage.lockFocus()

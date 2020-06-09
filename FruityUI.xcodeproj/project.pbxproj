@@ -819,7 +819,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -835,7 +835,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -850,7 +850,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -866,7 +866,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
