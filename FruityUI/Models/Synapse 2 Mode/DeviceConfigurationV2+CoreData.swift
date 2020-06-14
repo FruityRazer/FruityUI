@@ -34,21 +34,23 @@ extension DeviceConfigurationV2 {
         configuration.shortName = shortName
         
         switch mode {
-        case let .wave(direction):
-            configuration.mode = .wave
-            configuration.direction = direction.coreDataDirection
-        case .spectrum:
-            configuration.mode = .spectrum
+        case let .breath(color):
+            configuration.mode = .breath
+            configuration.color = color
         case let .reactive(speed, color):
             configuration.mode = .reactive
             configuration.speed = speed
             configuration.color = color
+        case .spectrum:
+            configuration.mode = .spectrum
+        case .starlight:
+            configuration.mode = .starlight
         case let .static(color):
             configuration.mode = .static
             configuration.color = color
-        case let .breath(color):
-            configuration.mode = .breath
-            configuration.color = color
+        case let .wave(direction):
+            configuration.mode = .wave
+            configuration.direction = direction.coreDataDirection
         }
         
         CoreData.commit()

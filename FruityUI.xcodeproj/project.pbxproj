@@ -18,6 +18,7 @@
 		A08D8706248D08A3008CE599 /* SynapseVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D8705248D08A3008CE599 /* SynapseVersion.swift */; };
 		A08D870A248D120C008CE599 /* USBWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D8709248D120C008CE599 /* USBWatcher.swift */; };
 		A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB387244F791D000534F2 /* DeviceRow.swift */; };
+		A08E1F6A2496437D00D13454 /* Starlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E1F692496437D00D13454 /* Starlight.swift */; };
 		A0A777F524904C0B00F246D5 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A777F424904C0B00F246D5 /* URLs.swift */; };
 		A0A91F43248EDE9A000EFC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91F42248EDE9A000EFC9A /* AppDelegate.swift */; };
 		A0A91F45248EDE9B000EFC9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A91F44248EDE9B000EFC9A /* Assets.xcassets */; };
@@ -116,6 +117,8 @@
 		A08D8705248D08A3008CE599 /* SynapseVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynapseVersion.swift; sourceTree = "<group>"; };
 		A08D8709248D120C008CE599 /* USBWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USBWatcher.swift; sourceTree = "<group>"; };
 		A08DB387244F791D000534F2 /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
+		A08E1F692496437D00D13454 /* Starlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starlight.swift; sourceTree = "<group>"; };
+		A08E1F6B2496453900D13454 /* DataModel v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel v2.xcdatamodel"; sourceTree = "<group>"; };
 		A0A777F424904C0B00F246D5 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		A0A91F40248EDE9A000EFC9A /* FruityUILaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruityUILaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A91F42248EDE9A000EFC9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -446,6 +449,7 @@
 				A0FBA0FB2466C7D00002EB75 /* Breath.swift */,
 				A0FBA0F02466B7420002EB75 /* Reactive.swift */,
 				A0FBA0FF2466CEC00002EB75 /* Spectrum.swift */,
+				A08E1F692496437D00D13454 /* Starlight.swift */,
 				A0FBA0F92466BD740002EB75 /* Static.swift */,
 				A0EF69C92466192400D77297 /* Wave.swift */,
 			);
@@ -632,6 +636,7 @@
 				A0EF69B12466041700D77297 /* Controller.swift in Sources */,
 				A0CD978824789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift in Sources */,
 				A0DFECE1248BA60D000C01BC /* DeviceConfigurationView.swift in Sources */,
+				A08E1F6A2496437D00D13454 /* Starlight.swift in Sources */,
 				A0569E4324774A8E00D98B41 /* DeviceConfigurationV2.swift in Sources */,
 				A0B1FDCF248EC26C00E07C79 /* BundleIdentifier.swift in Sources */,
 				A0EF69B62466063900D77297 /* DeviceConfigurationV3.swift in Sources */,
@@ -823,7 +828,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -839,7 +844,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -854,7 +859,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -870,7 +875,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -932,9 +937,10 @@
 		A0EF69AD2466038C00D77297 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				A08E1F6B2496453900D13454 /* DataModel v2.xcdatamodel */,
 				A0EF69AE2466038C00D77297 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = A0EF69AE2466038C00D77297 /* DataModel.xcdatamodel */;
+			currentVersion = A08E1F6B2496453900D13454 /* DataModel v2.xcdatamodel */;
 			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

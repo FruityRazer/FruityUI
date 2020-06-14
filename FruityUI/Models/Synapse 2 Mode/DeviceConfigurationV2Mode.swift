@@ -10,9 +10,10 @@ import Foundation
 
 @objc enum DeviceConfigurationV2Mode: UInt8 {
     
-    case wave = 1
-    case spectrum = 2
-    case reactive = 3
-    case `static` = 4
     case breath = 5
+    case reactive = 3
+    case spectrum = 2
+    case `static` = 4
+    case starlight = 6
+    case wave = 1
 }
