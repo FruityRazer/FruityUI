@@ -18,7 +18,7 @@ After that, open the project and compile.
 
 ## Documentation
 
-Soon. :)
+Documentation can be found on our umbrella wiki [here](https://github.com/FruityRazer/FruityRazer/wiki).
 
 ## License
 
