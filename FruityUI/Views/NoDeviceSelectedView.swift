@@ -11,12 +11,22 @@ import SwiftUI
 struct NoDeviceSelectedView: View {
     
     var body: some View {
-        ScrollView {
-            VStack {
-                Text("No device selected!")
-                    .padding()
-            }.frame(minWidth: 700)
-        }
+        VStack {
+            Spacer()
+            Image("FruityUI")
+                .resizable()
+                .frame(width: 100, height: 100)
+                .padding(.bottom, 25)
+            Text("FruityUI")
+                .font(.largeTitle)
+                .padding(.bottom, 10)
+            Text("(Unofficial) Razer drivers for macOS")
+                .font(.caption)
+            Text("Choose an entry from the list on your left to start customizing your devices!")
+                .font(.footnote)
+                .padding(.top, 50)
+            Spacer()
+        }.frame(minWidth: 700)
     }
 }
 

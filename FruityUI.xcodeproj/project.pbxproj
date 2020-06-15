@@ -40,6 +40,7 @@
 		A0BAE55E2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE55D2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift */; };
 		A0BAE5602479F83300B82FBE /* Synapse2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE55F2479F83300B82FBE /* Synapse2Controller.swift */; };
 		A0BAE5622479F83E00B82FBE /* DeviceControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5612479F83E00B82FBE /* DeviceControlling.swift */; };
+		A0C036EC2498000000D44584 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = A0C036EB2498000000D44584 /* URLImage */; };
 		A0CD978824789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978724789A1200BA56B0 /* DeviceConfigurationV2+SynapseMode.swift */; };
 		A0CD978A24789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978924789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift */; };
 		A0CD978C24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CD978B24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift */; };
@@ -62,9 +63,6 @@
 		A0EF69B62466063900D77297 /* DeviceConfigurationV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69B52466063900D77297 /* DeviceConfigurationV3.swift */; };
 		A0EF69B82466075700D77297 /* DeviceConfigurationV3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69B72466075700D77297 /* DeviceConfigurationV3+Extensions.swift */; };
 		A0EF69BB24660CFB00D77297 /* RazerDevice+Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69BA24660CFB00D77297 /* RazerDevice+Device.swift */; };
-		A0EF69BF24660DD100D77297 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69BE24660DD100D77297 /* AsyncImage.swift */; };
-		A0EF69C124660DE400D77297 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69C024660DE400D77297 /* ImageCache.swift */; };
-		A0EF69C324660DF500D77297 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69C224660DF500D77297 /* ImageLoader.swift */; };
 		A0EF69C524660FB300D77297 /* DeviceImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0EF69C424660FB300D77297 /* DeviceImages.plist */; };
 		A0EF69C72466165A00D77297 /* DeviceConfigurationViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69C62466165A00D77297 /* DeviceConfigurationViewV2.swift */; };
 		A0EF69CA2466192400D77297 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69C92466192400D77297 /* Wave.swift */; };
@@ -163,9 +161,6 @@
 		A0EF69B52466063900D77297 /* DeviceConfigurationV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationV3.swift; sourceTree = "<group>"; };
 		A0EF69B72466075700D77297 /* DeviceConfigurationV3+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceConfigurationV3+Extensions.swift"; sourceTree = "<group>"; };
 		A0EF69BA24660CFB00D77297 /* RazerDevice+Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RazerDevice+Device.swift"; sourceTree = "<group>"; };
-		A0EF69BE24660DD100D77297 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
-		A0EF69C024660DE400D77297 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		A0EF69C224660DF500D77297 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		A0EF69C424660FB300D77297 /* DeviceImages.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DeviceImages.plist; sourceTree = "<group>"; };
 		A0EF69C62466165A00D77297 /* DeviceConfigurationViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationViewV2.swift; sourceTree = "<group>"; };
 		A0EF69C92466192400D77297 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
@@ -195,6 +190,7 @@
 				A0692F10248D913E00296F7A /* CloudKit.framework in Frameworks */,
 				A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */,
 				A0B1FDC9248EC1A600E07C79 /* ServiceManagement.framework in Frameworks */,
+				A0C036EC2498000000D44584 /* URLImage in Frameworks */,
 				A0FBA0F42466B8340002EB75 /* ColorPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,22 +421,11 @@
 		A0EF69BC24660DAD00D77297 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				A0EF69BD24660DBA00D77297 /* AsyncImage */,
 				A0FB0061248B1247003FF9C7 /* ClosableWindow.swift */,
 				A0DFECE5248C442F000C01BC /* MacEditorTextView.swift */,
 				A08D8709248D120C008CE599 /* USBWatcher.swift */,
 			);
 			path = External;
-			sourceTree = "<group>";
-		};
-		A0EF69BD24660DBA00D77297 /* AsyncImage */ = {
-			isa = PBXGroup;
-			children = (
-				A0EF69BE24660DD100D77297 /* AsyncImage.swift */,
-				A0EF69C024660DE400D77297 /* ImageCache.swift */,
-				A0EF69C224660DF500D77297 /* ImageLoader.swift */,
-			);
-			path = AsyncImage;
 			sourceTree = "<group>";
 		};
 		A0EF69C82466191800D77297 /* Synapse 2 Mode */ = {
@@ -501,6 +486,7 @@
 			name = FruityUI;
 			packageProductDependencies = (
 				A0FBA0F32466B8340002EB75 /* ColorPicker */,
+				A0C036EB2498000000D44584 /* URLImage */,
 			);
 			productName = FruityUI;
 			productReference = A0AC449D244CAF78003CEDB4 /* FruityUI.app */;
@@ -535,6 +521,7 @@
 			mainGroup = A0AC4494244CAF78003CEDB4;
 			packageReferences = (
 				A0FBA0F22466B8340002EB75 /* XCRemoteSwiftPackageReference "ColorPicker" */,
+				A0C036EA2498000000D44584 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = A0AC449E244CAF78003CEDB4 /* Products */;
 			projectDirPath = "";
@@ -589,7 +576,6 @@
 				A0FBA0FC2466C7D00002EB75 /* Breath.swift in Sources */,
 				A08D8700248CFAFE008CE599 /* DeviceRawDataConverter.swift in Sources */,
 				A0BAE55E2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift in Sources */,
-				A0EF69C124660DE400D77297 /* ImageCache.swift in Sources */,
 				A0CD978C24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift in Sources */,
 				A0DFECE6248C442F000C01BC /* MacEditorTextView.swift in Sources */,
 				A04620222478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift in Sources */,
@@ -629,8 +615,6 @@
 				A0FBA0F62466B9950002EB75 /* CompleteColorPicker.swift in Sources */,
 				A0AC44A1244CAF78003CEDB4 /* AppDelegate.swift in Sources */,
 				A0DFECEE248C57F3000C01BC /* Engine.swift in Sources */,
-				A0EF69C324660DF500D77297 /* ImageLoader.swift in Sources */,
-				A0EF69BF24660DD100D77297 /* AsyncImage.swift in Sources */,
 				A0EF69BB24660CFB00D77297 /* RazerDevice+Device.swift in Sources */,
 				A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */,
 				A0EF69B12466041700D77297 /* Controller.swift in Sources */,
@@ -828,7 +812,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -859,7 +843,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -915,6 +899,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A0C036EA2498000000D44584 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.15;
+			};
+		};
 		A0FBA0F22466B8340002EB75 /* XCRemoteSwiftPackageReference "ColorPicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hendriku/ColorPicker";
@@ -926,6 +918,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A0C036EB2498000000D44584 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0C036EA2498000000D44584 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
 		A0FBA0F32466B8340002EB75 /* ColorPicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A0FBA0F22466B8340002EB75 /* XCRemoteSwiftPackageReference "ColorPicker" */;

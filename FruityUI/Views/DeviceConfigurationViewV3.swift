@@ -26,8 +26,6 @@ struct DeviceConfigurationViewV3: View {
         
         return ScrollView {
             VStack {
-                Text("Device selected: \(presenter.device.fullName)")
-                    .padding()
                 GroupBox(label: Text("Raw Data")) {
                     MacEditorTextView(
                         text: rawConfigurationBinding,

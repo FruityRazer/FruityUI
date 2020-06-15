@@ -37,8 +37,6 @@ struct DeviceConfigurationViewV2: View {
         
         return ScrollView {
             VStack {
-                Text("Device selected: \(presenter.device.fullName)")
-                    .padding()
                 GroupBox(label: Text("Mode")) {
                     Picker(selection: selectedModeBinding, label: EmptyView()) {
                         ForEach(presenter.availableModes, id: \.rawValue) {
