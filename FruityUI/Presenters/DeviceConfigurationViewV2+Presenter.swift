@@ -15,6 +15,7 @@ extension DeviceConfigurationViewV2 {
         enum Action {
             
             case commit
+            case dismissError
             case setMode(Synapse2ModeBasic)
         }
         
@@ -23,6 +24,18 @@ extension DeviceConfigurationViewV2 {
         
         @Published var selectedMode: Synapse2ModeBasic = .wave
         @Published var synapseMode: Synapse2Handle.Mode? = .wave(direction: .right)
+        
+        @Published var showingError = false
+        
+        var error: String? {
+            didSet {
+                if error != nil {
+                    showingError = true
+                } else {
+                    showingError = false
+                }
+            }
+        }
         
         var availableModes: [Synapse2ModeBasic] {
             guard case let Driver.v2(driver: handle) = device.razerDevice!.driver else {
@@ -63,9 +76,16 @@ extension DeviceConfigurationViewV2 {
                     return
                 }
                 
-                _ = handle.write(mode: mode)
+                guard handle.write(mode: mode) else {
+                    error = "An error has occurred while setting the selected mode.\n\nMaybe this mode isn't supported by your device?"
+                    
+                    return
+                }
                 
                 engine.persistence.setMode(mode, forDeviceWithShortName: device.shortName)
+                
+            case .dismissError:
+                error = nil
                 
             case .setMode(let mode):
                 selectedMode = mode

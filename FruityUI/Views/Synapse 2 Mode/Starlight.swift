@@ -12,11 +12,25 @@ import SwiftUI
 
 struct Starlight: View {
     
-    @State var speed: Int = 1
-    @State var color1: FruityKit.Color? = nil
-    @State var color2: FruityKit.Color? = nil
+    @State var speed: Int
+    @State var color1: FruityKit.Color?
+    @State var color2: FruityKit.Color?
     
     @Binding var mode: Synapse2Handle.Mode?
+    
+    init(mode: Binding<Synapse2Handle.Mode?>) {
+        self._mode = mode
+        
+        if let unwrappedMode = mode.wrappedValue, case let Synapse2Handle.Mode.starlight(speed, color1, color2) = unwrappedMode {
+            self._speed = State(initialValue: speed)
+            self._color1 = State(initialValue: color1)
+            self._color2 = State(initialValue: color2)
+        } else {
+            self._speed = State(initialValue: 1)
+            self._color1 = State(initialValue: nil)
+            self._color2 = State(initialValue: nil)
+        }
+    }
     
     private func updateMode() {
         if let color1 = color1, let color2 = color2 {

@@ -30,6 +30,11 @@ struct DeviceConfigurationViewV2: View {
             }
         )
         
+        let showingErrorBinding = Binding<Bool>(
+            get: { self.presenter.showingError },
+            set: { _ in self.presenter.perform(.dismissError) }
+        )
+        
         return ScrollView {
             VStack {
                 Text("Device selected: \(presenter.device.fullName)")
@@ -50,6 +55,8 @@ struct DeviceConfigurationViewV2: View {
             }
             .padding()
             .frame(minWidth: 700)
+        }.alert(isPresented: showingErrorBinding) {
+            Alert(title: Text("Error!"), message: Text(self.presenter.error!), dismissButton: .default(Text("Ok")))
         }
     }
     

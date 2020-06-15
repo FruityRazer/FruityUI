@@ -11,9 +11,19 @@ import SwiftUI
 
 struct Static: View {
     
-    @State var color: FruityKit.Color? = nil
+    @State var color: FruityKit.Color?
     
     @Binding var mode: Synapse2Handle.Mode?
+    
+    init(mode: Binding<Synapse2Handle.Mode?>) {
+        self._mode = mode
+        
+        if let unwrappedMode = mode.wrappedValue, case let Synapse2Handle.Mode.static(color: color) = unwrappedMode {
+            self._color = State(initialValue: color)
+        } else {
+            self._color = State(initialValue: nil)
+        }
+    }
     
     var body: some View {
         let binding = Binding<FruityKit.Color?>(
