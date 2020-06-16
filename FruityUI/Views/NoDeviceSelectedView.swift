@@ -12,14 +12,13 @@ struct NoDeviceSelectedView: View {
     
     @EnvironmentObject var engine: Engine
     
-    @State var openAtLoginToggleState: Bool = false
-    
-    func onAppear() {
-        self.openAtLoginToggleState = engine.loginItemManager.openAtLogin
-    }
-    
     var body: some View {
-        VStack {
+        let openAtLoginBinding = Binding<Bool>(
+            get: { self.engine.loginItemManager.openAtLogin },
+            set: { self.engine.loginItemManager.openAtLogin = $0 }
+        )
+        
+        return VStack {
             HStack {
                 Spacer()
                 CircularButton(text: "?")
@@ -51,10 +50,8 @@ struct NoDeviceSelectedView: View {
             GroupBox(label: Text("Preferences")) {
                 HStack {
                     Spacer()
-                    Toggle(isOn: $openAtLoginToggleState) {
+                    Toggle(isOn: openAtLoginBinding) {
                         Text("Open at Login")
-                    }.onReceive([self.openAtLoginToggleState].publisher.first()) { _ in
-                        self.engine.loginItemManager.toggle()
                     }.padding()
                     Spacer()
                 }
@@ -63,7 +60,6 @@ struct NoDeviceSelectedView: View {
             
             Spacer()
         }
-            .onAppear(perform: self.onAppear)
             .frame(minWidth: 700)
     }
 }

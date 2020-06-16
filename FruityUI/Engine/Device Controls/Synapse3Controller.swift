@@ -32,14 +32,18 @@ struct Synapse3Controller: DeviceControlling {
     }
     
     func updateWithSavedConfigurations() {
-        configurations.forEach {
-            _ = $0.handle.write(mode: $0.configuration.mode)
+        configurations.forEach { c in
+            DispatchQueue.global(qos: .default).async {
+                _ = c.handle.write(mode: c.configuration.mode)
+            }
         }
     }
     
     func pause(with: PauseType) {
-        configurations.forEach {
-            _ = $0.handle.write(mode: .off)
+        configurations.forEach { c in
+            DispatchQueue.global(qos: .default).async {
+                _ = c.handle.write(mode: .off)
+            }
         }
     }
 }
