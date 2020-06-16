@@ -24,26 +24,25 @@ struct DeviceConfigurationViewV3: View {
             set: { _ in self.presenter.perform(.dismissError) }
         )
         
-        return ScrollView {
-            VStack {
-                GroupBox(label: Text("Raw Data")) {
-                    MacEditorTextView(
-                        text: rawConfigurationBinding,
-                        isEditable: true,
-                        font: .userFixedPitchFont(ofSize: 14)
-                    )
+        return VStack {
+            GroupBox(label: Text("Raw Data")) {
+                MacEditorTextView(
+                    text: rawConfigurationBinding,
+                    isEditable: true,
+                    font: .userFixedPitchFont(ofSize: 14)
+                )
                     .frame(minWidth: 300,
                            maxWidth: .infinity,
                            minHeight: 200,
                            maxHeight: .infinity)
-                }.padding()
-                Button(action: { self.presenter.perform(.commit) }) {
-                    Text("Save")
-                }
-            }
-                .padding()
-                .frame(minWidth: 700)
-        }.alert(isPresented: showingErrorBinding) {
+            }.padding()
+            Button(action: { self.presenter.perform(.commit) }) {
+                Text("Save")
+            }.padding(.bottom, 15)
+        }
+        .padding()
+        .frame(minWidth: 700)
+        .alert(isPresented: showingErrorBinding) {
             Alert(title: Text("Error!"), message: Text(self.presenter.error!), dismissButton: .default(Text("Ok")))
         }
     }

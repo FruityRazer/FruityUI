@@ -17,4 +17,8 @@ enum URLs {
     static var help: URL {
         URL(string: "https://github.com/FruityRazer/FruityRazer/wiki")!
     }
+    
+    static var releases: URL {
+        URL(string: "https://github.com/FruityRazer/FruityUI/releases")!
+    }
 }

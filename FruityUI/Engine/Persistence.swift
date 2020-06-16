@@ -11,7 +11,11 @@ import FruityKit
 
 protocol Persisting {
     
+    func deleteConfigurations(forDeviceWithShortName shortName: String)
+    
     func getStoredDataVersion(forVersionedDevice device: VersionedRazerDevice) -> SynapseVersion?
+    
+    func deviceHasStoredData(_ device: VersionedRazerDevice) -> Bool
     
     func setMode(_ mode: Synapse2Handle.Mode, forDeviceWithShortName shortName: String)
     func setMode(_ mode: Synapse3Handle.Mode, forDeviceWithShortName shortName: String)
@@ -19,7 +23,7 @@ protocol Persisting {
 
 struct Persistence: Persisting {
     
-    private func deleteConfigurations(forDeviceWithShortName shortName: String) {
+    func deleteConfigurations(forDeviceWithShortName shortName: String) {
         if shortName.hasSuffix("_hw") {
             DeviceConfigurationV2.delete(forDeviceWithShortName: shortName)
             DeviceConfigurationV3.delete(forDeviceWithShortName: String(shortName.dropLast(3)) + "_sw")
@@ -29,6 +33,17 @@ struct Persistence: Persisting {
         } else {
             DeviceConfigurationV2.delete(forDeviceWithShortName: shortName)
             DeviceConfigurationV3.delete(forDeviceWithShortName: shortName)
+        }
+    }
+    
+    func deviceHasStoredData(_ device: VersionedRazerDevice) -> Bool {
+        switch device {
+        case let .both(v2, v3):
+            return DeviceConfigurationV2.get(forDeviceWithShortName: v2.shortName) != nil || DeviceConfigurationV3.get(forDeviceWithShortName: v3.shortName) != nil
+        case let .v2(device):
+            return DeviceConfigurationV2.get(forDeviceWithShortName: device.shortName) != nil
+        case let .v3(device):
+            return DeviceConfigurationV3.get(forDeviceWithShortName: device.shortName) != nil
         }
     }
     
