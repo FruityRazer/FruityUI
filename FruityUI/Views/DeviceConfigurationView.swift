@@ -63,15 +63,15 @@ struct DeviceConfigurationView: View {
     
     var body: some View {
         VStack {
-            if self.engine.persistence.deviceHasStoredData(device) {
-                HStack {
-                    CircularButton(text: "✕")
-                        { self.onConfigurationClose?() }
-                        .padding()
-                    Spacer()
+            HStack {
+                CircularButton(text: "✕")
+                    { self.onConfigurationClose?() }
+                    .padding()
+                Spacer()
+                if self.engine.persistence.deviceHasStoredData(device) {
                     DestructiveButton(text: "Delete Configuration")
-                        { self.isPresentingDeleteAlert = true }
-                        .padding()
+                    { self.isPresentingDeleteAlert = true }
+                    .padding()
                 }
             }
             deviceSettingsView
