@@ -19,34 +19,31 @@ struct DeviceConfigurationViewV3: View {
             set: { self.presenter.perform(.setRawConfiguration($0)) }
         )
         
-        let showingJSONValidationErrorBinding = Binding<Bool>(
-            get: { self.presenter.showingJSONValidationError },
-            set: { self.presenter.perform(.setShowingJSONValidationError($0)) }
+        let showingErrorBinding = Binding<Bool>(
+            get: { self.presenter.showingError },
+            set: { _ in self.presenter.perform(.dismissError) }
         )
         
-        return ScrollView {
-            VStack {
-                Text("Device selected: \(presenter.device.fullName)")
-                    .padding()
-                GroupBox(label: Text("Raw Data")) {
-                    MacEditorTextView(
-                        text: rawConfigurationBinding,
-                        isEditable: true,
-                        font: .userFixedPitchFont(ofSize: 14)
-                    )
+        return VStack {
+            GroupBox(label: Text("Raw Data")) {
+                MacEditorTextView(
+                    text: rawConfigurationBinding,
+                    isEditable: true,
+                    font: .userFixedPitchFont(ofSize: 14)
+                )
                     .frame(minWidth: 300,
                            maxWidth: .infinity,
                            minHeight: 200,
                            maxHeight: .infinity)
-                }.padding()
-                Button(action: { self.presenter.perform(.commit) }) {
-                    Text("Save")
-                }
-            }
-                .padding()
-                .frame(minWidth: 700)
-        }.alert(isPresented: showingJSONValidationErrorBinding) {
-            Alert(title: Text("Error!"), message: Text("Your input wasn't accepted by the driver. Please refer to the documentation to learn how to build a raw data input for your device."), dismissButton: .default(Text("Got it!")))
+            }.padding()
+            Button(action: { self.presenter.perform(.commit) }) {
+                Text("Save")
+            }.padding(.bottom, 15)
+        }
+        .padding()
+        .frame(minWidth: 700)
+        .alert(isPresented: showingErrorBinding) {
+            Alert(title: Text("Error!"), message: Text(self.presenter.error!), dismissButton: .default(Text("Ok")))
         }
     }
 }

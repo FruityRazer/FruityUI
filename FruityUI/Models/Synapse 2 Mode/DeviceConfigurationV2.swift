@@ -14,6 +14,7 @@ import FruityKit
 class DeviceConfigurationV2: NSManagedObject {
     
     @NSManaged private var colorRaw: [Int]?
+    @NSManaged private var color2Raw: [Int]?
     @NSManaged private var directionRaw: Int
     @NSManaged private var modeRaw: Int
     @NSManaged var shortName: String
@@ -39,6 +40,31 @@ extension DeviceConfigurationV2 {
             }
             
             colorRaw = [Int(c.r), Int(c.g), Int(c.b)]
+        }
+    }
+    
+    var color1: Color? {
+        get { color }
+        set { color = newValue }
+    }
+    
+    var color2: Color? {
+        get {
+            guard let components = color2Raw, components.count == 3 else {
+                return nil
+            }
+            
+            return Color(red: UInt8(components[0]), green: UInt8(components[1]), blue: UInt8(components[2]))
+        }
+        
+        set {
+            guard let c = newValue else {
+                color2Raw = nil
+                
+                return
+            }
+            
+            color2Raw = [Int(c.r), Int(c.g), Int(c.b)]
         }
     }
     

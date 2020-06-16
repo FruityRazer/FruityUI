@@ -26,9 +26,19 @@ enum WaveMode: String, CaseIterable {
 
 struct Wave: View {
     
-    @State var direction: WaveMode = .right
+    @State var direction: WaveMode
     
     @Binding var mode: Synapse2Handle.Mode?
+    
+    init(mode: Binding<Synapse2Handle.Mode?>) {
+        self._mode = mode
+        
+        if let unwrappedMode = mode.wrappedValue, case let Synapse2Handle.Mode.wave(direction) = unwrappedMode {
+            self._direction = State(initialValue: direction == .right ? .right : .left)
+        } else {
+            self._direction = State(initialValue: .right)
+        }
+    }
     
     var body: some View {
         let waveModeBinding = Binding<WaveMode>(

@@ -10,13 +10,67 @@ import SwiftUI
 
 struct NoDeviceSelectedView: View {
     
+    @State var openAtLogin: Bool = false
+    
+    @EnvironmentObject var engine: Engine
+    
+    func updateOpenAtLoginState() {
+        self.openAtLogin = engine.loginItemManager.openAtLogin
+    }
+    
     var body: some View {
-        ScrollView {
-            VStack {
-                Text("No device selected!")
+        return VStack {
+            HStack {
+                Spacer()
+                CircularButton(text: "?")
+                { NSWorkspace.shared.open(URLs.help) }
                     .padding()
-            }.frame(minWidth: 700)
+            }
+            
+            Spacer()
+            
+            Image("FruityUI")
+                .resizable()
+                .frame(width: 100, height: 100)
+                .padding(.bottom, 25)
+            HStack(alignment: .top) {
+                Text("FruityUI")
+                    .font(.largeTitle)
+                    .padding(.bottom, 10)
+                
+                PillButton(text: "\(Bundle.main.shortVersion) (\(Bundle.main.version))")
+                { NSWorkspace.shared.open(URLs.releases) }
+            }
+            
+            Text("(Unofficial) Razer drivers for macOS")
+                .font(.caption)
+            Text("Choose an entry from the list on your left to start customizing your devices!")
+                .font(.footnote)
+                .padding(.top, 50)
+            
+            Spacer()
+            
+            GroupBox(label: Text("Preferences")) {
+                HStack {
+                    Spacer()
+                    
+                    Toggle(isOn: $openAtLogin) {
+                        Text("Open at Login")
+                            .onTapGesture {
+                                self.engine.loginItemManager.toggle()
+                                self.updateOpenAtLoginState()
+                            }
+                    }.padding()
+                    
+                    Spacer()
+                }
+            }
+            .padding()
+            
+            Spacer()
         }
+        .frame(minWidth: 700)
+        .onAppear(perform: self.updateOpenAtLoginState)
     }
 }
 

@@ -15,15 +15,25 @@ extension DeviceConfigurationViewV3 {
         enum Action {
             
             case commit
+            case dismissError
             case setRawConfiguration(String)
-            case setShowingJSONValidationError(Bool)
         }
         
         let device: Device
         let engine: Engine
         
         @Published var rawConfiguration: String = ""
-        @Published var showingJSONValidationError = false
+        @Published var showingError = false
+        
+        var error: String? {
+            didSet {
+                if error != nil {
+                    showingError = true
+                } else {
+                    showingError = false
+                }
+            }
+        }
         
         init(device: Device, engine: Engine) {
             self.device = device
@@ -52,20 +62,24 @@ extension DeviceConfigurationViewV3 {
                 }
                 
                 guard let converter = DeviceRawDataConverter(json: rawConfiguration) else {
-                    showingJSONValidationError = true
+                    error = "Your input wasn't accepted by the driver. Please refer to the documentation to learn how to build a raw data input for your device."
                     
                     return
                 }
                 
-                _ = handle.write(mode: converter.mode)
+                guard handle.write(mode: converter.mode) else {
+                    error = "An error has occurred while setting the selected mode.\n\nMaybe this mode isn't supported by your device?"
+                    
+                    return
+                }
                 
                 engine.persistence.setMode(converter.mode, forDeviceWithShortName: device.shortName)
                 
+            case .dismissError:
+                error = nil
+                
             case .setRawConfiguration(let configuration):
                 rawConfiguration = configuration
-                
-            case .setShowingJSONValidationError(let showing):
-                showingJSONValidationError = showing
             }
         }
     }

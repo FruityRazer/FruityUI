@@ -18,7 +18,9 @@ struct ContentView: View {
             DeviceList(selectedDevice: $selectedDevice)
             
             if selectedDevice != nil {
-                DeviceConfigurationView(device: selectedDevice!)
+                DeviceConfigurationView(device: selectedDevice!, onConfigurationClose: {
+                    self.selectedDevice = nil
+                })
             } else {
                 NoDeviceSelectedView()
             }

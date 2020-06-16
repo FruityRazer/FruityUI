@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct DeviceRow: View {
     
@@ -14,18 +15,26 @@ struct DeviceRow: View {
     
     var body: some View {
         HStack(alignment: .center) {
-            AsyncImage(url: device.imageURL, placeholder: Rectangle().frame(width: 50, height: 50, alignment: .trailing), configuration: { $0.resizable() })
+            URLImage(device.imageURL) {
+                $0.image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .clipped()
+            }
                 .frame(width: 50, height: 50, alignment: .trailing)
-            
             VStack(alignment: .leading) {
+                Spacer()
                 Text(device.fullName)
                     .font(.subheadline)
                 HStack {
-                    //  Add some sort of traffic light image here...
+                    Circle()
+                        .fill(device.connected ? Color.green : Color.red)
+                        .frame(width: 10, height: 10)
                     Text(device.connected ? "Connected" : "Disconnected")
                         .font(.caption)
                         .foregroundColor(device.connected ? .green : .red)
                 }
+                Spacer()
             }
         }
     }

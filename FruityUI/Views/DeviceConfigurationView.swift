@@ -11,17 +11,24 @@ import SwiftUI
 
 struct DeviceConfigurationView: View {
     
+    typealias Action = () -> ()
+    
     @EnvironmentObject var engine: Engine
     
     @State private var selectedSynapseVersion: SynapseVersion = .v2
     
+    @State private var isPresentingDeleteAlert: Bool = false
+    
     private var device: VersionedRazerDevice
     
-    init(device: VersionedRazerDevice) {
+    private var onConfigurationClose: Action?
+    
+    init(device: VersionedRazerDevice, onConfigurationClose: Action?) {
         self.device = device
+        self.onConfigurationClose = onConfigurationClose
     }
     
-    func delayedInit() {
+    func loadData() {
         if self.engine.persistence.getStoredDataVersion(forVersionedDevice: self.device) == .v3 {
             self.selectedSynapseVersion = .v3
         } else {
@@ -29,7 +36,12 @@ struct DeviceConfigurationView: View {
         }
     }
     
-    var body: some View {
+    func deleteDeviceSettings() {
+        self.engine.persistence.deleteConfigurations(forDeviceWithShortName: device.shortName)
+        self.loadData()
+    }
+    
+    var deviceSettingsView: some View {
         switch device {
         case let .v2(device):
             return AnyView(DeviceConfigurationViewV2(presenter: .init(device: device, engine: engine)))
@@ -45,7 +57,31 @@ struct DeviceConfigurationView: View {
                 } else {
                     DeviceConfigurationViewV3(presenter: .init(device: v3, engine: engine))
                 }
-            }.onAppear(perform: self.delayedInit))
+            }.onAppear(perform: self.loadData))
+        }
+    }
+    
+    var body: some View {
+        VStack {
+            HStack {
+                CircularButton(text: "✕")
+                    { self.onConfigurationClose?() }
+                    .padding()
+                Spacer()
+                if self.engine.persistence.deviceHasStoredData(device) {
+                    DestructiveButton(text: "Delete Configuration")
+                    { self.isPresentingDeleteAlert = true }
+                    .padding()
+                }
+            }
+            deviceSettingsView
+        }.alert(isPresented: $isPresentingDeleteAlert) {
+            Alert(
+                title: Text("Are you sure?"),
+                message: Text("Do you really wish to delete the saved settings for \"\(self.device.fullName)\"?"),
+                primaryButton: .destructive(Text("Yes, I'm sure!"), action: self.deleteDeviceSettings),
+                secondaryButton: .cancel(Text("No"))
+            )
         }
     }
 }
@@ -55,8 +91,9 @@ struct DeviceConfigurationView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ForEach(FruityRazer.groupedConnectedDevices, id: \.self) {
-                DeviceConfigurationView(device: $0)
+                DeviceConfigurationView(device: $0, onConfigurationClose: nil)
             }
         }
     }
+
 }

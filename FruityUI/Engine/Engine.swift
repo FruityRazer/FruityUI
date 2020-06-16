@@ -11,7 +11,7 @@ import Foundation
 class Engine {
     
     let deviceController: Controlling
-    let loginItemManager: LoginItemManaging
+    var loginItemManager: LoginItemManaging
     let persistence: Persisting
     
     init(deviceController: Controlling = Controller(),

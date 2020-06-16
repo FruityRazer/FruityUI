@@ -12,11 +12,12 @@ import FruityKit
 struct DeviceConfigurationViewV2: View {
     
     enum Synapse2ModeBasic: String, CaseIterable {
-        case wave = "Wave"
-        case spectrum = "Spectrum"
-        case reactive = "Reactive"
-        case `static` = "Static"
         case breath = "Breath"
+        case reactive = "Reactive"
+        case spectrum = "Spectrum"
+        case starlight = "Starlight"
+        case `static` = "Static"
+        case wave = "Wave"
     }
     
     @ObservedObject var presenter: DeviceConfigurationViewV2.Presenter
@@ -29,13 +30,16 @@ struct DeviceConfigurationViewV2: View {
             }
         )
         
+        let showingErrorBinding = Binding<Bool>(
+            get: { self.presenter.showingError },
+            set: { _ in self.presenter.perform(.dismissError) }
+        )
+        
         return ScrollView {
             VStack {
-                Text("Device selected: \(presenter.device.fullName)")
-                    .padding()
                 GroupBox(label: Text("Mode")) {
                     Picker(selection: selectedModeBinding, label: EmptyView()) {
-                        ForEach(Synapse2ModeBasic.allCases, id: \.rawValue) {
+                        ForEach(presenter.availableModes, id: \.rawValue) {
                             Text($0.rawValue).tag($0)
                         }
                     }
@@ -49,21 +53,25 @@ struct DeviceConfigurationViewV2: View {
             }
             .padding()
             .frame(minWidth: 700)
+        }.alert(isPresented: showingErrorBinding) {
+            Alert(title: Text("Error!"), message: Text(self.presenter.error!), dismissButton: .default(Text("Ok")))
         }
     }
     
     var modeSettings: AnyView? {
         switch presenter.selectedMode {
-        case .wave:
-            return AnyView(Wave(mode: $presenter.synapseMode))
-        case .spectrum:
-            return AnyView(Spectrum(mode: $presenter.synapseMode))
-        case .reactive:
-            return AnyView(Reactive(mode: $presenter.synapseMode))
-        case .static:
-            return AnyView(Static(mode: $presenter.synapseMode))
         case .breath:
             return AnyView(Breath(mode: $presenter.synapseMode))
+        case .reactive:
+            return AnyView(Reactive(mode: $presenter.synapseMode))
+        case .spectrum:
+            return AnyView(Spectrum(mode: $presenter.synapseMode))
+        case .starlight:
+            return AnyView(Starlight(mode: $presenter.synapseMode))
+        case .static:
+            return AnyView(Static(mode: $presenter.synapseMode))
+        case .wave:
+            return AnyView(Wave(mode: $presenter.synapseMode))
         }
     }
 }

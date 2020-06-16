@@ -2,8 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>basilisk</key>
+	<string>https://assets.razerzone.com/eeimages/support/products/1241/1241_basilisk.png</string>
 	<key>huntsman_elite</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1361/1361_huntsman_elite.png</string>
+	<key>lancehead_te_wired</key>
+	<string>https://assets.razerzone.com/eeimages/support/products/1203/1206_lanceheadte.png</string>
+	<key>lancehead_wired</key>
+	<string>https://assets.razerzone.com/eeimages/support/products/1205/1205_lancehead.png</string>
+	<key>lancehead_wireless</key>
+	<string>https://assets.razerzone.com/eeimages/support/products/1205/1205_lancehead.png</string>
+	<key>lancehead_wireless_receiver</key>
+	<string>https://assets.razerzone.com/eeimages/support/products/1205/1205_lancehead.png</string>
+	<key>lancehead_wireless_wired</key>
+	<string>https://assets.razerzone.com/eeimages/support/products/1205/1205_lancehead.png</string>
 	<key>mamba_hyperflux</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1276/1276_hyperflux.png</string>
 	<key>manowar</key>

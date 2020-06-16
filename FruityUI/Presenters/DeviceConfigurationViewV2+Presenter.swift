@@ -15,6 +15,7 @@ extension DeviceConfigurationViewV2 {
         enum Action {
             
             case commit
+            case dismissError
             case setMode(Synapse2ModeBasic)
         }
         
@@ -23,6 +24,26 @@ extension DeviceConfigurationViewV2 {
         
         @Published var selectedMode: Synapse2ModeBasic = .wave
         @Published var synapseMode: Synapse2Handle.Mode? = .wave(direction: .right)
+        
+        @Published var showingError = false
+        
+        var error: String? {
+            didSet {
+                if error != nil {
+                    showingError = true
+                } else {
+                    showingError = false
+                }
+            }
+        }
+        
+        var availableModes: [Synapse2ModeBasic] {
+            guard case let Driver.v2(driver: handle) = device.razerDevice!.driver else {
+                return []
+            }
+            
+            return handle.supportedModes.map(Synapse2ModeBasic.init)
+        }
         
         init(device: Device, engine: Engine) {
             self.device = device
@@ -55,9 +76,16 @@ extension DeviceConfigurationViewV2 {
                     return
                 }
                 
-                _ = handle.write(mode: mode)
+                guard handle.write(mode: mode) else {
+                    error = "An error has occurred while setting the selected mode.\n\nMaybe this mode isn't supported by your device?"
+                    
+                    return
+                }
                 
                 engine.persistence.setMode(mode, forDeviceWithShortName: device.shortName)
+                
+            case .dismissError:
+                error = nil
                 
             case .setMode(let mode):
                 selectedMode = mode
@@ -65,18 +93,40 @@ extension DeviceConfigurationViewV2 {
                 let white = FruityKit.Color(red: 255, green: 255, blue: 255)
                 
                 switch mode {
-                case .wave:
-                    synapseMode = .wave(direction: .right)
-                case .spectrum:
-                    synapseMode = .spectrum
-                case .reactive:
-                    synapseMode = .reactive(speed: 1, color: white)
-                case .static:
-                    synapseMode = .static(color: white)
                 case .breath:
                     synapseMode = .breath(color: white)
+                case .reactive:
+                    synapseMode = .reactive(speed: 1, color: white)
+                case .spectrum:
+                    synapseMode = .spectrum
+                case .starlight:
+                    synapseMode = .starlight(speed: 1, color1: white, color2: white)
+                case .static:
+                    synapseMode = .static(color: white)
+                case .wave:
+                    synapseMode = .wave(direction: .right)
                 }
             }
+        }
+    }
+}
+
+extension DeviceConfigurationViewV2.Synapse2ModeBasic {
+    
+    init(basicMode: Synapse2Handle.BasicMode) {
+        switch basicMode {
+        case .breath:
+            self = .breath
+        case .reactive:
+            self = .reactive
+        case .spectrum:
+            self = .spectrum
+        case .starlight:
+            self = .starlight
+        case .static:
+            self = .static
+        case .wave:
+            self = .wave
         }
     }
 }

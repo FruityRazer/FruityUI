@@ -12,16 +12,18 @@ extension Synapse2Handle.Mode {
     
     var synapse2ModeBasic: DeviceConfigurationViewV2.Synapse2ModeBasic {
         switch self {
-        case .wave:
-            return .wave
-        case .spectrum:
-            return .spectrum
-        case .reactive:
-            return .reactive
-        case .static:
-            return .static
         case .breath:
             return .breath
+        case .reactive:
+            return .reactive
+        case .spectrum:
+            return .spectrum
+        case .starlight:
+            return .starlight
+        case .static:
+            return .static
+        case .wave:
+            return .wave
         }
     }
 }

@@ -12,10 +12,22 @@ import SwiftUI
 
 struct Reactive: View {
     
-    @State var speed: Int = 1
-    @State var color: FruityKit.Color? = nil
+    @State var speed: Int
+    @State var color: FruityKit.Color?
     
     @Binding var mode: Synapse2Handle.Mode?
+    
+    init(mode: Binding<Synapse2Handle.Mode?>) {
+        self._mode = mode
+        
+        if let unwrappedMode = mode.wrappedValue, case let Synapse2Handle.Mode.reactive(speed, color) = unwrappedMode {
+            self._speed = State(initialValue: speed)
+            self._color = State(initialValue: color)
+        } else {
+            self._speed = State(initialValue: 1)
+            self._color = State(initialValue: nil)
+        }
+    }
     
     private func updateMode() {
         if let color = color {
