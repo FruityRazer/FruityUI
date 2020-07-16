@@ -41,15 +41,14 @@ struct DeviceConfigurationView: View {
         self.loadData()
     }
     
-    @ViewBuilder
     var deviceSettingsView: some View {
         switch device {
         case let .v2(device):
-            return DeviceConfigurationViewV2(presenter: .init(device: device, engine: engine))
+            return AnyView(DeviceConfigurationViewV2(presenter: .init(device: device, engine: engine)))
         case let .v3(device):
-            return DeviceConfigurationViewV3(presenter: .init(device: device, engine: engine))
+            return AnyView(DeviceConfigurationViewV3(presenter: .init(device: device, engine: engine)))
         case let .both(v2: v2, v3: v3):
-            return VStack {
+            return AnyView(VStack {
                 DeviceConfigurationVersionPicker(selectedVersion: $selectedSynapseVersion)
                     .padding()
                 
@@ -58,7 +57,7 @@ struct DeviceConfigurationView: View {
                 } else {
                     DeviceConfigurationViewV3(presenter: .init(device: v3, engine: engine))
                 }
-            }.onAppear(perform: self.loadData)
+            }.onAppear(perform: self.loadData))
         }
     }
     

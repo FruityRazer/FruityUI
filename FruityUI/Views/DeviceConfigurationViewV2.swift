@@ -58,21 +58,20 @@ struct DeviceConfigurationViewV2: View {
         }
     }
     
-    @ViewBuilder
-    var modeSettings: some View {
+    var modeSettings: AnyView? {
         switch presenter.selectedMode {
         case .breath:
-            return Breath(mode: $presenter.synapseMode)
+            return AnyView(Breath(mode: $presenter.synapseMode))
         case .reactive:
-            return Reactive(mode: $presenter.synapseMode)
+            return AnyView(Reactive(mode: $presenter.synapseMode))
         case .spectrum:
-            return Spectrum(mode: $presenter.synapseMode)
+            return AnyView(Spectrum(mode: $presenter.synapseMode))
         case .starlight:
-            return Starlight(mode: $presenter.synapseMode)
+            return AnyView(Starlight(mode: $presenter.synapseMode))
         case .static:
-            return Static(mode: $presenter.synapseMode)
+            return AnyView(Static(mode: $presenter.synapseMode))
         case .wave:
-            return Wave(mode: $presenter.synapseMode)
+            return AnyView(Wave(mode: $presenter.synapseMode))
         }
     }
 }
