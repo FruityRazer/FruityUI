@@ -4,8 +4,14 @@
 <dict>
 	<key>basilisk</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1241/1241_basilisk.png</string>
+	<key>huntsman</key>
+	<string>https://assets.razerzone.com/eeimages/support/products/1360/1360_huntsman-3.png</string>
 	<key>huntsman_elite</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1361/1361_huntsman_elite.png</string>
+	<key>huntsman_mini</key>
+	<string>https://assets.razerzone.com/eeimages/support/products/1689/1689-huntsmanmini.png</string>
+	<key>huntsman_te</key>
+	<string>https://assets.razerzone.com/eeimages/support/products/1537/1537_huntsman_te.png</string>
 	<key>lancehead_te_wired</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1203/1206_lanceheadte.png</string>
 	<key>lancehead_wired</key>
