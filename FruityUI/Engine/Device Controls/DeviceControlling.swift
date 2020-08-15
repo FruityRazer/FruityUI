@@ -16,6 +16,19 @@ enum PauseType: Equatable {
 
 protocol DeviceControlling {
     
-    func updateWithSavedConfigurations()
-    func pause(with: PauseType)
+    typealias CompletionBlock = () -> ()
+    
+    func updateWithSavedConfigurations(completion: CompletionBlock?)
+    func pause(with: PauseType, completion: CompletionBlock?)
+}
+
+extension DeviceControlling {
+    
+    func updateWithSavedConfigurations() {
+        updateWithSavedConfigurations(completion: nil)
+    }
+    
+    func pause(with pauseType: PauseType) {
+        pause(with: pauseType, completion: nil)
+    }
 }

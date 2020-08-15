@@ -76,16 +76,30 @@ class Controller: Controlling {
         
         updating = true
         
-        defer {
-            updating = false
+        var remaining = 2
+        
+        let completionBlockSemaphore = DispatchSemaphore(value: 1)
+        
+        let completionBlock: DeviceControlling.CompletionBlock = {
+            completionBlockSemaphore.wait()
+            
+            defer {
+                completionBlockSemaphore.signal()
+            }
+            
+            remaining -= 1
+            
+            if remaining == 0 {
+                self.updating = false
+            }
         }
         
         if status == .running {
-            synapse2.updateWithSavedConfigurations()
-            synapse3.updateWithSavedConfigurations()
+            synapse2.updateWithSavedConfigurations(completion: completionBlock)
+            synapse3.updateWithSavedConfigurations(completion: completionBlock)
         } else if case let ControllerStatus.paused(pauseType) = status, pauseType == .lightsOut {
-            synapse2.pause(with: pauseType)
-            synapse3.pause(with: pauseType)
+            synapse2.pause(with: pauseType, completion: completionBlock)
+            synapse3.pause(with: pauseType, completion: completionBlock)
         }
     }
     

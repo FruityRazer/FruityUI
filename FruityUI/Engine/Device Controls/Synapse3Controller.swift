@@ -31,18 +31,46 @@ struct Synapse3Controller: DeviceControlling {
         }
     }
     
-    func updateWithSavedConfigurations() {
+    func updateWithSavedConfigurations(completion: CompletionBlock?) {
+        guard configurations.count > 0 else {
+            completion?()
+            
+            return
+        }
+        
+        var remaining = configurations.count
+        
         configurations.forEach { c in
             DispatchQueue.global(qos: .default).async {
                 _ = c.handle.write(mode: c.configuration.mode)
+                
+                remaining -= 1
+                
+                if remaining == 0 {
+                    completion?()
+                }
             }
         }
     }
     
-    func pause(with: PauseType) {
+    func pause(with: PauseType, completion: CompletionBlock?) {
+        guard configurations.count > 0 else {
+            completion?()
+            
+            return
+        }
+        
+        var remaining = configurations.count
+        
         configurations.forEach { c in
             DispatchQueue.global(qos: .default).async {
                 _ = c.handle.write(mode: .off)
+                
+                remaining -= 1
+                
+                if remaining == 0 {
+                    completion?()
+                }
             }
         }
     }

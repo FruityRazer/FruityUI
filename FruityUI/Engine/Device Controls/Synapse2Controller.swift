@@ -31,18 +31,46 @@ struct Synapse2Controller: DeviceControlling {
         }
     }
     
-    func updateWithSavedConfigurations() {
+    func updateWithSavedConfigurations(completion: CompletionBlock?) {
+        guard configurations.count > 0 else {
+            completion?()
+            
+            return
+        }
+        
+        var remaining = configurations.count
+        
         configurations.forEach { c in
             DispatchQueue.global(qos: .default).async {
                 _ = c.handle.write(mode: c.configuration.synapseMode)
+                
+                remaining -= 1
+                
+                if remaining == 0 {
+                    completion?()
+                }
             }
         }
     }
     
-    func pause(with: PauseType) {
+    func pause(with: PauseType, completion: CompletionBlock?) {
+        guard configurations.count > 0 else {
+            completion?()
+            
+            return
+        }
+        
+        var remaining = configurations.count
+        
         configurations.forEach { c in
             DispatchQueue.global(qos: .default).async {
                 _ = c.handle.write(mode: .static(color: .init(red: 0, green: 0, blue: 0)))
+                
+                remaining -= 1
+                
+                if remaining == 0 {
+                    completion?()
+                }
             }
         }
     }
