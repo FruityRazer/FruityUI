@@ -32,6 +32,8 @@ class Controller: Controlling {
     
     private var usbWatcher: USBWatcher
     
+    private var updating: Bool = false
+    
     init(synapse2: Synapse2Controller = Synapse2Controller(),
          synapse3: Synapse3Controller = Synapse3Controller()) {
         
@@ -66,6 +68,14 @@ class Controller: Controlling {
     }
     
     @objc func forceUpdate() {
+        guard !updating else { return }
+        
+        updating = true
+        
+        defer {
+            updating = false
+        }
+        
         if status == .running {
             synapse2.updateWithSavedConfigurations()
             synapse3.updateWithSavedConfigurations()
