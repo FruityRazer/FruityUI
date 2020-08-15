@@ -14,6 +14,8 @@ enum ControllerStatus: Equatable {
     case paused(PauseType)
 }
 
+/// Responsible for the control of the FruityUI engine.
+
 protocol Controlling {
     
     var status: ControllerStatus { get }
@@ -22,6 +24,8 @@ protocol Controlling {
     func startUpdates()
     func pauseUpdates(withPauseType pauseType: PauseType)
 }
+
+/// Default implementation for Controlling.
 
 class Controller: Controlling {
     
@@ -58,11 +62,11 @@ class Controller: Controlling {
     }
     
     @objc private func receivedDidWakeNotification() {
-        //  Just listening for the USB notifications would be enough in
-        //  most cases, but by experience this doesn't always work,
-        //  so this delayed update is a nice-to-have fallback.
+        updating = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.updating = false
+            
             self.forceUpdate()
         }
     }

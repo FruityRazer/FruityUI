@@ -8,6 +8,9 @@
 
 import Foundation
 
+/// Engine of the app, class that handles shared objects used by the whole app.
+/// Used basically to avoid passing around instances of every single one of these objects.
+
 class Engine {
     
     let deviceController: Controlling
