@@ -18,7 +18,7 @@ protocol DeviceRawDataConverting {
 struct DeviceRawDataConverter: DeviceRawDataConverting {
     
     struct DeviceRawData: Decodable, Encodable {
-        let type: String = "raw"
+        var type: String { "raw" }
         let rows: [[String]]
     }
     
