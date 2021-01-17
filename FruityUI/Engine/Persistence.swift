@@ -21,6 +21,11 @@ protocol Persisting {
     func setMode(_ mode: Synapse3Handle.Mode, forDeviceWithShortName shortName: String)
 }
 
+extension NSNotification.Name {
+    
+    static let persistenceChanged = NSNotification.Name("PersistenceChanged")
+}
+
 struct Persistence: Persisting {
     
     func deleteConfigurations(forDeviceWithShortName shortName: String) {
@@ -34,6 +39,8 @@ struct Persistence: Persisting {
             DeviceConfigurationV2.delete(forDeviceWithShortName: shortName)
             DeviceConfigurationV3.delete(forDeviceWithShortName: shortName)
         }
+        
+        NotificationCenter.default.post(Notification(name: .persistenceChanged))
     }
     
     func deviceHasStoredData(_ device: VersionedRazerDevice) -> Bool {
@@ -67,11 +74,15 @@ struct Persistence: Persisting {
         deleteConfigurations(forDeviceWithShortName: shortName)
         
         DeviceConfigurationV2.new(withShortName: shortName, mode: mode)
+        
+        NotificationCenter.default.post(Notification(name: .persistenceChanged))
     }
     
     func setMode(_ mode: Synapse3Handle.Mode, forDeviceWithShortName shortName: String) {
         deleteConfigurations(forDeviceWithShortName: shortName)
         
         DeviceConfigurationV3.new(withShortName: shortName, mode: mode)
+        
+        NotificationCenter.default.post(Notification(name: .persistenceChanged))
     }
 }

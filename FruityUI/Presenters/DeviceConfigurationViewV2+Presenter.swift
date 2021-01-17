@@ -76,10 +76,12 @@ extension DeviceConfigurationViewV2 {
                     return
                 }
                 
-                guard handle.write(mode: mode) else {
-                    error = "An error has occurred while setting the selected mode.\n\nMaybe this mode isn't supported by your device?"
-                    
-                    return
+                if razerDevice.connected {
+                    guard handle.write(mode: mode) else {
+                        error = "An error has occurred while setting the selected mode.\n\nMaybe this mode isn't supported by your device?"
+                        
+                        return
+                    }
                 }
                 
                 engine.persistence.setMode(mode, forDeviceWithShortName: device.shortName)

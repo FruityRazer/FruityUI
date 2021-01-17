@@ -35,16 +35,19 @@ struct DeviceConfigurationViewV3: View {
                            maxWidth: .infinity,
                            minHeight: 200,
                            maxHeight: .infinity)
-            }.padding()
+            }
+            .padding()
+            
             Button(action: { self.presenter.perform(.commit) }) {
                 Text("Save")
-            }.padding(.bottom, 15)
+            }
+            .padding(.bottom, 15)
+            .alert(isPresented: showingErrorBinding) {
+                Alert(title: Text("Error!"), message: Text(self.presenter.error!), dismissButton: .default(Text("Ok")))
+            }
         }
         .padding()
         .frame(minWidth: 700)
-        .alert(isPresented: showingErrorBinding) {
-            Alert(title: Text("Error!"), message: Text(self.presenter.error!), dismissButton: .default(Text("Ok")))
-        }
     }
 }
 

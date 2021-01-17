@@ -18,8 +18,13 @@ protocol DeviceRawDataConverting {
 struct DeviceRawDataConverter: DeviceRawDataConverting {
     
     struct DeviceRawData: Decodable, Encodable {
-        var type: String { "raw" }
+        let type: String
         let rows: [[String]]
+        
+        init(type: String = "raw", rows: [[String]]) {
+            self.type = type
+            self.rows = rows
+        }
     }
     
     let rawData: DeviceRawData
@@ -30,6 +35,10 @@ struct DeviceRawDataConverter: DeviceRawDataConverting {
         }
         
         guard let decoded = try? JSONDecoder().decode(DeviceRawData.self, from: data) else {
+            return nil
+        }
+        
+        guard decoded.type == "raw" else {
             return nil
         }
         

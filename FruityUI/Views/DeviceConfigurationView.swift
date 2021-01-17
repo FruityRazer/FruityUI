@@ -19,6 +19,8 @@ struct DeviceConfigurationView: View {
     
     @State private var isPresentingDeleteAlert: Bool = false
     
+    @State private var hasStoredData: Bool = false
+    
     private var device: VersionedRazerDevice
     
     private var onConfigurationClose: Action?
@@ -26,6 +28,13 @@ struct DeviceConfigurationView: View {
     init(device: VersionedRazerDevice, onConfigurationClose: Action?) {
         self.device = device
         self.onConfigurationClose = onConfigurationClose
+    }
+    
+    let persistenceChangedPublisher = NotificationCenter.default
+        .publisher(for: .persistenceChanged)
+    
+    func updateInterfaceWithCoreData() {
+        hasStoredData = self.engine.persistence.deviceHasStoredData(device)
     }
     
     func loadData() {
@@ -41,14 +50,15 @@ struct DeviceConfigurationView: View {
         self.loadData()
     }
     
+    @ViewBuilder
     var deviceSettingsView: some View {
         switch device {
         case let .v2(device):
-            return AnyView(DeviceConfigurationViewV2(presenter: .init(device: device, engine: engine)))
+            DeviceConfigurationViewV2(presenter: .init(device: device, engine: engine))
         case let .v3(device):
-            return AnyView(DeviceConfigurationViewV3(presenter: .init(device: device, engine: engine)))
+            DeviceConfigurationViewV3(presenter: .init(device: device, engine: engine))
         case let .both(v2: v2, v3: v3):
-            return AnyView(VStack {
+            VStack {
                 DeviceConfigurationVersionPicker(selectedVersion: $selectedSynapseVersion)
                     .padding()
                 
@@ -57,7 +67,7 @@ struct DeviceConfigurationView: View {
                 } else {
                     DeviceConfigurationViewV3(presenter: .init(device: v3, engine: engine))
                 }
-            }.onAppear(perform: self.loadData))
+            }.onAppear(perform: self.loadData)
         }
     }
     
@@ -67,22 +77,28 @@ struct DeviceConfigurationView: View {
                 CircularButton(text: "✕")
                     { self.onConfigurationClose?() }
                     .padding()
+                
                 Spacer()
-                if self.engine.persistence.deviceHasStoredData(device) {
+                
+                if hasStoredData {
                     DestructiveButton(text: "Delete Configuration")
-                    { self.isPresentingDeleteAlert = true }
-                    .padding()
+                        { self.isPresentingDeleteAlert = true }
+                        .padding()
+                        .alert(isPresented: $isPresentingDeleteAlert) {
+                            Alert(
+                                title: Text("Are you sure?"),
+                                message: Text("Do you really wish to delete the saved settings for \"\(self.device.fullName)\"?"),
+                                primaryButton: .destructive(Text("Yes, I'm sure!"), action: self.deleteDeviceSettings),
+                                secondaryButton: .cancel(Text("No"))
+                            )
+                        }
                 }
             }
+            
             deviceSettingsView
-        }.alert(isPresented: $isPresentingDeleteAlert) {
-            Alert(
-                title: Text("Are you sure?"),
-                message: Text("Do you really wish to delete the saved settings for \"\(self.device.fullName)\"?"),
-                primaryButton: .destructive(Text("Yes, I'm sure!"), action: self.deleteDeviceSettings),
-                secondaryButton: .cancel(Text("No"))
-            )
         }
+        .onAppear(perform: self.updateInterfaceWithCoreData)
+        .onReceive(persistenceChangedPublisher) { _ in self.updateInterfaceWithCoreData() }
     }
 }
 
@@ -95,5 +111,5 @@ struct DeviceConfigurationView_Previews: PreviewProvider {
             }
         }
     }
-
+    
 }
