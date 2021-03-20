@@ -16,14 +16,17 @@ class Engine {
     let deviceController: Controlling
     var loginItemManager: LoginItemManaging
     let persistence: Persisting
+    var updateManager: UpdateManaging
     
     init(deviceController: Controlling = Controller(),
          loginItemManager: LoginItemManaging = LoginItemManager(),
-         persistence: Persisting = Persistence()) {
+         persistence: Persisting = Persistence(),
+         updateManager: UpdateManaging = UpdateManager()) {
         
         self.deviceController = deviceController
         self.loginItemManager = loginItemManager
         self.persistence = persistence
+        self.updateManager = updateManager
     }
 }
 

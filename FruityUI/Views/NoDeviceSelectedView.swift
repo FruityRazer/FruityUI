@@ -10,11 +10,13 @@ import SwiftUI
 
 struct NoDeviceSelectedView: View {
     
+    @State var automaticallyCheckForUpdates: Bool = false
     @State var openAtLogin: Bool = false
     
     @EnvironmentObject var engine: Engine
     
-    func updateOpenAtLoginState() {
+    func updatePreferencesState() {
+        self.automaticallyCheckForUpdates = engine.updateManager.automaticallyCheckForUpdates
         self.openAtLogin = engine.loginItemManager.openAtLogin
     }
     
@@ -54,13 +56,33 @@ struct NoDeviceSelectedView: View {
                 HStack {
                     Spacer()
                     
-                    Toggle(isOn: $openAtLogin) {
-                        Text("Open at Login")
-                            .onTapGesture {
-                                self.engine.loginItemManager.toggle()
-                                self.updateOpenAtLoginState()
-                            }
-                    }.padding()
+                    VStack {
+                        Spacer()
+                        
+                        Toggle(isOn: $automaticallyCheckForUpdates) {
+                            Text("Automatically Check for Updates")
+                                .onTapGesture {
+                                    self.engine.updateManager.automaticallyCheckForUpdates.toggle()
+                                    self.updatePreferencesState()
+                                }
+                        }.padding()
+                        
+                        Toggle(isOn: $openAtLogin) {
+                            Text("Open at Login")
+                                .onTapGesture {
+                                    self.engine.loginItemManager.toggle()
+                                    self.updatePreferencesState()
+                                }
+                        }.padding()
+                        
+                        Spacer()
+                        
+                        Button("Check for Updates") {
+                            self.engine.updateManager.checkForUpdates()
+                        }
+                        
+                        Spacer()
+                    }
                     
                     Spacer()
                 }
@@ -70,7 +92,7 @@ struct NoDeviceSelectedView: View {
             Spacer()
         }
         .frame(minWidth: 700)
-        .onAppear(perform: self.updateOpenAtLoginState)
+        .onAppear(perform: self.updatePreferencesState)
     }
 }
 

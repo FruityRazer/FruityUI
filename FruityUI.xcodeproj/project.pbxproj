@@ -10,6 +10,9 @@
 		A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F7EA7244F7CB80035CB81 /* DeviceList.swift */; };
 		A010711124870F28007E3E45 /* Synapse2Handle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A010711024870F28007E3E45 /* Synapse2Handle+Extensions.swift */; };
 		A04620222478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04620212478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift */; };
+		A051B402260605D900A381F0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A051B400260605BD00A381F0 /* Sparkle.framework */; };
+		A051B403260605D900A381F0 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A051B400260605BD00A381F0 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A051B406260607BC00A381F0 /* UpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A051B405260607BC00A381F0 /* UpdateManager.swift */; };
 		A0569E4324774A8E00D98B41 /* DeviceConfigurationV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0569E4224774A8E00D98B41 /* DeviceConfigurationV2.swift */; };
 		A0692F10248D913E00296F7A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0692F0F248D913E00296F7A /* CloudKit.framework */; };
 		A075E5F6249840BB00D1B46F /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A075E5F5249840BB00D1B46F /* Bundle+Extensions.swift */; };
@@ -91,6 +94,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				A0E4BF492450C90700F0D77D /* FruityKit.framework in Embed Frameworks */,
+				A051B403260605D900A381F0 /* Sparkle.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +116,8 @@
 		A00F7EA9244F80F70035CB81 /* FruityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FruityKit.framework; path = Carthage/Build/Mac/FruityKit.framework; sourceTree = "<group>"; };
 		A010711024870F28007E3E45 /* Synapse2Handle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Synapse2Handle+Extensions.swift"; sourceTree = "<group>"; };
 		A04620212478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+Convenience.swift"; sourceTree = "<group>"; };
+		A051B400260605BD00A381F0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		A051B405260607BC00A381F0 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
 		A0569E4224774A8E00D98B41 /* DeviceConfigurationV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationV2.swift; sourceTree = "<group>"; };
 		A0692F0F248D913E00296F7A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A075E5F5249840BB00D1B46F /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0692F10248D913E00296F7A /* CloudKit.framework in Frameworks */,
+				A051B402260605D900A381F0 /* Sparkle.framework in Frameworks */,
 				A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */,
 				A0B1FDC9248EC1A600E07C79 /* ServiceManagement.framework in Frameworks */,
 				A0C036EC2498000000D44584 /* URLImage in Frameworks */,
@@ -214,6 +221,7 @@
 				A0692F0F248D913E00296F7A /* CloudKit.framework */,
 				A00F7EA9244F80F70035CB81 /* FruityKit.framework */,
 				A0B1FDC8248EC1A600E07C79 /* ServiceManagement.framework */,
+				A051B400260605BD00A381F0 /* Sparkle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -413,6 +421,7 @@
 				A0B1FDD1248EC32600E07C79 /* LoginItemManager.swift */,
 				A0DFECE7248C4E57000C01BC /* Persistence.swift */,
 				A0FB0066248B16DA003FF9C7 /* Router.swift */,
+				A051B405260607BC00A381F0 /* UpdateManager.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -601,6 +610,7 @@
 				A0BAE55E2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift in Sources */,
 				A0CD978C24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift in Sources */,
 				A0DFECE6248C442F000C01BC /* MacEditorTextView.swift in Sources */,
+				A051B406260607BC00A381F0 /* UpdateManager.swift in Sources */,
 				A04620222478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift in Sources */,
 				A0B1FDCC248EC22000E07C79 /* Notification+FruityUI.swift in Sources */,
 				A0CD978A24789BFA00BA56B0 /* DeviceConfigurationV2+CoreData.swift in Sources */,

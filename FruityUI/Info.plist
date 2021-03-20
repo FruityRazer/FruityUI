@@ -34,6 +34,10 @@
 	<string>NSApplication</string>
 	<key>NSSupportsAutomaticTermination</key>
 	<false/>
+	<key>SUPublicEDKey</key>
+	<string>i7l9xblkRRcqmn+FMBRbdAmmA03lWFAHka5N0Gx6DDc=</string>
+	<key>SUFeedURL</key>
+	<string>https://fruityrazer.github.io/fruityui-appcast.xml</string>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
 </dict>
