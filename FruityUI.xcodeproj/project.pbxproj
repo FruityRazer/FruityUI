@@ -24,6 +24,9 @@
 		A08D870A248D120C008CE599 /* USBWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08D8709248D120C008CE599 /* USBWatcher.swift */; };
 		A08DB388244F791D000534F2 /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08DB387244F791D000534F2 /* DeviceRow.swift */; };
 		A08E1F6A2496437D00D13454 /* Starlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E1F692496437D00D13454 /* Starlight.swift */; };
+		A0931A4A260612A60088EDD1 /* org.sparkle-project.InstallerConnection.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = A0931A41260612780088EDD1 /* org.sparkle-project.InstallerConnection.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0931A4B260612A60088EDD1 /* org.sparkle-project.InstallerLauncher.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = A0931A42260612780088EDD1 /* org.sparkle-project.InstallerLauncher.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0931A4C260612A60088EDD1 /* org.sparkle-project.InstallerStatus.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = A0931A43260612780088EDD1 /* org.sparkle-project.InstallerStatus.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0A777F524904C0B00F246D5 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A777F424904C0B00F246D5 /* URLs.swift */; };
 		A0A91F43248EDE9A000EFC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91F42248EDE9A000EFC9A /* AppDelegate.swift */; };
 		A0A91F45248EDE9B000EFC9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A91F44248EDE9B000EFC9A /* Assets.xcassets */; };
@@ -99,6 +102,18 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0931A49260612960088EDD1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				A0931A4A260612A60088EDD1 /* org.sparkle-project.InstallerConnection.xpc in CopyFiles */,
+				A0931A4B260612A60088EDD1 /* org.sparkle-project.InstallerLauncher.xpc in CopyFiles */,
+				A0931A4C260612A60088EDD1 /* org.sparkle-project.InstallerStatus.xpc in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0B1FDC6248EC17C00E07C79 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,6 +145,9 @@
 		A08DB387244F791D000534F2 /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
 		A08E1F692496437D00D13454 /* Starlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starlight.swift; sourceTree = "<group>"; };
 		A08E1F6B2496453900D13454 /* DataModel v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DataModel v2.xcdatamodel"; sourceTree = "<group>"; };
+		A0931A41260612780088EDD1 /* org.sparkle-project.InstallerConnection.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "org.sparkle-project.InstallerConnection.xpc"; sourceTree = "<group>"; };
+		A0931A42260612780088EDD1 /* org.sparkle-project.InstallerLauncher.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "org.sparkle-project.InstallerLauncher.xpc"; sourceTree = "<group>"; };
+		A0931A43260612780088EDD1 /* org.sparkle-project.InstallerStatus.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "org.sparkle-project.InstallerStatus.xpc"; sourceTree = "<group>"; };
 		A0A777F424904C0B00F246D5 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		A0A91F40248EDE9A000EFC9A /* FruityUILaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruityUILaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A91F42248EDE9A000EFC9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +292,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A0931A40260612680088EDD1 /* XPCServices */ = {
+			isa = PBXGroup;
+			children = (
+				A0931A41260612780088EDD1 /* org.sparkle-project.InstallerConnection.xpc */,
+				A0931A42260612780088EDD1 /* org.sparkle-project.InstallerLauncher.xpc */,
+				A0931A43260612780088EDD1 /* org.sparkle-project.InstallerStatus.xpc */,
+			);
+			path = XPCServices;
+			sourceTree = "<group>";
+		};
 		A0A91F41248EDE9A000EFC9A /* FruityUILaunchHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +321,7 @@
 				A0A91F41248EDE9A000EFC9A /* FruityUILaunchHelper */,
 				A0B1FDCA248EC21200E07C79 /* Shared */,
 				A0AC449E244CAF78003CEDB4 /* Products */,
+				A0931A40260612680088EDD1 /* XPCServices */,
 				A00F7E9D244F7AE10035CB81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -510,6 +539,7 @@
 				A0AC449B244CAF78003CEDB4 /* Resources */,
 				A00F7EA6244F7B990035CB81 /* Embed Frameworks */,
 				A0B1FDC6248EC17C00E07C79 /* CopyFiles */,
+				A0931A49260612960088EDD1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -852,7 +882,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -868,7 +898,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -883,7 +913,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -899,7 +929,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.4.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

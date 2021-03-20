@@ -37,7 +37,7 @@
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>https://fruityrazer.github.io/fruityui-appcast.xml</string>
+	<string>https://fruityrazer.github.io/fruityui/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>i7l9xblkRRcqmn+FMBRbdAmmA03lWFAHka5N0Gx6DDc=</string>
 </dict>
