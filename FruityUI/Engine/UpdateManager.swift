@@ -17,6 +17,7 @@ protocol UpdateManaging {
 }
 
 class UpdateManager: NSObject, UpdateManaging {
+    
     let userDriver: SPUUserDriver = SPUStandardUserDriver(hostBundle: Bundle.main, delegate: nil)
     let updater: SPUUpdater?
     
