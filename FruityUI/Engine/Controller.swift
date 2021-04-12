@@ -50,10 +50,10 @@ class Controller: Controlling {
         
         self.usbWatcher.delegate = self
         
-        NSWorkspace.shared.notificationCenter.addObserver(self,
-                                                          selector: #selector(receivedDidWakeNotification),
-                                                          name: NSWorkspace.didWakeNotification,
-                                                          object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(receivedDidWakeNotification),
+                                               name: NSWorkspace.didWakeNotification,
+                                               object: nil)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(forceUpdate),
