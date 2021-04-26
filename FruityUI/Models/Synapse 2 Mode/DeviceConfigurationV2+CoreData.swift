@@ -37,17 +37,25 @@ extension DeviceConfigurationV2 {
         case let .breath(color):
             configuration.mode = .breath
             configuration.color = color
+            
         case let .reactive(speed, color):
             configuration.mode = .reactive
             configuration.speed = speed
             configuration.color = color
+            
         case .spectrum:
             configuration.mode = .spectrum
-        case .starlight:
+            
+        case let .starlight(speed, color1, color2):
             configuration.mode = .starlight
+            configuration.speed = speed
+            configuration.color1 = color1
+            configuration.color2 = color2
+            
         case let .static(color):
             configuration.mode = .static
             configuration.color = color
+            
         case let .wave(direction):
             configuration.mode = .wave
             configuration.direction = direction.coreDataDirection

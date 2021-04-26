@@ -14,15 +14,29 @@ extension DeviceConfigurationV2 {
     var synapseMode: Synapse2Handle.Mode {
         switch mode {
         case .breath:
-            return .breath(color: color!)
+            let c = color ?? .white
+            
+            return .breath(color: c)
+            
         case .reactive:
-            return .reactive(speed: Int(speed), color: color!)
+            let c = color ?? .white
+            
+            return .reactive(speed: Int(speed), color: c)
+            
         case .spectrum:
             return .spectrum
+            
         case .starlight:
-            return .starlight(speed: Int(speed), color1: color1!, color2: color2!)
+            let c1 = color1 ?? .white
+            let c2 = color2 ?? .white
+            
+            return .starlight(speed: Int(speed), color1: c1, color2: c2)
+            
         case .static:
-            return .static(color: color!)
+            let c = color ?? .white
+            
+            return .static(color: c)
+            
         case .wave:
             return .wave(direction: direction.fruityKitDirection)
         }
