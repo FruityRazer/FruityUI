@@ -13,15 +13,26 @@ struct DeviceRow: View {
     
     let device: Device
     
+    var defaultImage: some View {
+        URLImage(url: URLs.defaultImage) {
+            $0
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+        }
+    }
+    
     var body: some View {
         HStack(alignment: .center) {
-            URLImage(device.imageURL) {
-                $0.image
+            URLImage(
+                url: device.imageURL,
+                failure: { _, _ in defaultImage }
+            ) {
+                $0
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .clipped()
             }
                 .frame(width: 50, height: 50, alignment: .trailing)
+            
             VStack(alignment: .leading) {
                 Spacer()
                 Text(device.fullName)

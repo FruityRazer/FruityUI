@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>atheris_receiver</key>
+	<string>https://assets.razerzone.com/eeimages/support/products/1234/1234_atheris.png</string>
 	<key>basilisk</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1241/1241_basilisk.png</string>
 	<key>huntsman</key>

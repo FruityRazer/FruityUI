@@ -6,7 +6,7 @@
 //  Copyright © 2020 Eduardo Almeida. All rights reserved.
 //
 
-import ColorPicker
+import ColorPickerRing
 import FruityKit
 import SwiftUI
 

@@ -16,7 +16,8 @@ struct DeviceList: View {
     @Binding private var selectedDevice: VersionedRazerDevice?
     @State private var filter: FilterOption = .connected
     
-    init(devices: [VersionedRazerDevice] = FruityRazer.sortedGroupedDevices(onlyConnected: false), selectedDevice: Binding<VersionedRazerDevice?> = .constant(nil)) {
+    init(devices: [VersionedRazerDevice] = FruityRazer.sortedGroupedDevices(onlyConnected: false),
+         selectedDevice: Binding<VersionedRazerDevice?> = .constant(nil)) {
         self.devices = devices
         self._selectedDevice = selectedDevice
     }

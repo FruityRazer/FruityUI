@@ -6,7 +6,7 @@
 //  Copyright © 2020 Eduardo Almeida. All rights reserved.
 //
 
-import ColorPicker
+import ColorPickerRing
 import FruityKit
 import SwiftUI
 
@@ -86,7 +86,7 @@ struct CompleteColorPicker: View {
             }
             
             if selection == .custom {
-                ColorPicker(color: customColorBinding, strokeWidth: 30)
+                ColorPickerRing(color: customColorBinding, strokeWidth: 30)
                     .frame(width: 300, height: 300, alignment: .center)
                     .padding()
             }

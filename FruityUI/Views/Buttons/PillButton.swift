@@ -39,6 +39,6 @@ struct PillButton: View {
 struct PillButton_Previews: PreviewProvider {
     
     static var previews: some View {
-        CircularButton()
+        PillButton()
     }
 }

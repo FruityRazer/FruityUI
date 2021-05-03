@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A000272C26400C2B0083082F /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = A000272B26400C2B0083082F /* URLImage */; };
+		A000272E26400EE20083082F /* ColorPickerRing in Frameworks */ = {isa = PBXBuildFile; productRef = A000272D26400EE20083082F /* ColorPickerRing */; };
 		A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F7EA7244F7CB80035CB81 /* DeviceList.swift */; };
 		A010711124870F28007E3E45 /* Synapse2Handle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A010711024870F28007E3E45 /* Synapse2Handle+Extensions.swift */; };
 		A04620222478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04620212478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift */; };
@@ -48,7 +50,6 @@
 		A0BAE55E2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE55D2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift */; };
 		A0BAE5602479F83300B82FBE /* Synapse2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE55F2479F83300B82FBE /* Synapse2Controller.swift */; };
 		A0BAE5622479F83E00B82FBE /* DeviceControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE5612479F83E00B82FBE /* DeviceControlling.swift */; };
-		A0C036EC2498000000D44584 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = A0C036EB2498000000D44584 /* URLImage */; };
 		A0C036EE249820BE00D44584 /* DestructiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C036ED249820BE00D44584 /* DestructiveButton.swift */; };
 		A0C036F02498283600D44584 /* FruityRazer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C036EF2498283600D44584 /* FruityRazer+Extensions.swift */; };
 		A0C036F22498358C00D44584 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C036F12498358C00D44584 /* CircularButton.swift */; };
@@ -81,7 +82,6 @@
 		A0FB0065248B14C1003FF9C7 /* StatusBarItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0064248B14C1003FF9C7 /* StatusBarItemController.swift */; };
 		A0FB0067248B16DA003FF9C7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0066248B16DA003FF9C7 /* Router.swift */; };
 		A0FBA0F12466B7420002EB75 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0F02466B7420002EB75 /* Reactive.swift */; };
-		A0FBA0F42466B8340002EB75 /* ColorPicker in Frameworks */ = {isa = PBXBuildFile; productRef = A0FBA0F32466B8340002EB75 /* ColorPicker */; };
 		A0FBA0F62466B9950002EB75 /* CompleteColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0F52466B9950002EB75 /* CompleteColorPicker.swift */; };
 		A0FBA0FA2466BD740002EB75 /* Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0F92466BD740002EB75 /* Static.swift */; };
 		A0FBA0FC2466C7D00002EB75 /* Breath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0FB2466C7D00002EB75 /* Breath.swift */; };
@@ -225,8 +225,8 @@
 				A051B402260605D900A381F0 /* Sparkle.framework in Frameworks */,
 				A0E4BF482450C90700F0D77D /* FruityKit.framework in Frameworks */,
 				A0B1FDC9248EC1A600E07C79 /* ServiceManagement.framework in Frameworks */,
-				A0C036EC2498000000D44584 /* URLImage in Frameworks */,
-				A0FBA0F42466B8340002EB75 /* ColorPicker in Frameworks */,
+				A000272E26400EE20083082F /* ColorPickerRing in Frameworks */,
+				A000272C26400C2B0083082F /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,19 +265,12 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		A087405A246AF798008DFBA4 /* Synapse 3 Mode */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Synapse 3 Mode";
-			sourceTree = "<group>";
-		};
 		A08DB389244F7921000534F2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A075E5F92498434500D1B46F /* Buttons */,
 				A0EF69C82466191800D77297 /* Synapse 2 Mode */,
-				A087405A246AF798008DFBA4 /* Synapse 3 Mode */,
+				A0EB3C7C2640033100DA34CE /* Synapse 3 Mode */,
 				A0FBA0F52466B9950002EB75 /* CompleteColorPicker.swift */,
 				A0AC44A2244CAF78003CEDB4 /* ContentView.swift */,
 				A0DFECE0248BA60D000C01BC /* DeviceConfigurationView.swift */,
@@ -441,6 +434,13 @@
 			path = Stubs;
 			sourceTree = "<group>";
 		};
+		A0EB3C7C2640033100DA34CE /* Synapse 3 Mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Synapse 3 Mode";
+			sourceTree = "<group>";
+		};
 		A0EF69AC2466037000D77297 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,8 +547,8 @@
 			);
 			name = FruityUI;
 			packageProductDependencies = (
-				A0FBA0F32466B8340002EB75 /* ColorPicker */,
-				A0C036EB2498000000D44584 /* URLImage */,
+				A000272B26400C2B0083082F /* URLImage */,
+				A000272D26400EE20083082F /* ColorPickerRing */,
 			);
 			productName = FruityUI;
 			productReference = A0AC449D244CAF78003CEDB4 /* FruityUI.app */;
@@ -583,7 +583,7 @@
 			mainGroup = A0AC4494244CAF78003CEDB4;
 			packageReferences = (
 				A0FBA0F22466B8340002EB75 /* XCRemoteSwiftPackageReference "ColorPicker" */,
-				A0C036EA2498000000D44584 /* XCRemoteSwiftPackageReference "url-image" */,
+				A000272A26400C2B0083082F /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = A0AC449E244CAF78003CEDB4 /* Products */;
 			projectDirPath = "";
@@ -969,12 +969,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A0C036EA2498000000D44584 /* XCRemoteSwiftPackageReference "url-image" */ = {
+		A000272A26400C2B0083082F /* XCRemoteSwiftPackageReference "url-image" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.15;
+				minimumVersion = 2.2.5;
 			};
 		};
 		A0FBA0F22466B8340002EB75 /* XCRemoteSwiftPackageReference "ColorPicker" */ = {
@@ -988,15 +988,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A0C036EB2498000000D44584 /* URLImage */ = {
+		A000272B26400C2B0083082F /* URLImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A0C036EA2498000000D44584 /* XCRemoteSwiftPackageReference "url-image" */;
+			package = A000272A26400C2B0083082F /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
 		};
-		A0FBA0F32466B8340002EB75 /* ColorPicker */ = {
+		A000272D26400EE20083082F /* ColorPickerRing */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A0FBA0F22466B8340002EB75 /* XCRemoteSwiftPackageReference "ColorPicker" */;
-			productName = ColorPicker;
+			productName = ColorPickerRing;
 		};
 /* End XCSwiftPackageProductDependency section */
 

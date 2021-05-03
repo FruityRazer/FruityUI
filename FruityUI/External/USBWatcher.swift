@@ -10,7 +10,7 @@ import Foundation
 import IOKit
 import IOKit.usb
 
-public protocol USBWatcherDelegate: class {
+public protocol USBWatcherDelegate: AnyObject {
     
     /// Called on the main thread when a device is connected.
     func deviceAdded(_ device: io_object_t)
