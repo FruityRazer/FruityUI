@@ -16,6 +16,11 @@ struct DeviceList: View {
     @Binding private var selectedDevice: VersionedRazerDevice?
     @State private var filter: FilterOption = .connected
     
+    //  On macOS 11.3+, the first draw of the list has the rows with the wrong height.
+    //  Forcing a re-draw is hacky and messy, but fixes it.
+    
+    @State private var shouldRedraw: Bool = true
+    
     init(devices: [VersionedRazerDevice] = FruityRazer.sortedGroupedDevices(onlyConnected: false),
          selectedDevice: Binding<VersionedRazerDevice?> = .constant(nil)) {
         self.devices = devices
@@ -26,11 +31,13 @@ struct DeviceList: View {
         VStack {
             Filter(selected: self.$filter).padding(EdgeInsets(top: 5, leading: 5, bottom: 0, trailing: 5))
             List(selection: self.$selectedDevice) {
-                ForEach(self.devices.filter { (filter == .connected ? $0.connected : true) }, id: \.shortName) { device in
+                ForEach(self.devices.filter { shouldRedraw == false && (filter == .connected ? $0.connected : true) }, id: \.shortName) { device in
                     DeviceRow(device: device).tag(device)
                 }
             }
-        }.frame(minWidth: 225, maxWidth: 300, minHeight: 450)
+        }
+        .frame(minWidth: 225, maxWidth: 300, minHeight: 450)
+        .onAppear { shouldRedraw = false }
     }
 }
 
