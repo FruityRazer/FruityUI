@@ -12,10 +12,12 @@ import CoreData
 @objc(DeviceConfigurationV3)
 class DeviceConfigurationV3: NSManagedObject {
     
+    static let EntityName = "DeviceConfigurationV3"
+    
     @NSManaged var colorsRaw: [[[UInt8]]]
     @NSManaged var shortName: String
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<DeviceConfigurationV3> {
-        return NSFetchRequest<DeviceConfigurationV3>(entityName: "DeviceConfigurationV3")
+        return NSFetchRequest<DeviceConfigurationV3>(entityName: EntityName)
     }
 }

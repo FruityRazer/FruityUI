@@ -19,7 +19,7 @@ extension DeviceConfigurationV2 {
         
         let managedContext = appDelegate.persistentContainer.viewContext
 
-        let entity = NSEntityDescription.entity(forEntityName: "DeviceConfigurationV2", in: managedContext)!
+        let entity = NSEntityDescription.entity(forEntityName: EntityName, in: managedContext)!
         
         let deviceConfiguration = NSManagedObject(entity: entity, insertInto: managedContext)
         
@@ -71,7 +71,7 @@ extension DeviceConfigurationV2 {
             return []
         }
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DeviceConfigurationV2")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: EntityName)
         
         do {
             return try managedContext.fetch(fetchRequest) as! [DeviceConfigurationV2]
@@ -87,7 +87,7 @@ extension DeviceConfigurationV2 {
             return nil
         }
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DeviceConfigurationV2")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: EntityName)
         
         fetchRequest.predicate = NSPredicate(format: "shortName == %@", shortName)
         
@@ -109,7 +109,7 @@ extension DeviceConfigurationV2 {
             return
         }
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DeviceConfigurationV2")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: EntityName)
         
         fetchRequest.predicate = NSPredicate(format: "shortName == %@", shortName)
         
