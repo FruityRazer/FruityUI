@@ -19,7 +19,7 @@ protocol UpdateManaging {
 class UpdateManager: NSObject, UpdateManaging {
     
     let userDriver: SPUUserDriver = SPUStandardUserDriver(hostBundle: Bundle.main, delegate: nil)
-    let updater: SPUUpdater?
+    let updater: SPUUpdater
     
     override init() {
         self.updater = SPUUpdater(hostBundle: Bundle.main,
@@ -28,7 +28,7 @@ class UpdateManager: NSObject, UpdateManaging {
                                   delegate: nil)
         
         do {
-            try self.updater?.start()
+            try self.updater.start()
         } catch {
             assertionFailure("Failed to initalize updater: \(error)")
         }
@@ -36,22 +36,17 @@ class UpdateManager: NSObject, UpdateManaging {
     
     var automaticallyCheckForUpdates: Bool {
         get {
-            updater?.automaticallyChecksForUpdates ?? false
+            updater.automaticallyChecksForUpdates
         }
         
         set {
-            updater?.automaticallyChecksForUpdates = newValue
+            updater.automaticallyChecksForUpdates = newValue
             
             UserDefaults.standard.synchronize()
         }
     }
     
     func checkForUpdates() {
-        guard let updater = updater else {
-            assertionFailure("No updater set!")
-            return
-        }
-        
         print("Checking for updates at \(updater.feedURL)")
         
         updater.checkForUpdates()
