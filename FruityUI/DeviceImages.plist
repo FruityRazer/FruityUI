@@ -172,10 +172,6 @@
 	<string>https://assets.razerzone.com/eeimages/support/products/736/736_blade_pro_2016.png</string>
 	<key>blade_pro_2017</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1200/1200_blade_pro_2017.png</string>
-	<key>huntsman_elite_hw</key>
-	<string></string>
-	<key>huntsman_hw</key>
-	<string></string>
 	<key>blackwidow_elite</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1398/1398_blackwidowelite.png</string>
 	<key>cynosa_chroma</key>
@@ -208,8 +204,6 @@
 	<string></string>
 	<key>blackwidow_2019</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1501/1501-blackwidow2019.png</string>
-	<key>huntsman_te_hw</key>
-	<string></string>
 	<key>blade_mid_2019_mercury</key>
 	<string>https://assets2.razerzone.com/images/blade-15/shop/blade15-mercury-1.jpg</string>
 	<key>blade_2019</key>
@@ -232,8 +226,6 @@
 	<string>https://assets.razerzone.com/eeimages/support/products/1672/ornata-v2.png</string>
 	<key>cynosa_v2</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1694/1694-2.png</string>
-	<key>mamba_hyperflux_hw</key>
-	<string></string>
 	<key>core</key>
 	<string><https://assets.razerzone.com/eeimages/support/products/684/684_razer_core.png/string>
 	<key>nommo_chroma</key>
@@ -248,26 +240,14 @@
 	<string>https://assets.razerzone.com/eeimages/support/products/1395/1395_goliathusextended.png</string>
 	<key>chroma_mug</key>
 	<string>https://assets2.razerzone.com/images/mug-holder/e64e507b73e61c44789d996065fd9645-1500x1000mug_01.jpg</string>
-	<key>base_station_hw</key>
-	<string></string>
 	<key>chroma_hdk</key>
 	<string>https://assets2.razerzone.com/images/chromahdk2017/788b689d471fedbc0c5a175592316657-gallery-08.jpg</string>
 	<key>kraken_kitty</key>
 	<string>https://assets2.razerzone.com/images/pnx.assets/1c503aa176bc82d999299aba0d6c7d2c/kraken-kitty-quartz.png</string>
 	<key>mouse_bungee_v3_chroma</key>
 	<string>https://assets2.razerzone.com/images/pnx.assets/03970e1bd220f3d2985c5e0060fb3bbf/razer-mouse-bungee-v3-chroma.png</string>
-	<key>mamba_hyperflux_sw</key>
-	<string>https://assets.razerzone.com/eeimages/support/products/594/594_firefly_500x500.png</string>
-	<key>huntsman_elite_sw</key>
-	<string></string>
-	<key>huntsman_te_sw</key>
-	<string></string>
-	<key>huntsman_sw</key>
-	<string></string>
 	<key>huntsman_mini</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1689/1689-huntsmanmini.png</string>
-	<key>base_station_sw</key>
-	<string></string>
 	<key>huntsman</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1360/1360_huntsman-3.png</string>
 	<key>huntsman_elite</key>
