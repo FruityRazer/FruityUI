@@ -32,22 +32,14 @@
 	<string>https://assets.razerzone.com/eeimages/support/products/227/227_razer_naga_2014.png</string>
 	<key>naga_hex</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/23/23_naga_hex.png</string>
-	<key>abyssus</key>
-	<string></string>
 	<key>deathadder_chroma</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/278/278_deathadder_chroma.png</string>
-	<key>mamba_wired</key>
-	<string></string>
 	<key>mamba_wireless</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1404/1404_mamba_wireless.png</string>
 	<key>mamba_wired_te</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/606/606_mambate_500x500.png</string>
-	<key>orochi_chroma</key>
-	<string></string>
 	<key>diamondback_chroma</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/613/613_diamondback.png</string>
-	<key>deathadder_2000</key>
-	<string></string>
 	<key>naga_hex_v2</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/715/715_nagahexv2_500x500.png</string>
 	<key>naga_hex_chroma</key>
@@ -114,8 +106,6 @@
 	<string>https://assets.razerzone.com/eeimages/support/products/1634/vipermini.png</string>
 	<key>deathadder_v2_mini</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1692/deathadder-v2-mini.png</string>
-	<key>naga_lh_2020</key>
-	<string></string>
 	<key>blackwidow_ultimate_2012</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/563/563_blackwidow_ultimate_classic.png</string>
 	<key>blackwidow_stealth_edition</key>
@@ -188,10 +178,6 @@
 	<string>https://assets.razerzone.com/eeimages/support/products/1418/1418_blade_2018__base.png</string>
 	<key>blade_pro_2019</key>
 	<string>https://assets2.razerzone.com/images/razer-blade-pro-17/razer-blade-pro-17-2019-OGimage-1200x630.jpg</string>
-	<key>bladewidow_lite</key>
-	<string></string>
-	<key>bladewidow_essential</key>
-	<string></string>
 	<key>blade_stealth_2019</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1475/1475_bladestealth13(2019).png</string>
 	<key>blade_2019_adv</key>
@@ -200,20 +186,14 @@
 	<string>https://assets.razerzone.com/eeimages/support/products/1518/1518_blade15_mid2019-base.png</string>
 	<key>cynosa_lite</key>
 	<string>https://assets2.razerzone.com/images/og-image/cynosa-lite-OGimage.jpg</string>
-	<key>blade_2019_mercury</key>
-	<string></string>
 	<key>blackwidow_2019</key>
 	<string>https://assets.razerzone.com/eeimages/support/products/1501/1501-blackwidow2019.png</string>
 	<key>blade_mid_2019_mercury</key>
 	<string>https://assets2.razerzone.com/images/blade-15/shop/blade15-mercury-1.jpg</string>
-	<key>blade_2019</key>
-	<string></string>
 	<key>blade_stealth_late_2019</key>
 	<string>https://assets2.razerzone.com/images/blade-stealth-13/shop/stealth-l2p-1.jpg</string>
 	<key>blade_pro_late2019</key>
 	<string>https://assets2.razerzone.com/images/razer-blade-pro-17/razer-blade-pro-17-2019-OGimage-1200x630.jpg</string>
-	<key>blade_studio_2019</key>
-	<string></string>
 	<key>blade_stealth_early_2020</key>
 	<string>https://assets2.razerzone.com/images/blade-stealth-13/shop/sl25p-fhd-4.jpg</string>
 	<key>blade_blade_15_adv_2020</key>
