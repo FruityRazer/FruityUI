@@ -23,7 +23,7 @@ extension DeviceConfigurationViewV2 {
         let engine: Engine
         
         @Published var selectedMode: Synapse2ModeBasic = .wave
-        @Published var synapseMode: Synapse2Handle.Mode? = .wave(direction: .right)
+        @Published var synapseMode: Synapse2Handle.Mode? = .wave(speed: .default, direction: .right)
         
         @Published var showingError = false
         
@@ -98,15 +98,15 @@ extension DeviceConfigurationViewV2 {
                 case .breath:
                     synapseMode = .breath(color: white)
                 case .reactive:
-                    synapseMode = .reactive(speed: 1, color: white)
+                    synapseMode = .reactive(speed: .default, color: white)
                 case .spectrum:
                     synapseMode = .spectrum
                 case .starlight:
-                    synapseMode = .starlight(speed: 1, color1: white, color2: white)
+                    synapseMode = .starlight(speed: .default, color1: white, color2: white)
                 case .static:
                     synapseMode = .static(color: white)
                 case .wave:
-                    synapseMode = .wave(direction: .right)
+                    synapseMode = .wave(speed: .default, direction: .right)
                 }
             }
         }

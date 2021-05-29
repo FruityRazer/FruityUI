@@ -21,7 +21,7 @@ extension DeviceConfigurationV2 {
         case .reactive:
             let c = color ?? .white
             
-            return .reactive(speed: Int(speed), color: c)
+            return .reactive(speed: Speed(rawValue: speed) ?? .default, color: c)
             
         case .spectrum:
             return .spectrum
@@ -30,7 +30,7 @@ extension DeviceConfigurationV2 {
             let c1 = color1 ?? .white
             let c2 = color2 ?? .white
             
-            return .starlight(speed: Int(speed), color1: c1, color2: c2)
+            return .starlight(speed: Speed(rawValue: speed) ?? .default, color1: c1, color2: c2)
             
         case .static:
             let c = color ?? .white
@@ -38,7 +38,7 @@ extension DeviceConfigurationV2 {
             return .static(color: c)
             
         case .wave:
-            return .wave(direction: direction.fruityKitDirection)
+            return .wave(speed: Speed(rawValue: speed) ?? .default, direction: direction.fruityKitDirection)
         }
     }
 }

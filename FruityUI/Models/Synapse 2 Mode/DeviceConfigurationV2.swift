@@ -13,7 +13,7 @@ import FruityKit
 @objc(DeviceConfigurationV2)
 class DeviceConfigurationV2: NSManagedObject {
     
-    static private let EntityName = "DeviceConfigurationV2"
+    static let EntityName = "DeviceConfigurationV2"
     
     @NSManaged private var colorRaw: [Int]?
     @NSManaged private var color2Raw: [Int]?

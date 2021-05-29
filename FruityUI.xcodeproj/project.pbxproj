@@ -29,6 +29,7 @@
 		A0931A4A260612A60088EDD1 /* org.sparkle-project.InstallerConnection.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = A0931A41260612780088EDD1 /* org.sparkle-project.InstallerConnection.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0931A4B260612A60088EDD1 /* org.sparkle-project.InstallerLauncher.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = A0931A42260612780088EDD1 /* org.sparkle-project.InstallerLauncher.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0931A4C260612A60088EDD1 /* org.sparkle-project.InstallerStatus.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = A0931A43260612780088EDD1 /* org.sparkle-project.InstallerStatus.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0A2E5262662CCC90025E330 /* Speed+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2E5252662CCC90025E330 /* Speed+Extensions.swift */; };
 		A0A777F524904C0B00F246D5 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A777F424904C0B00F246D5 /* URLs.swift */; };
 		A0A91F43248EDE9A000EFC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A91F42248EDE9A000EFC9A /* AppDelegate.swift */; };
 		A0A91F45248EDE9B000EFC9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0A91F44248EDE9B000EFC9A /* Assets.xcassets */; };
@@ -148,6 +149,7 @@
 		A0931A41260612780088EDD1 /* org.sparkle-project.InstallerConnection.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "org.sparkle-project.InstallerConnection.xpc"; sourceTree = "<group>"; };
 		A0931A42260612780088EDD1 /* org.sparkle-project.InstallerLauncher.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "org.sparkle-project.InstallerLauncher.xpc"; sourceTree = "<group>"; };
 		A0931A43260612780088EDD1 /* org.sparkle-project.InstallerStatus.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "org.sparkle-project.InstallerStatus.xpc"; sourceTree = "<group>"; };
+		A0A2E5252662CCC90025E330 /* Speed+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Speed+Extensions.swift"; sourceTree = "<group>"; };
 		A0A777F424904C0B00F246D5 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		A0A91F40248EDE9A000EFC9A /* FruityUILaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruityUILaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A91F42248EDE9A000EFC9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				A0EF69BA24660CFB00D77297 /* RazerDevice+Device.swift */,
 				A0BAE55D2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift */,
 				A010711024870F28007E3E45 /* Synapse2Handle+Extensions.swift */,
+				A0A2E5252662CCC90025E330 /* Speed+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -561,7 +564,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Eduardo Almeida";
 				TargetAttributes = {
 					A0A91F3F248EDE9A000EFC9A = {
@@ -675,6 +678,7 @@
 				A0BAE5602479F83300B82FBE /* Synapse2Controller.swift in Sources */,
 				A0EF69AF2466038C00D77297 /* DataModel.xcdatamodeld in Sources */,
 				A0FB0067248B16DA003FF9C7 /* Router.swift in Sources */,
+				A0A2E5262662CCC90025E330 /* Speed+Extensions.swift in Sources */,
 				A0FBA0FA2466BD740002EB75 /* Static.swift in Sources */,
 				A0FBA0FE2466C88D0002EB75 /* Device.swift in Sources */,
 				A0BAE5622479F83E00B82FBE /* DeviceControlling.swift in Sources */,
@@ -882,7 +886,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -898,7 +902,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -913,7 +917,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_ASSET_PATHS = "\"FruityUI/Preview Content\"";
 				DEVELOPMENT_TEAM = 3D7R27DBRZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -929,7 +933,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 1.4.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = io.edr.fruityui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

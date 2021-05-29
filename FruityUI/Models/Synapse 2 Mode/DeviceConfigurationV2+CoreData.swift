@@ -40,7 +40,7 @@ extension DeviceConfigurationV2 {
             
         case let .reactive(speed, color):
             configuration.mode = .reactive
-            configuration.speed = speed
+            configuration.speed = speed.rawValue
             configuration.color = color
             
         case .spectrum:
@@ -48,7 +48,7 @@ extension DeviceConfigurationV2 {
             
         case let .starlight(speed, color1, color2):
             configuration.mode = .starlight
-            configuration.speed = speed
+            configuration.speed = speed.rawValue
             configuration.color1 = color1
             configuration.color2 = color2
             
@@ -56,8 +56,9 @@ extension DeviceConfigurationV2 {
             configuration.mode = .static
             configuration.color = color
             
-        case let .wave(direction):
+        case let .wave(speed, direction):
             configuration.mode = .wave
+            configuration.speed = speed.rawValue
             configuration.direction = direction.coreDataDirection
         }
         

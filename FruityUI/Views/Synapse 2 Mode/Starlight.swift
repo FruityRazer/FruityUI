@@ -12,7 +12,7 @@ import SwiftUI
 
 struct Starlight: View {
     
-    @State var speed: Int
+    @State var speed: Speed
     @State var color1: FruityKit.Color?
     @State var color2: FruityKit.Color?
     
@@ -26,7 +26,7 @@ struct Starlight: View {
             self._color1 = State(initialValue: color1)
             self._color2 = State(initialValue: color2)
         } else {
-            self._speed = State(initialValue: 1)
+            self._speed = State(initialValue: .default)
             self._color1 = State(initialValue: nil)
             self._color2 = State(initialValue: nil)
         }
@@ -41,11 +41,11 @@ struct Starlight: View {
     }
     
     var body: some View {
-        let speedFieldBinding = Binding<String>(
-            get: { String(self.speed) },
+        let speedBinding = Binding<Double>(
+            get: { Double(self.speed.uiValue) },
             set: {
-                guard let speed = Int($0) else {
-                    self.mode = nil
+                guard let speed = Speed(fromUIValue: Int($0)) else {
+                    assertionFailure("Speed value out of bounds.")
                     
                     return
                 }
@@ -76,7 +76,7 @@ struct Starlight: View {
         
         return VStack {
             GroupBox(label: Text("Speed")) {
-                TextField("", text: speedFieldBinding)
+                Slider(value: speedBinding, in: 0...8, step: 1) { Text("Speed") }
             }
             
             GroupBox(label: Text("Color (1)")) {

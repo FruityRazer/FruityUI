@@ -12,7 +12,7 @@ import SwiftUI
 
 struct Reactive: View {
     
-    @State var speed: Int
+    @State var speed: Speed
     @State var color: FruityKit.Color?
     
     @Binding var mode: Synapse2Handle.Mode?
@@ -24,7 +24,7 @@ struct Reactive: View {
             self._speed = State(initialValue: speed)
             self._color = State(initialValue: color)
         } else {
-            self._speed = State(initialValue: 1)
+            self._speed = State(initialValue: .default)
             self._color = State(initialValue: nil)
         }
     }
@@ -38,11 +38,11 @@ struct Reactive: View {
     }
     
     var body: some View {
-        let speedFieldBinding = Binding<String>(
-            get: { String(self.speed) },
+        let speedBinding = Binding<Double>(
+            get: { Double(self.speed.uiValue) },
             set: {
-                guard let speed = Int($0) else {
-                    self.mode = nil
+                guard let speed = Speed(fromUIValue: Int($0)) else {
+                    assertionFailure("Speed value out of bounds.")
                     
                     return
                 }
@@ -64,7 +64,7 @@ struct Reactive: View {
         
         return VStack {
             GroupBox(label: Text("Speed")) {
-                TextField("", text: speedFieldBinding)
+                Slider(value: speedBinding, in: 0...8, step: 1) { Text("Speed") }
             }
             
             GroupBox(label: Text("Color")) {
