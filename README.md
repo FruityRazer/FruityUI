@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300" height="300" src="https://github.com/FruityRazer/FruityUI/raw/master/GitHub%20Resources/Snake.png">
+  <img width="300" height="300" src="https://github.com/FruityRazer/FruityUI/raw/main/GitHub%20Resources/Snake.png">
 </p>
 
 # FruityUI
@@ -15,7 +15,7 @@ Please note that since this app uses SwiftUI, it only supports macOS 10.15 and u
 ## Screenshots
 
 <p align="center">
-  <img width="556" height="369" src="https://github.com/FruityRazer/FruityUI/raw/master/GitHub%20Resources/Main%20Window.png">
+  <img width="556" height="369" src="https://github.com/FruityRazer/FruityUI/raw/main/GitHub%20Resources/Main%20Window.png">
 </p>
 
 ## Development
