@@ -79,6 +79,7 @@
 		A0EF69C524660FB300D77297 /* DeviceImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0EF69C424660FB300D77297 /* DeviceImages.plist */; };
 		A0EF69C72466165A00D77297 /* DeviceConfigurationViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69C62466165A00D77297 /* DeviceConfigurationViewV2.swift */; };
 		A0EF69CA2466192400D77297 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF69C92466192400D77297 /* Wave.swift */; };
+		A0F81B2826652EE600D789FD /* SpeedSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F81B2726652EE600D789FD /* SpeedSlider.swift */; };
 		A0FB0062248B1247003FF9C7 /* ClosableWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0061248B1247003FF9C7 /* ClosableWindow.swift */; };
 		A0FB0065248B14C1003FF9C7 /* StatusBarItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0064248B14C1003FF9C7 /* StatusBarItemController.swift */; };
 		A0FB0067248B16DA003FF9C7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB0066248B16DA003FF9C7 /* Router.swift */; };
@@ -200,6 +201,7 @@
 		A0EF69C424660FB300D77297 /* DeviceImages.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DeviceImages.plist; sourceTree = "<group>"; };
 		A0EF69C62466165A00D77297 /* DeviceConfigurationViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConfigurationViewV2.swift; sourceTree = "<group>"; };
 		A0EF69C92466192400D77297 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		A0F81B2726652EE600D789FD /* SpeedSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedSlider.swift; sourceTree = "<group>"; };
 		A0FB0061248B1247003FF9C7 /* ClosableWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosableWindow.swift; sourceTree = "<group>"; };
 		A0FB0064248B14C1003FF9C7 /* StatusBarItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarItemController.swift; sourceTree = "<group>"; };
 		A0FB0066248B16DA003FF9C7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 		A0EF69C82466191800D77297 /* Synapse 2 Mode */ = {
 			isa = PBXGroup;
 			children = (
+				A0F81B2926652F3100D789FD /* Components */,
 				A0FBA0FB2466C7D00002EB75 /* Breath.swift */,
 				A0FBA0F02466B7420002EB75 /* Reactive.swift */,
 				A0FBA0FF2466CEC00002EB75 /* Spectrum.swift */,
@@ -503,6 +506,14 @@
 				A0EF69C92466192400D77297 /* Wave.swift */,
 			);
 			path = "Synapse 2 Mode";
+			sourceTree = "<group>";
+		};
+		A0F81B2926652F3100D789FD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A0F81B2726652EE600D789FD /* SpeedSlider.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		A0FB0063248B14B3003FF9C7 /* Controllers */ = {
@@ -672,6 +683,7 @@
 				A0EF69B32466044300D77297 /* Synapse3Controller.swift in Sources */,
 				A0DFECDF248BA3BC000C01BC /* DeviceConfigurationVersionPicker.swift in Sources */,
 				A0BAE55A2479E8C800B82FBE /* DeviceConfigurationV2Direction.swift in Sources */,
+				A0F81B2826652EE600D789FD /* SpeedSlider.swift in Sources */,
 				A0E4BF512450CDE400F0D77D /* DeviceConfigurationViewV3.swift in Sources */,
 				A0E4BF552450D09600F0D77D /* Filter.swift in Sources */,
 				A0B1FDD2248EC32600E07C79 /* LoginItemManager.swift in Sources */,

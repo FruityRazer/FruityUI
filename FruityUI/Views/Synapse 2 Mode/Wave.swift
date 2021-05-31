@@ -26,13 +26,16 @@ enum WaveMode: String, CaseIterable {
 
 struct Wave: View {
     
+    let speedSupported: Bool
+    
     @State var direction: WaveMode
     @State var speed: Speed
     
     @Binding var mode: Synapse2Handle.Mode?
     
-    init(mode: Binding<Synapse2Handle.Mode?>) {
+    init(mode: Binding<Synapse2Handle.Mode?>, speedSupported: Bool) {
         self._mode = mode
+        self.speedSupported = speedSupported
         
         if let unwrappedMode = mode.wrappedValue, case let Synapse2Handle.Mode.wave(speed, direction) = unwrappedMode {
             self._speed = State(initialValue: speed)
@@ -73,13 +76,10 @@ struct Wave: View {
         )
         
         return VStack {
-            GroupBox(label: Text("Speed")) {
-                HStack {
-                    Text("🐢")
-                    Slider(value: speedBinding, in: 0...8, step: 1)
-                    Text("🐎")
+            if speedSupported {
+                GroupBox(label: Text("Speed")) {
+                    SpeedSlider(speed: speedBinding)
                 }
-                
             }
             
             GroupBox(label: Text("Direction")) {
@@ -96,6 +96,6 @@ struct Wave: View {
 struct Wave_Previews: PreviewProvider {
     
     static var previews: some View {
-        Wave(mode: .constant(nil))
+        Wave(mode: .constant(nil), speedSupported: true)
     }
 }

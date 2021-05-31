@@ -12,14 +12,17 @@ import SwiftUI
 
 struct Starlight: View {
     
+    let speedSupported: Bool
+    
     @State var speed: Speed
     @State var color1: FruityKit.Color?
     @State var color2: FruityKit.Color?
     
     @Binding var mode: Synapse2Handle.Mode?
     
-    init(mode: Binding<Synapse2Handle.Mode?>) {
+    init(mode: Binding<Synapse2Handle.Mode?>, speedSupported: Bool) {
         self._mode = mode
+        self.speedSupported = speedSupported
         
         if let unwrappedMode = mode.wrappedValue, case let Synapse2Handle.Mode.starlight(speed, color1, color2) = unwrappedMode {
             self._speed = State(initialValue: speed)
@@ -75,8 +78,10 @@ struct Starlight: View {
         )
         
         return VStack {
-            GroupBox(label: Text("Speed")) {
-                Slider(value: speedBinding, in: 0...8, step: 1) { Text("Speed") }
+            if speedSupported {
+                GroupBox(label: Text("Speed")) {
+                    SpeedSlider(speed: speedBinding)
+                }
             }
             
             GroupBox(label: Text("Color (1)")) {
@@ -93,6 +98,6 @@ struct Starlight: View {
 struct Starlight_Previews: PreviewProvider {
     
     static var previews: some View {
-        Starlight(mode: .constant(nil))
+        Starlight(mode: .constant(nil), speedSupported: true)
     }
 }

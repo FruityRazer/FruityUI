@@ -12,6 +12,7 @@ import FruityKit
 struct DeviceConfigurationViewV2: View {
     
     enum Synapse2ModeBasic: String, CaseIterable {
+        
         case breath = "Breath"
         case reactive = "Reactive"
         case spectrum = "Spectrum"
@@ -64,15 +65,15 @@ struct DeviceConfigurationViewV2: View {
         case .breath:
             Breath(mode: $presenter.synapseMode)
         case .reactive:
-            Reactive(mode: $presenter.synapseMode)
+            Reactive(mode: $presenter.synapseMode, speedSupported: presenter.speedSupported)
         case .spectrum:
             Spectrum(mode: $presenter.synapseMode)
         case .starlight:
-            Starlight(mode: $presenter.synapseMode)
+            Starlight(mode: $presenter.synapseMode, speedSupported: presenter.speedSupported)
         case .static:
             Static(mode: $presenter.synapseMode)
         case .wave:
-            Wave(mode: $presenter.synapseMode)
+            Wave(mode: $presenter.synapseMode, speedSupported: presenter.speedSupported)
         }
     }
 }

@@ -12,13 +12,16 @@ import SwiftUI
 
 struct Reactive: View {
     
+    let speedSupported: Bool
+    
     @State var speed: Speed
     @State var color: FruityKit.Color?
     
     @Binding var mode: Synapse2Handle.Mode?
     
-    init(mode: Binding<Synapse2Handle.Mode?>) {
+    init(mode: Binding<Synapse2Handle.Mode?>, speedSupported: Bool) {
         self._mode = mode
+        self.speedSupported = speedSupported
         
         if let unwrappedMode = mode.wrappedValue, case let Synapse2Handle.Mode.reactive(speed, color) = unwrappedMode {
             self._speed = State(initialValue: speed)
@@ -63,8 +66,10 @@ struct Reactive: View {
         )
         
         return VStack {
-            GroupBox(label: Text("Speed")) {
-                Slider(value: speedBinding, in: 0...8, step: 1) { Text("Speed") }
+            if speedSupported {
+                GroupBox(label: Text("Speed")) {
+                    SpeedSlider(speed: speedBinding)
+                }
             }
             
             GroupBox(label: Text("Color")) {
@@ -77,6 +82,6 @@ struct Reactive: View {
 struct Reactive_Previews: PreviewProvider {
     
     static var previews: some View {
-        Reactive(mode: .constant(nil))
+        Reactive(mode: .constant(nil), speedSupported: true)
     }
 }

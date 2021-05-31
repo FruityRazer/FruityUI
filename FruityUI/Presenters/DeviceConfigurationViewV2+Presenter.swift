@@ -38,11 +38,19 @@ extension DeviceConfigurationViewV2 {
         }
         
         var availableModes: [Synapse2ModeBasic] {
-            guard case let Driver.v2(driver: handle) = device.razerDevice!.driver else {
+            guard let d = device.razerDevice, case let Driver.v2(driver: handle) = d.driver else {
                 return []
             }
             
             return handle.supportedModes.map(Synapse2ModeBasic.init)
+        }
+        
+        var speedSupported: Bool {
+            guard let d = device.razerDevice, case let Driver.v2(driver: handle) = d.driver else {
+                return false
+            }
+            
+            return handle.speedSupported
         }
         
         init(device: Device, engine: Engine) {
