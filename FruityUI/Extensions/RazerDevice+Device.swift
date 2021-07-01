@@ -9,7 +9,7 @@
 import Foundation
 import FruityKit
 
-extension Device {
+extension HasDeviceMetadata {
     
     var imageURL: URL {
         guard let plistPath = Bundle.main.path(forResource: "DeviceImages", ofType: "plist"),
@@ -22,18 +22,9 @@ extension Device {
     }
 }
 
-extension RazerDevice: Device {
+extension RazerDevice: HasDeviceDriver {
     
     var razerDevice: RazerDevice? {
         return self
-    }
-}
-
-extension VersionedRazerDevice: Device {
-    
-    var razerDevice: RazerDevice? {
-        assertionFailure("This should never be called on a VersionedRazerDevice instance. This should probably be re-factored, it's a code 👃.")
-        
-        return nil
     }
 }

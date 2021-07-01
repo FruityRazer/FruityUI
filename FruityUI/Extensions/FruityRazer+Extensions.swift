@@ -10,7 +10,7 @@ import FruityKit
 
 extension FruityRazer {
     
-    static let sortFunction: (Device, Device) -> Bool = {
+    static let sortFunction: (HasDeviceMetadata, HasDeviceMetadata) -> Bool = {
         $0.fullName < $1.fullName
     }
     

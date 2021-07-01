@@ -9,12 +9,7 @@
 import Foundation
 import FruityKit
 
-protocol Device {
-    
-    var shortName: String { get }
-    var fullName: String { get }
-    var connected: Bool { get }
-    var imageURL: URL { get }
-    
-    var razerDevice: RazerDevice? { get }
-}
+typealias Device = HasDeviceDriver & HasDeviceMetadata
+
+extension RazerDevice: HasDeviceMetadata {}
+extension VersionedRazerDevice: HasDeviceMetadata {}

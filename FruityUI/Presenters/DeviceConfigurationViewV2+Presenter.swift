@@ -69,11 +69,15 @@ extension DeviceConfigurationViewV2 {
                 guard let razerDevice = device.razerDevice else {
                     assertionFailure("`razerDevice` should never be nil on a non-stub device driver.")
                     
+                    error = "Internal inconsistency error: \"`razerDevice` should never be nil on a non-stub device driver.\""
+                    
                     return
                 }
                 
                 guard case let Driver.v2(driver: handle) = razerDevice.driver else {
                     assertionFailure("Driver should be of Synapse2 type.")
+                    
+                    error = "Internal inconsistency error: \"Driver should be of Synapse2 type.\""
                     
                     return
                 }

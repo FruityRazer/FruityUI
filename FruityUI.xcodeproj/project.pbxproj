@@ -11,6 +11,8 @@
 		A000272E26400EE20083082F /* ColorPickerRing in Frameworks */ = {isa = PBXBuildFile; productRef = A000272D26400EE20083082F /* ColorPickerRing */; };
 		A00F7EA8244F7CB80035CB81 /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F7EA7244F7CB80035CB81 /* DeviceList.swift */; };
 		A010711124870F28007E3E45 /* Synapse2Handle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A010711024870F28007E3E45 /* Synapse2Handle+Extensions.swift */; };
+		A03AE882268E4E7E002E7D31 /* HasDeviceDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE881268E4E7E002E7D31 /* HasDeviceDriver.swift */; };
+		A03AE884268E4E9D002E7D31 /* HasDeviceMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE883268E4E9D002E7D31 /* HasDeviceMetadata.swift */; };
 		A04620222478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04620212478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift */; };
 		A051B402260605D900A381F0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A051B400260605BD00A381F0 /* Sparkle.framework */; };
 		A051B403260605D900A381F0 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A051B400260605BD00A381F0 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -132,6 +134,8 @@
 		A00F7EA7244F7CB80035CB81 /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
 		A00F7EA9244F80F70035CB81 /* FruityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FruityKit.framework; path = Carthage/Build/Mac/FruityKit.framework; sourceTree = "<group>"; };
 		A010711024870F28007E3E45 /* Synapse2Handle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Synapse2Handle+Extensions.swift"; sourceTree = "<group>"; };
+		A03AE881268E4E7E002E7D31 /* HasDeviceDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDeviceDriver.swift; sourceTree = "<group>"; };
+		A03AE883268E4E9D002E7D31 /* HasDeviceMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasDeviceMetadata.swift; sourceTree = "<group>"; };
 		A04620212478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+Convenience.swift"; sourceTree = "<group>"; };
 		A051B400260605BD00A381F0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		A051B405260607BC00A381F0 /* UpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateManager.swift; sourceTree = "<group>"; };
@@ -248,6 +252,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A03AE880268E4E2B002E7D31 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A03AE881268E4E7E002E7D31 /* HasDeviceDriver.swift */,
+				A03AE883268E4E9D002E7D31 /* HasDeviceMetadata.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		A046201E2478A27800CB2A5B /* Convenience */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +357,7 @@
 				A0EF69B42466062F00D77297 /* Models */,
 				A0E4BF4B2450C93C00F0D77D /* Stubs */,
 				A0CD978D24789F3F00BA56B0 /* Presenters */,
+				A03AE880268E4E2B002E7D31 /* Protocols */,
 				A08DB389244F7921000534F2 /* Views */,
 				A0AC44A4244CAF79003CEDB4 /* Assets.xcassets */,
 				A0AC44A9244CAF79003CEDB4 /* Main.storyboard */,
@@ -653,6 +667,7 @@
 				A08D8700248CFAFE008CE599 /* DeviceRawDataConverter.swift in Sources */,
 				A0BAE55E2479EEF700B82FBE /* Synapse2HandleMode+Conversions.swift in Sources */,
 				A0CD978C24789F3B00BA56B0 /* DeviceConfigurationViewV2+Presenter.swift in Sources */,
+				A03AE882268E4E7E002E7D31 /* HasDeviceDriver.swift in Sources */,
 				A0DFECE6248C442F000C01BC /* MacEditorTextView.swift in Sources */,
 				A051B406260607BC00A381F0 /* UpdateManager.swift in Sources */,
 				A04620222478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift in Sources */,
@@ -690,6 +705,7 @@
 				A0BAE5602479F83300B82FBE /* Synapse2Controller.swift in Sources */,
 				A0EF69AF2466038C00D77297 /* DataModel.xcdatamodeld in Sources */,
 				A0FB0067248B16DA003FF9C7 /* Router.swift in Sources */,
+				A03AE884268E4E9D002E7D31 /* HasDeviceMetadata.swift in Sources */,
 				A0A2E5262662CCC90025E330 /* Speed+Extensions.swift in Sources */,
 				A0FBA0FA2466BD740002EB75 /* Static.swift in Sources */,
 				A0FBA0FE2466C88D0002EB75 /* Device.swift in Sources */,

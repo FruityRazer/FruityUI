@@ -11,7 +11,7 @@ import URLImage
 
 struct DeviceRow: View {
     
-    let device: Device
+    let device: HasDeviceMetadata
     
     var defaultImage: some View {
         URLImage(url: URLs.defaultImage) {
