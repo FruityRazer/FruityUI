@@ -24,7 +24,7 @@ extension HasDeviceMetadata {
 
 extension RazerDevice: HasDeviceDriver {
     
-    var razerDevice: RazerDevice? {
+    var razerDevice: RazerDevice {
         return self
     }
 }

@@ -38,7 +38,7 @@ extension DeviceConfigurationViewV2 {
         }
         
         var availableModes: [Synapse2ModeBasic] {
-            guard let d = device.razerDevice, case let Driver.v2(driver: handle) = d.driver else {
+            guard case let Driver.v2(driver: handle) = device.razerDevice.driver else {
                 return []
             }
             
@@ -46,7 +46,7 @@ extension DeviceConfigurationViewV2 {
         }
         
         var speedSupported: Bool {
-            guard let d = device.razerDevice, case let Driver.v2(driver: handle) = d.driver else {
+            guard case let Driver.v2(driver: handle) = device.razerDevice.driver else {
                 return false
             }
             
@@ -64,16 +64,10 @@ extension DeviceConfigurationViewV2 {
         }
         
         func perform(_ action: Action) {
+            let razerDevice = device.razerDevice
+            
             switch action {
             case .commit:
-                guard let razerDevice = device.razerDevice else {
-                    assertionFailure("`razerDevice` should never be nil on a non-stub device driver.")
-                    
-                    error = "Internal inconsistency error: \"`razerDevice` should never be nil on a non-stub device driver.\""
-                    
-                    return
-                }
-                
                 guard case let Driver.v2(driver: handle) = razerDevice.driver else {
                     assertionFailure("Driver should be of Synapse2 type.")
                     

@@ -10,5 +10,5 @@ import FruityKit
 
 protocol HasDeviceDriver {
     
-    var razerDevice: RazerDevice? { get }
+    var razerDevice: RazerDevice { get }
 }
