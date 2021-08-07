@@ -91,6 +91,7 @@
 		A0FBA0FC2466C7D00002EB75 /* Breath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0FB2466C7D00002EB75 /* Breath.swift */; };
 		A0FBA0FE2466C88D0002EB75 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0FD2466C88D0002EB75 /* Device.swift */; };
 		A0FBA1002466CEC00002EB75 /* Spectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FBA0FF2466CEC00002EB75 /* Spectrum.swift */; };
+		A0FF1D0326BE76E500FC87C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF1D0226BE76E500FC87C3 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -215,6 +216,7 @@
 		A0FBA0FB2466C7D00002EB75 /* Breath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breath.swift; sourceTree = "<group>"; };
 		A0FBA0FD2466C88D0002EB75 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		A0FBA0FF2466CEC00002EB75 /* Spectrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spectrum.swift; sourceTree = "<group>"; };
+		A0FF1D0226BE76E500FC87C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 		A046201E2478A27800CB2A5B /* Convenience */ = {
 			isa = PBXGroup;
 			children = (
+				A0FF1D0226BE76E500FC87C3 /* Constants.swift */,
 				A08D86FF248CFAFE008CE599 /* DeviceRawDataConverter.swift */,
 				A04620212478A3C200CB2A5B /* NSPersistentContainer+Convenience.swift */,
 				A0DFECD9248BA09B000C01BC /* ResourceHelpers.swift */,
@@ -700,6 +703,7 @@
 				A0BAE55A2479E8C800B82FBE /* DeviceConfigurationV2Direction.swift in Sources */,
 				A0F81B2826652EE600D789FD /* SpeedSlider.swift in Sources */,
 				A0E4BF512450CDE400F0D77D /* DeviceConfigurationViewV3.swift in Sources */,
+				A0FF1D0326BE76E500FC87C3 /* Constants.swift in Sources */,
 				A0E4BF552450D09600F0D77D /* Filter.swift in Sources */,
 				A0B1FDD2248EC32600E07C79 /* LoginItemManager.swift in Sources */,
 				A0BAE5602479F83300B82FBE /* Synapse2Controller.swift in Sources */,

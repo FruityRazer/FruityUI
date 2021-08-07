@@ -21,19 +21,14 @@ protocol Persisting {
     func setMode(_ mode: Synapse3Handle.Mode, forDeviceWithShortName shortName: String)
 }
 
-extension NSNotification.Name {
-    
-    static let persistenceChanged = NSNotification.Name("PersistenceChanged")
-}
-
 struct Persistence: Persisting {
     
     func deleteConfigurations(forDeviceWithShortName shortName: String) {
-        if shortName.hasSuffix("_hw") {
+        if shortName.hasSuffix(Constants.synapse2Suffix) {
             DeviceConfigurationV2.delete(forDeviceWithShortName: shortName)
-            DeviceConfigurationV3.delete(forDeviceWithShortName: String(shortName.dropLast(3)) + "_sw")
-        } else if shortName.hasSuffix("_sw") {
-            DeviceConfigurationV2.delete(forDeviceWithShortName: String(shortName.dropLast(3)) + "_hw")
+            DeviceConfigurationV3.delete(forDeviceWithShortName: String(shortName.dropLast(Constants.synapse2Suffix.count)) + Constants.synapse3Suffix)
+        } else if shortName.hasSuffix(Constants.synapse3Suffix) {
+            DeviceConfigurationV2.delete(forDeviceWithShortName: String(shortName.dropLast(Constants.synapse3Suffix.count)) + Constants.synapse2Suffix)
             DeviceConfigurationV3.delete(forDeviceWithShortName: shortName)
         } else {
             DeviceConfigurationV2.delete(forDeviceWithShortName: shortName)

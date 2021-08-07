@@ -10,5 +10,12 @@ import Foundation
 
 extension Notification.Name {
     
+    //  Custom Notifications
+    
     static let killLauncher = Notification.Name("KillFruityUILaunchHelper")
+    static let persistenceChanged = Notification.Name("PersistenceChanged")
+    
+    //  OS Notifications
+    
+    static let persistentStoreRemoteChangeNotification = Notification.Name("NSPersistentStoreRemoteChangeNotification")
 }

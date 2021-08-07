@@ -57,7 +57,7 @@ class Controller: Controlling {
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(forceUpdate),
-                                               name: NSNotification.Name(rawValue: "NSPersistentStoreRemoteChangeNotification"),
+                                               name: .persistentStoreRemoteChangeNotification,
                                                object: nil)
     }
     
