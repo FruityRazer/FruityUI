@@ -15,10 +15,6 @@ struct PillButton: View {
     let text: String
     let action: Action?
     
-    init() {
-        self.init(text: "Lorem Ipsum", action: nil)
-    }
-    
     init(text: String, action: Action?) {
         self.text = text
         self.action = action
@@ -39,6 +35,6 @@ struct PillButton: View {
 struct PillButton_Previews: PreviewProvider {
     
     static var previews: some View {
-        PillButton()
+        PillButton(text: "Lorem Ipsum", action: nil)
     }
 }
