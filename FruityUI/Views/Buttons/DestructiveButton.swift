@@ -15,10 +15,6 @@ struct DestructiveButton: View {
     let text: String
     let action: Action?
     
-    init() {
-        self.init(text: "Delete", action: nil)
-    }
-    
     init(text: String, action: Action?) {
         self.text = text
         self.action = action
@@ -40,6 +36,6 @@ struct DestructiveButton: View {
 struct DeleteButton_Previews: PreviewProvider {
     
     static var previews: some View {
-        DestructiveButton()
+        DestructiveButton(text: "Delete", action: nil)
     }
 }
