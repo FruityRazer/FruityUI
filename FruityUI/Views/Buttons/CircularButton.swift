@@ -15,10 +15,6 @@ struct CircularButton: View {
     let text: String
     let action: Action?
     
-    init() {
-        self.init(text: "✕", action: nil)
-    }
-    
     init(text: String, action: Action?) {
         self.text = text
         self.action = action
@@ -40,6 +36,6 @@ struct CircularButton: View {
 struct CloseButton_Previews: PreviewProvider {
     
     static var previews: some View {
-        CircularButton()
+        CircularButton(text: "✕", action: nil)
     }
 }
