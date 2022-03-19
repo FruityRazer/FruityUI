@@ -44,7 +44,7 @@ struct Router: Routable {
         
         window.center()
         
-        window.title = "FruityUI for FruityRazer"
+        window.title = "FruityUI"
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)
         window.level = .normal
